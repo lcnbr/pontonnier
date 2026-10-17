@@ -1,36 +1,38 @@
 /* Recreates the reference site's Twenty Ten composition with a fluid layout. */
-:root { color-scheme: light; --ink: #333; --link: #0066cc; }
-* { box-sizing: border-box; }
-body { margin: 0; background: #bcbcbc; color: var(--ink); font: 16px/1.5 Georgia, "Bitstream Charter", serif; }
+:root { color-scheme: light; --ink: #333; --link: #0066cc; --body-font: -apple-system-body, ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+* { box-sizing: border-box; border-radius: 0; }
+/* Make the approved preview’s typography explicit instead of inheriting host UI styles. */
+body { margin: 0; padding: 18px; background: #bcbcbc; color: var(--ink); font: 16px/1.5 var(--body-font); }
 a { color: var(--link); text-underline-offset: 2px; }
 a:visited { color: #743399; }
 a:hover { color: #d43722; }
 a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #0066cc; outline-offset: 4px; }
-.wrapper { width: min(980px, calc(100% - 32px)); margin: 20px auto; padding: 0 20px; background: #fff; }
-header { padding-top: 30px; }
-.branding { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
-.site-title { margin: 0 0 18px; font: bold 30px/36px "Helvetica Neue", Arial, sans-serif; }
+.wrapper { width: 100%; max-width: 980px; margin: 0 auto; padding: 28px 20px 0; background: #fff; }
+.branding { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 18px; }
+.site-title { margin: 0; font: 700 30px/1.2 "Helvetica Neue", Arial, sans-serif; }
 .site-title a, .site-title a:visited { color: #000; text-decoration: none; }
-.site-description { width: 220px; flex-shrink: 0; margin: 0 0 18px; font-size: 12px; font-style: italic; color: #666; }
-.banner { border-top: 4px solid #000; border-bottom: 1px solid #000; }
+.site-description { flex-shrink: 0; margin: 0; padding-right: 60px; color: #666; font: italic 12px/1.5 Georgia, serif; }
 .banner p { margin: 0; }
-.banner img { display: block; width: 100%; height: auto; aspect-ratio: 940 / 198; }
-nav { background: #000; font: 13px/1.5 "Helvetica Neue", Arial, sans-serif; }
+.banner img { display: block; width: 100%; height: auto; aspect-ratio: 940 / 198; border-top: 4px solid #000; border-bottom: 1px solid #000; }
+nav { background: #000; font: 13px/18px "Helvetica Neue", Arial, sans-serif; }
 .menu, .submenu { list-style: none; margin: 0; padding: 0; }
 .menu { position: relative; display: flex; flex-wrap: wrap; padding-left: 12px; }
 .menu > li { position: relative; }
-.menu a, .menu summary { display: block; padding: 10px; line-height: 18px; color: #b5b5b5; text-decoration: none; cursor: pointer; }
-.menu summary { list-style: none; }
+.menu a, .menu summary { display: block; padding: 11px 10px; line-height: 18px; color: #aaa; text-decoration: none; cursor: pointer; white-space: nowrap; }
+.menu summary { position: relative; list-style: none; }
 .menu summary::-webkit-details-marker { display: none; }
-.menu summary::after { content: " ▾"; font-size: 10px; }
-.menu a:hover, .menu a:focus-visible, .menu summary:hover, .menu details[open] > summary { background: #333; color: #fff; }
+.menu summary::after { content: "▾"; position: absolute; right: 3px; font-size: 10px; }
+.menu .gallery-menu summary::after { position: static; margin-left: 5px; font-size: inherit; }
+.menu a:hover, .menu a:focus-visible, .menu summary:hover, .menu details[open] > summary { background: #292929; color: #fff; }
 .menu a[aria-current="page"] { color: #fff; }
-.submenu { position: absolute; z-index: 3; width: 215px; max-height: 65vh; overflow-y: auto; background: #333; box-shadow: 0 3px 3px #0003; }
-.submenu a { color: #ddd; line-height: 1.4; }
+.submenu { position: absolute; z-index: 3; width: 215px; max-height: 65vh; overflow-y: auto; background: #292929; }
+.submenu a { color: #ddd; line-height: 1.4; white-space: normal; }
 .submenu a:hover { background: #444; }
-main { max-width: 640px; margin: 0 auto; padding: 40px 0 36px; min-height: 340px; overflow-wrap: break-word; }
+main { max-width: 640px; margin: 0 auto; padding: 34px 0 30px; min-height: 340px; overflow-wrap: break-word; }
 h1, h2, h3 { color: #000; }
-h1.entry-title { margin: 0 0 20px; font: bold 21px/1.5 "Helvetica Neue", Arial, sans-serif; }
+h1.entry-title { margin: 0 0 18px; font: 700 28px/1.25 "Helvetica Neue", Arial, sans-serif; }
+/* Typst strong() inside a bold heading must not become weight 900. */
+h1 strong, h2 strong, h3 strong, .album-card-title strong { font-weight: inherit; }
 h2 { margin: 28px 0 20px; font-size: 24px; line-height: 1.5; }
 h3 { margin: 24px 0 16px; font-size: 19px; }
 p { margin: 0 0 24px; }
@@ -48,7 +50,8 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 .gallery figure > a { display: block; }
 .gallery img { width: 100%; height: auto; }
 .gallery-page { max-width: none; }
-.gallery-page h1.entry-title { font-size: 28px; line-height: 1.25; }
+.gallery-page .entry-content > p:first-child { margin-bottom: 26px; }
+.gallery-page .entry-content > h2 { margin: 32px 0 18px; font: 700 21px/1.3 Arial, sans-serif; }
 .gallery-page .gallery { columns: 3; }
 .gallery.is-mosaic { position: relative; columns: auto; }
 .gallery.is-mosaic > figure { position: absolute; margin: 0; }
@@ -71,6 +74,7 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 .pg-viewer-count { margin: 0 0 0 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .pg-viewer-tools { display: flex; gap: 2px; align-items: center; }
 .photo-viewer button { cursor: pointer; }
+.photo-viewer svg { width: 16px; height: 16px; }
 .pg-viewer-tools button { display: grid; place-items: center; min-width: 44px; height: 44px; padding: 6px; border: 0; background: transparent; color: #fff; font: inherit; }
 .pg-viewer-tools button:hover { background: #333; }
 .pg-viewer-tools button:disabled { opacity: .35; cursor: default; }
@@ -103,21 +107,20 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 table { width: 100%; border-collapse: collapse; margin: 0 0 24px; }
 th, td { border-bottom: 1px solid #ddd; padding: 10px 12px; text-align: left; }
 th { font-family: Arial, sans-serif; }
-footer { display: flex; justify-content: space-between; gap: 24px; padding: 18px 0; border-top: 4px solid #000; font: 12px/1.5 "Helvetica Neue", Arial, sans-serif; }
+footer { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 4px solid #000; color: #666; font: 12px/1.5 "Helvetica Neue", Arial, sans-serif; }
 footer strong { font-size: 14px; }
 footer a, footer a:visited { color: #000; text-decoration: none; }
 footer span, footer span a, footer span a:visited { color: #666; }
 .skip-link { position: fixed; top: -100px; left: 10px; z-index: 10; padding: 12px 20px; background: #fff; }
 .skip-link:focus { top: 10px; }
 @media (max-width: 720px) {
-  .wrapper { width: 100%; margin: 0; padding: 0 16px; }
-  header { padding-top: 22px; }
+  body { padding: 0; }
+  .wrapper { padding: 22px 16px 0; }
   .branding { display: block; }
-  .site-title { font-size: 25px; line-height: 1.25; margin-bottom: 6px; }
-  .site-description { width: auto; margin-bottom: 18px; }
-  .banner img { min-height: 110px; object-fit: cover; }
+  .site-title { font-size: 25px; }
+  .site-description { padding: 7px 0 0; }
   .menu { padding-left: 0; }
-  .menu a, .menu summary { padding: 10px 9px; }
+  .menu a, .menu summary { padding: 13px 9px; }
   .submenu { position: static; width: min(215px, calc(100vw - 32px)); box-shadow: none; }
   main { padding-top: 28px; }
   .gallery-page .gallery:not(.is-mosaic) { columns: 2; column-gap: 6px; }
@@ -126,10 +129,10 @@ footer span, footer span a, footer span a:visited { color: #666; }
   .menu .album-options a { min-height: 44px; }
   .instagram { font-size: 21px; }
   .introduction { text-align: left; }
-  footer { flex-direction: column; gap: 8px; }
+  footer { flex-direction: column; gap: 7px; }
 }
 @media print {
-  body { background: #fff; }
+  body { padding: 0; background: #fff; }
   .wrapper { width: 100%; padding: 0; margin: 0; }
   nav, .rhonometre, .skip-link, .photo-viewer { display: none; }
   main { max-width: none; }
@@ -159,14 +162,17 @@ footer span, footer span a, footer span a:visited { color: #666; }
 .older-albums[open] summary { margin-bottom: 22px; }
 .album-summary { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 26px; }
 .album-summary p { margin: 0; }
-.album-summary > a { padding: 4px 0; font: 14px/1.5 Arial, sans-serif; }
+.album-summary > a { min-height: 32px; padding: 4px 0; font: 14px/1.5 Arial, sans-serif; }
 .album-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; background: transparent; color: #777; font: 13px/1.4 Arial, sans-serif; }
-.album-breadcrumb a, .album-breadcrumb a:visited { display: inline-block; padding: 6px 0; color: #555; }
+.album-breadcrumb a, .album-breadcrumb a:visited { display: inline-flex; align-items: center; min-height: 32px; padding: 2px 0; color: #555; }
 .album-parent { display: inline-flex; align-items: center; gap: 10px; }
 .album-event { margin: 28px 0; }
 .album-event > .event-title { margin: 0 0 12px; }
 .event-meta { margin: 0 0 24px; color: #666; font: 13px/1.5 Arial, sans-serif; }
+.album-event.is-selected { margin: 0; }
 .album-event.is-selected > .event-title { display: none; }
+.album-event.is-selected > .event-meta { margin-bottom: 26px; color: var(--ink); font: 16px/1.5 var(--body-font); }
+.album-event.is-selected > .gallery:first-of-type { margin-top: 0; }
 .album-overview[hidden], .album-events[hidden], .album-event[hidden], .album-parent[hidden] { display: none; }
 @media (max-width: 640px) {
   .album-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }

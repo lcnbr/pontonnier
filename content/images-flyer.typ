@@ -2,11 +2,11 @@
 
 // Set cover: none to use the first photo instead.
 #let album = album-data(
-  title: "Images Flyer", path: "images-flyer/",
+  title: "Images et affiches", path: "images-flyer/",
   cover: "archive/2018/10/IMG_6244.jpg",
   events: (
     album-event(
-      id: "photos", title: "Images Flyer",
+      id: "photos", title: "Images et affiches",
       cover: "archive/2018/10/IMG_6244.jpg",
     )[
 #gallery[

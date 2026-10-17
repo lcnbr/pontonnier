@@ -84,7 +84,7 @@
     html.div(class: "album-overview")[
       #html.div(class: "album-summary")[
         #html.p[#album.events.len() événements · #media-summary(album.items)]
-        #html.a(href: base + album.path + "#all-photos")[Tout voir]
+        #html.a(href: base + album.path + "#all-photos")[#if album.items.any(item => item.kind == "video") { [Tout voir] } else { [Voir les #album.items.len() photos] }]
       ]
       #album.intro
       #html.div(class: "album-cards")[
