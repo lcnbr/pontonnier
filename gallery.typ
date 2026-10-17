@@ -14,9 +14,9 @@
     #html.elem("path", attrs: (d: paths.at(name)))
   ]
 }
-#let viewer-button(class, label, icon) = html.button(type: "button", class: class,
+#let viewer-button(class, label, icon, autofocus: false) = html.button(type: "button", class: class, autofocus: autofocus,
   title: label, ..("aria-label": label), viewer-icon(icon))
-#let photo-viewer() = html.section(class: "photo-viewer", hidden: true,
+#let photo-viewer() = html.dialog(class: "photo-viewer",
   ..("aria-label": "Visionneuse de photos"))[
   #html.div(class: "pg-viewer-bar")[
     #html.p(class: "pg-viewer-count", ..("aria-live": "polite"))[]
@@ -25,7 +25,7 @@
       #html.button(type: "button", class: "pg-zoom-reset", title: "Afficher la photo entière",
         ..("aria-label": "Afficher la photo entière"))[100%]
       #viewer-button("pg-zoom-in", "Agrandir", "zoom-in")
-      #viewer-button("pg-viewer-close", "Fermer", "close")
+      #viewer-button("pg-viewer-close", "Fermer", "close", autofocus: true)
     ]
   ]
   #html.div(class: "pg-viewer-stage")[

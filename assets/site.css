@@ -68,8 +68,12 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 .menu .album-options li:first-child a, .menu .album-options li:nth-last-child(-n+3) a { text-align: left; padding-left: 12px; }
 .album-options li:nth-last-child(3) { border-top: 1px solid #555; margin-top: 4px; padding-top: 4px; }
 .menu .album-options a:focus-visible { outline-offset: -2px; }
-.photo-viewer { background: #111; color: #fff; font: 14px/1.5 Arial, sans-serif; }
-.photo-viewer[hidden], .entry-content[hidden], .pg-viewer-caption[hidden] { display: none; }
+/* The native modal fills the viewport and keeps the background inert. */
+.photo-viewer { position: fixed; inset: 0; width: 100%; max-width: none; height: 100vh; height: 100dvh; max-height: none; margin: 0; padding: 0; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); border: 0; overflow: hidden; overscroll-behavior: contain; background: #111; color: #fff; font: 14px/1.5 Arial, sans-serif; }
+.photo-viewer[open] { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; }
+.photo-viewer::backdrop { background: #111; }
+.photo-viewer:not([open]), .pg-viewer-caption[hidden] { display: none; }
+html.photo-viewer-open, html.photo-viewer-open body { overflow: hidden; overscroll-behavior: none; }
 .pg-viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px; }
 .pg-viewer-count { margin: 0 0 0 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .pg-viewer-tools { display: flex; gap: 2px; align-items: center; }
@@ -80,7 +84,7 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 .pg-viewer-tools button:disabled { opacity: .35; cursor: default; }
 .pg-viewer-tools .pg-zoom-reset { min-width: 52px; font-variant-numeric: tabular-nums; }
 .pg-viewer-tools .pg-viewer-close { margin-left: 4px; }
-.pg-viewer-stage { position: relative; aspect-ratio: 3 / 2; }
+.pg-viewer-stage { position: relative; min-width: 0; min-height: 0; }
 .pg-image-viewport { position: absolute; inset: 0; overflow: hidden; touch-action: none; user-select: none; }
 .pg-image-viewport.is-zoomed { cursor: grab; }
 .pg-image-viewport.is-dragging { cursor: grabbing; }
@@ -88,11 +92,8 @@ figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Aria
 .pg-photo-nav { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 46px; height: 52px; padding: 0; border: 0; background: #000b; color: #fff; }
 .pg-photo-prev { left: 8px; }
 .pg-photo-next { right: 8px; }
-.pg-viewer-caption { margin: 0; padding: 14px; color: #ddd; text-align: center; }
+.pg-viewer-caption { min-width: 0; max-height: 25vh; max-height: min(25dvh, 10rem); overflow-y: auto; overscroll-behavior: contain; margin: 0; padding: 14px; color: #ddd; text-align: center; }
 .pg-viewer-caption a, .pg-viewer-caption a:visited { color: #ddd; }
-@media (max-width: 600px) {
-  .pg-viewer-stage { aspect-ratio: 4 / 5; }
-}
 .instagram { margin-bottom: 24px; text-align: center; color: #c90000; font-size: 24px; font-weight: bold; line-height: 1.5; }
 .instagram a, .instagram a:visited { color: inherit; }
 .news-label { margin-bottom: 24px; color: #c90000; font-weight: bold; }
@@ -134,9 +135,9 @@ footer span, footer span a, footer span a:visited { color: #666; }
 @media print {
   body { padding: 0; background: #fff; }
   .wrapper { width: 100%; padding: 0; margin: 0; }
-  nav, .rhonometre, .skip-link, .photo-viewer { display: none; }
+  nav, .rhonometre, .skip-link, .photo-viewer[open] { display: none; }
   main { max-width: none; }
-  .entry-content[hidden] { display: block; }
+  html.photo-viewer-open, html.photo-viewer-open body { overflow: visible; }
 }
 
 /* Archive media is shared between pages instead of embedded in every document. */

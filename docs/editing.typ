@@ -218,7 +218,9 @@ opened event; cover cards display the title text.
 
 The navbar opens the album overview for a year. Select an event card for its
 photos and videos, or use the link beside the media count for the whole year.
-The carousel follows that selection. Scroll, pinch or use the magnifier buttons to zoom; drag to pan, click
+The carousel follows that selection and opens in a fullscreen overlay. The page
+behind it stays in place and cannot scroll or receive keyboard focus. Scroll,
+pinch or use the magnifier buttons to zoom; drag to pan, click
 the percentage to reset, and use the arrows or swipe at normal zoom to change
 photos. Escape or the close icon returns to the gallery position. Browser Back
 and old event anchors also work. Without JavaScript, the cards link to the event

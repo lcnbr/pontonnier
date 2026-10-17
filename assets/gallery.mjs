@@ -230,16 +230,18 @@ function initializeGallery(main) {
   viewport.addEventListener("pointerup", endPointer);
   viewport.addEventListener("pointercancel", endPointer);
   viewport.addEventListener("lostpointercapture", endPointer);
-  new ResizeObserver(() => { if (!viewer.hidden) paintZoom(); }).observe(viewport);
+  new ResizeObserver(() => { if (viewer.open) paintZoom(); }).observe(viewport);
 
   function showPhoto(index) {
     activePhoto = (index + sequence.length) % sequence.length;
     const item = sequence[activePhoto];
-    content.hidden = true;
-    viewer.hidden = false;
     viewerImage.src = item.anchor.href;
     viewerImage.alt = item.image.alt;
     photoRatio = item.width / item.height;
+    if (!viewer.open) {
+      document.documentElement.classList.add('photo-viewer-open');
+      viewer.showModal();
+    }
     resetZoom();
     viewerCount.textContent = (activePhoto + 1) + ' / ' + sequence.length;
     // Captions are authored content, never the automatically numbered alt text.
@@ -253,8 +255,8 @@ function initializeGallery(main) {
   function closePhoto(restorePosition = true) {
     activePhoto = null;
     resetZoom();
-    viewer.hidden = true;
-    content.hidden = false;
+    if (viewer.open) viewer.close();
+    document.documentElement.classList.remove('photo-viewer-open');
     for (const gallery of layouts.keys()) layout(gallery);
     if (restorePosition) {
       opener?.focus({preventScroll: true});
@@ -269,9 +271,15 @@ function initializeGallery(main) {
     sequence = items.filter(photo => !photo.figure.closest('.album-event')?.hidden);
     showPhoto(sequence.indexOf(item));
     closeButton.focus({preventScroll: true});
-    main.scrollIntoView({block: 'start', behavior: 'instant'});
   }));
   closeButton.addEventListener('click', () => closePhoto());
+  viewer.addEventListener('cancel', event => {
+    event.preventDefault();
+    closePhoto();
+  });
+  viewer.addEventListener('close', () => {
+    if (activePhoto !== null && !viewer.open) closePhoto();
+  });
   viewer.querySelector('.pg-photo-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
   viewer.querySelector('.pg-photo-next').addEventListener('click', () => showPhoto(activePhoto + 1));
   main.addEventListener('keydown', event => {
