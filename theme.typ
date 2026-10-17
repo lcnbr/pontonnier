@@ -1,22 +1,21 @@
-#import "site.typ": name, motto, email, navigation, albums
+#import "site.typ": name, motto, email, navigation, albums, published-url
 
-#let base = sys.inputs.at("base-path", default: "/")
-#assert(base.starts-with("/") and base.ends-with("/"), message: "base-path must start and end with /")
+#let base = sys.inputs.at("base-path", default: published-url)
+#assert(base.ends-with("/"), message: "The site base URL must end with /")
 #let site-link(path, body) = link(base + path, body)
-// Standalone editor previews embed images; bundles publish shared, lazy-loaded files.
-#let external-assets = sys.inputs.at("external-assets", default: "false") == "true"
+// Editor previews load published media; builds supply the local Pages base path.
 #let media = json("assets/manifest.json")
+#let picture(file, alt, loading: "lazy") = {
+  let entry = media.find(item => item.path == "assets/" + file)
+  let dimensions = if entry != none and "width" in entry and "height" in entry {
+    (width: entry.width, height: entry.height)
+  } else { (:) }
+  html.img(src: base + "assets/" + file, alt: alt, loading: loading, decoding: "async", ..dimensions)
+}
 #let photo(file, alt, caption: none, destination: none) = {
-  let picture = if external-assets {
-    let entry = media.find(item => item.path == "assets/" + file)
-    let dimensions = if entry != none and "width" in entry and "height" in entry {
-      (width: entry.width, height: entry.height)
-    } else { (:) }
-    html.img(src: base + "assets/" + file, alt: alt, loading: "lazy", decoding: "async", ..dimensions)
-  } else { image("assets/" + file, alt: alt) }
   let href = if destination == none { base + "assets/" + file } else { destination }
   html.figure[
-    #link(href, picture)
+    #link(href, picture(file, alt))
     #if caption != none { html.figcaption(caption) }
   ]
 }
@@ -68,7 +67,7 @@
             #html.p(class: "site-description", motto)
           ]
           #html.div(class: "banner")[
-            #image("assets/banner.jpg", alt: "La rade de Genève à la tombée de la nuit")
+            #picture("banner.jpg", "La rade de Genève à la tombée de la nuit", loading: "eager")
           ]
           #html.nav(..("aria-label": "Navigation principale"))[
             #html.ul(class: "menu")[

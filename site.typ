@@ -1,4 +1,5 @@
 // Shared content and navigation. Paths are relative to the website root.
+#let published-url = "https://lcnbr.github.io/pontonnier/"
 #let name = "Pontonnier·ère·s de Genève"
 #let motto = "Rhodanus Et Lemanus"
 #let email = "info@pontonniers-geneve.ch"

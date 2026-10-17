@@ -9,7 +9,7 @@ layout. The CSS in this repository is a separate implementation.
 The public articles, technical material, gallery events and captions are authored
 in editable Typst files under `content/`, preserving the corresponding paths on
 #link("https://www.pontonniers-geneve.ch/"). The main entry point is
-`content/index.typ`; `content/galerie.typ` lists every imported album.
+`content/index.typ`; the `albums` inventory in `site.typ` lists the collections.
 
 The existing history introduction and its local edit are preserved. Additional
 illustrations, historical background, sources and downloads were appended.
@@ -23,8 +23,11 @@ the WordPress form processor is not part of this static site.
 
 == Media provenance
 
-`assets/manifest.json` records each local file’s path, source URL, byte size and
-SHA-256 checksum. Typst reads this inventory to publish the files in the bundle.
+`assets/manifest.json` records each published file’s path, source URL, byte size,
+SHA-256 checksum and image dimensions. Binary files live in
+#link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media]. The source
+repository pins their commit in `.media-revision`; Typst reads the downloaded
+`.media/` checkout to publish the same asset paths in its bundle.
 Images use existing source-provided web renditions where available. They were
 not generatively recreated. Videos and PDFs retain their downloaded bytes.
 

@@ -44,6 +44,6 @@
   document(entry.output, include ("content/" + entry.source + ".typ"))
 }
 #for entry in json("assets/manifest.json") {
-  asset(entry.path, read(entry.path, encoding: none))
+  asset(entry.path, read(".media/" + entry.path, encoding: none))
 }
 #asset(".nojekyll", bytes(""))

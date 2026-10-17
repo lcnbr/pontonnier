@@ -13,10 +13,11 @@ if [[ ! "$base" =~ ^/([A-Za-z0-9_-]+/)*$ ]]; then
   printf 'BASE_PATH must be / or a path such as /pontonnier/\n' >&2
   exit 1
 fi
+bash scripts/fetch-media.sh
 output=$(mktemp -d .build-XXXXXX)
 trap 'rm -rf "$output"' EXIT
 "$compiler" compile --root . --features html,bundle --format bundle \
-  --input "base-path=$base" --input external-assets=true main.typ "$output"
+  --input "base-path=$base" main.typ "$output"
 # Replace only this project's generated directory, after a successful compile.
 rm -rf dist
 mv "$output" dist

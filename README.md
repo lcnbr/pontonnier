@@ -1,22 +1,21 @@
 # Pontonnier
 
-A reproduction of [pontonniers-geneve.ch](https://www.pontonniers-geneve.ch/),
-with French content authored in Typst and HTML generated directly by Typst.
+The [Pontonnier website](https://lcnbr.github.io/pontonnier/) is authored in Typst,
+which generates its HTML directly. This repository contains the small editing
+project. Photos, PDFs and videos live in [pontonnier-media](https://github.com/lcnbr/pontonnier-media).
 
-The articles, photo albums, PDFs and hosted videos are served locally; the live
-Rhonomètre remains an external integration.
+Edit the `.typ` files under `content/` and push to `main`. CI fetches the media
+commit pinned in `.media-revision` and publishes the complete website at the
+same address, including its local media URLs and live Rhonomètre integration.
 
-Edit the `.typ` files under `content/`, push to `main`, and GitHub Actions publishes to
-[GitHub Pages](https://lcnbr.github.io/pontonnier/).
-
-With Typst 0.15.1 installed:
+With Git, Typst 0.15.1 and Python 3 installed:
 
 ```sh
 bash scripts/build.sh
 python3 scripts/check.py
 ```
 
-See [the editing and deployment guide](docs/editing.typ) for Typst web app
-setup, local preview, and adding pages; [sources](docs/sources.typ) records
-reference content and media. HTML and bundle export are experimental and the
-compiler is pinned in `.typst-version`. Generated HTML is not committed.
+The first build downloads media into the ignored `.media/` checkout.
+See [the editing guide](docs/editing.typ) for Typst web-app setup, the one-time
+reconnection after the media split, previews and adding media. [Sources](docs/sources.typ)
+records attribution. HTML and bundle export are experimental; the compiler is pinned.
