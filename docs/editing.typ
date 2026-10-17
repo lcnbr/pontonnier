@@ -62,9 +62,13 @@ are pushed.
 Install the CLI release recorded in `.typst-version`, then run:
 
 ```sh
-./scripts/build.sh
+bash scripts/build.sh
 python3 scripts/check.py
 ```
+
+Invoke the build through Bash: browser-based editors and Git synchronization
+can save shell scripts without their executable permission. The CI workflow
+uses the same command, so publishing does not depend on that permission.
 
 The build uses Typst’s native `html` and `bundle` experimental features. A failed
 compile leaves the previous `dist/` intact. The compiler’s experimental-feature
@@ -83,7 +87,7 @@ Typst injects a reload script only into the live preview it serves.
 To reproduce the GitHub Pages subdirectory locally:
 
 ```sh
-BASE_PATH=/pontonnier/ ./scripts/build.sh
+BASE_PATH=/pontonnier/ bash scripts/build.sh
 python3 scripts/check.py --base-path /pontonnier/
 ```
 

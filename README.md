@@ -9,7 +9,7 @@ Edit `content/*.typ`, push to `main`, and GitHub Actions publishes to
 With Typst 0.15.1 installed:
 
 ```sh
-./scripts/build.sh
+bash scripts/build.sh
 python3 scripts/check.py
 ```
 
