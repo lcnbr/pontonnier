@@ -8,7 +8,7 @@ all page markup from Typst; the browser applies the CSS in `assets/site.css`.
 
 - `content/`: French page sources. Ordinary paragraphs, headings, lists and links
   use Typst markup.
-- `site.typ`: the site name, contact address and navigation.
+- `site.typ`: the site name, contact address, navigation and shared album inventory.
 - `theme.typ`: the HTML structure, page template and reusable content functions.
 - `assets/`: local photographs, diagrams, PDFs, videos and CSS.
 - `assets/manifest.json`: published asset paths and provenance for imported media.
@@ -38,7 +38,8 @@ Pages repository path. Use Typst’s `link` for external URLs. Add images to
 `assets/` and use `photo` with a meaningful alternative description. Add each new
 media file to `assets/manifest.json` with its repository-relative `path`; for
 example, `{"path": "assets/ma-photo.jpg"}`. Imported media also records its source
-URL, byte size and SHA-256 checksum for provenance.
+URL, byte size and SHA-256 checksum for provenance. Record image `width` and
+`height` in pixels as well, so the mosaic reserves space before photos load.
 
 Typst emits the shared media files into the bundle. Published images load lazily
 and open a local full-size view when clicked. Individual HTML previews in the
@@ -119,6 +120,18 @@ personal access token or a hosting password. The default site address is
 
 A custom domain is not configured. To move to one later, configure it in GitHub
 Pages and update DNS; the workflow takes the new base path from Pages.
+
+== Gallery layout and years
+
+Wrap photos in `gallery[...]` to display a responsive mosaic. Portrait and
+landscape images retain their proportions; each photo opens its local image.
+The layout uses CSS and the album dropdown uses native HTML, both generated
+through the shared Typst template, without application JavaScript.
+
+The `albums` inventory in `site.typ` supplies both the main gallery menu and the
+year dropdown on every album page. Extend the year range there when adding a
+new annual album, and register that page in `main.typ`. The older paths for 2012
+and 2015 are preserved. Special collections are listed in the same inventory.
 
 == Adding a page
 

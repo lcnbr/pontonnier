@@ -3,6 +3,16 @@
 #let motto = "Rhodanus Et Lemanus"
 #let email = "info@pontonniers-geneve.ch"
 #let instagram = "https://www.instagram.com/pontonniers_geneve/"
+// The gallery picker and main menu share one album inventory.
+#let albums = ((title: "Tous les albums", path: "galerie/"),) + range(2025, 2011, step: -1).map(year => (
+  title: str(year),
+  path: if year in (2012, 2015) { "images-" + str(year) + "/" }
+    else { "galerie/images-" + str(year) + "/" },
+)) + (
+  (title: "Avant 1960", path: "galerie/avant-1950/"),
+  (title: "Castor", path: "galerie/castor/"),
+  (title: "Images et affiches", path: "images-flyer/"),
+)
 #let navigation = (
   (title: "Accueil", path: ""),
   (title: "Histoire", path: "histoire/", children: (
@@ -20,13 +30,7 @@
     (title: "Cordages", path: "sport/cordages/"),
     (title: "Vidéos", path: "videos/"),
   )),
-  (title: "Galerie", path: "galerie/", children: (
-    (title: "Tous les albums", path: "galerie/"),
-    (title: "Images 2025", path: "galerie/images-2025/"),
-    (title: "Images 2024", path: "galerie/images-2024/"),
-    (title: "Castor", path: "galerie/castor/"),
-    (title: "Avant 1960", path: "galerie/avant-1950/"),
-  )),
+  (title: "Galerie", path: "galerie/", children: albums),
   (title: "Apprenez à ramer!", path: "sport/cours/"),
   (title: "Origami-Weidling", path: "origami-weidling/"),
   (title: "Contact", path: "contact/"),

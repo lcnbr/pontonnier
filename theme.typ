@@ -1,13 +1,18 @@
-#import "site.typ": name, motto, email, navigation
+#import "site.typ": name, motto, email, navigation, albums
 
 #let base = sys.inputs.at("base-path", default: "/")
 #assert(base.starts-with("/") and base.ends-with("/"), message: "base-path must start and end with /")
 #let site-link(path, body) = link(base + path, body)
 // Standalone editor previews embed images; bundles publish shared, lazy-loaded files.
 #let external-assets = sys.inputs.at("external-assets", default: "false") == "true"
+#let media = json("assets/manifest.json")
 #let photo(file, alt, caption: none, destination: none) = {
   let picture = if external-assets {
-    html.img(src: base + "assets/" + file, alt: alt, loading: "lazy", decoding: "async")
+    let entry = media.find(item => item.path == "assets/" + file)
+    let dimensions = if entry != none and "width" in entry and "height" in entry {
+      (width: entry.width, height: entry.height)
+    } else { (:) }
+    html.img(src: base + "assets/" + file, alt: alt, loading: "lazy", decoding: "async", ..dimensions)
   } else { image("assets/" + file, alt: alt) }
   let href = if destination == none { base + "assets/" + file } else { destination }
   html.figure[
@@ -31,7 +36,19 @@
   item.title,
 )
 
+#let album-picker(current) = html.details(class: "album-picker")[
+  #html.summary[
+    #html.span(class: "album-picker-label")[Année / album]
+    #html.span(class: "album-picker-current", current.title)
+    #html.span(class: "album-picker-chevron", ..("aria-hidden": true))[⌄]
+  ]
+  #html.ul(class: "album-options", ..("aria-label": "Choisir une année ou un album"))[
+    #for album in albums { html.li(menu-link(album, current.path)) }
+  ]
+]
+
 #let page(title: "", path: "", description: "La Société des Pontonnier·ère·s de Genève : histoire, navigation, cours et vie du club au bord du Rhône.", body) = {
+  let album = albums.find(item => item.path == path)
   set text(lang: "fr")
   set document(title: title + " | " + name, author: name)
   html.html(lang: "fr")[
@@ -70,8 +87,16 @@
             ]
           ]
         ]
-        #html.main(id: "content", tabindex: -1)[
-          #html.h1(class: "entry-title", title)
+        #html.main(id: "content", tabindex: -1, class: if album != none { "gallery-page" } else { "" })[
+          #if album != none {
+            html.div(class: "gallery-heading")[
+              #html.div[
+                #html.p(class: "gallery-eyebrow")[Au fil de l’eau, au fil des années]
+                #html.h1(class: "entry-title", title)
+              ]
+              #album-picker(album)
+            ]
+          } else { html.h1(class: "entry-title", title) }
           #html.div(class: "entry-content", body)
         ]
         #html.footer[
