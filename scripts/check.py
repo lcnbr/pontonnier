@@ -12,7 +12,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.path = path
         self.ids = set()
-        self.links = []
+        self.urls = []
         self.errors = []
         self.headings = 0
         self.main = 0
@@ -24,7 +24,7 @@ class Page(HTMLParser):
         attrs = dict(attrs)
         if "id" in attrs:
             if attrs["id"] in self.ids:
-                self.errors.append(f'duplicate id: {attrs["id"]}')
+                self.errors.append(f"duplicate id: {attrs['id']}")
             self.ids.add(attrs["id"])
         if tag == "html":
             self.french = attrs.get("lang") == "fr"
@@ -38,14 +38,35 @@ class Page(HTMLParser):
             self.errors.append("image is missing alternative text")
         if tag == "img" and not attrs.get("src"):
             self.errors.append("image has no source")
-        if tag == "a":
-            self.links.append(attrs.get("href", ""))
+        if tag == "a" and not attrs.get("href"):
+            self.errors.append("empty link")
+        for attribute in ("href", "src", "poster", "action"):
+            if attrs.get(attribute):
+                self.urls.append(attrs[attribute])
+        if attrs.get("srcset"):
+            self.urls.extend(
+                item.strip().split()[0]
+                for item in attrs["srcset"].split(",")
+                if item.strip()
+            )
 
     def check(self, pages, root, base):
-        if not (self.french and self.viewport and self.headings == 1 and self.main == 1):
-            self.errors.append("expected French document, viewport, one h1 and one main")
-        for href in self.links:
+        if not (
+            self.french and self.viewport and self.headings == 1 and self.main == 1
+        ):
+            self.errors.append(
+                "expected French document, viewport, one h1 and one main"
+            )
+        for href in self.urls:
             url = urlsplit(href)
+            if url.hostname in {
+                "pontonniers-geneve.ch",
+                "www.pontonniers-geneve.ch",
+                "pontonniers.files.wordpress.com",
+                "pontonniers.wordpress.com",
+            }:
+                self.errors.append(f"original-site dependency: {href}")
+                continue
             if url.scheme or url.netloc:
                 continue
             if not href:
@@ -90,7 +111,9 @@ def main():
         errors.extend(page.check(pages, root, args.base_path))
     if errors:
         raise SystemExit("\n".join(errors))
-    print(f"Validated {len(pages)} HTML pages and all local links at {args.base_path}")
+    print(
+        f"Validated {len(pages)} HTML pages, local links and media references at {args.base_path}"
+    )
 
 
 if __name__ == "__main__":

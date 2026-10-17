@@ -16,11 +16,13 @@ Des entraînements, des sorties et des rencontres au fil de l’eau.
 
 == Les albums par année
 
-Les albums complets sont conservés sur le site d’origine.
+Retrouvez les sorties, entraînements et compétitions de la société.
 
-#for year in range(2025, 2012, step: -1) [
-  - #link("https://www.pontonniers-geneve.ch/" + if year == 2015 { "images-2015/" } else { "galerie/images-" + str(year) + "/" })[Images #year]
+#for year in range(2025, 2011, step: -1) [
+  - #site-link(if year in (2012, 2015) { "images-" + str(year) + "/" } else { "galerie/images-" + str(year) + "/" })[Images #year]
 ]
 
-- #link("https://www.pontonniers-geneve.ch/galerie/avant-1950/")[Avant 1960]
-- #link("https://www.pontonniers-geneve.ch/galerie/castor/")[Castor]
+- #site-link("galerie/avant-1950/")[Avant 1960]
+- #site-link("galerie/castor/")[Castor]
+
+- #site-link("images-flyer/")[Images et affiches]

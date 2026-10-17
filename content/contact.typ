@@ -20,3 +20,5 @@ Les bateaux sont amarrés à la Jonction, près du *Sentier des Saules, Genève*
 Merci de prendre contact avant de venir à votre premier entraînement.
 
 #link("mailto:info@pontonniers-geneve.ch?subject=Informations%20sur%20les%20cours")[Écrire un message à la société]
+
+#site-link("inscriptions/")[Demander une inscription ou un cours d’essai]

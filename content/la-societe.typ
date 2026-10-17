@@ -1,16 +1,42 @@
 #import "/theme.typ": *
 #show: page.with(title: "La Société", path: "la-societe/")
 
-Fondée en septembre 1930, la section genevoise perpétue la navigation en barque à
-fond plat. Ses bateaux sont amarrés à la Jonction, près du Sentier des Saules,
-depuis les années trente.
+La Section-Genève de la Société de Pontonniers était fondé en Septembre 1930.
 
-#photo("jonction-1954.jpg", "Vue historique de la Jonction en 1954", caption: [La Jonction en 1954.])
+#photo("archive/2016/11/jdg_1930_09_23_pontonniers.jpg", "jdg_1930_09_23_pontonniers")
 
-Au fil des décennies, la société a conservé ses traditions tout en développant
-ses activités sportives. Elle participe à des compétitions et transmet les gestes
-de la navigation aux nouvelles générations.
+Source: #site-link("assets/archive/2016/11/jdg_1930_09_23_smaller.pdf")[Journal de Genève 23.9.1930] , d’autres #link("http://www.letempsarchives.ch/recherche?q=pontonniers")[articles de l’archive ]le Journal de Genève
 
-#link("https://www.pontonniers-geneve.ch/wp-content/uploads/2016/11/jdg_1930_09_23_smaller.pdf")[Lire l’article du Journal de Genève du 23 septembre 1930 (PDF)]
+Elle a bien changé à travers les décennies, mais elle maintient ses traditions et propose des activités variées pendant toute l’année.
 
-#site-link("sport/cours/")[Découvrir nos cours de navigation]
+#photo("archive/2017/10/jonction1954_d-944x1024.jpg", "La Société — photographie 2")
+
+Depuis les années trente nos bateau sont amarrés à la Jonction vers le Sentier des Saules.
+
+#photo("archive/2017/03/statuts19301.jpg", "La Société — photographie 3")
+
+Les #site-link("assets/archive/2017/03/statuts_originales_19301.pdf")[statuts originales] adopté le 6.11.1930 par la société, retrouvé dans les archives, témoignent d’un fonctionnement beaucoup plus réglementé et strict: la tenue obligatoire consistait et “casquette avec l’insigne s’adaptant avec veston foncé, col blanc et cravate noire”!
+
+#html.hr()
+
+La Section-Genève de la Société de Pontonniers participe régulièrement a des competitions:
+
+#gallery[
+
+#photo("archive/2017/03/1950_berna-1080x1083.jpg", "La Société — photographie 4")
+
+#photo("archive/2017/03/1949_dietikon-1080x1077.jpg", "La Société — photographie 5")
+
+#photo("archive/2017/03/1953_bernb.jpg", "La Société — photographie 6")
+
+#html.br()
+
+#photo("archive/2017/03/1964_yverdon.jpg", "La Société — photographie 7")
+
+#photo("archive/2017/07/img_9987_cropped.jpg", "La Société — photographie 8")
+
+#html.br()
+
+]
+
+#html.hr()

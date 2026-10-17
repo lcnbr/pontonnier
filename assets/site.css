@@ -74,6 +74,7 @@ footer span, footer span a, footer span a:visited { color: #666; }
   .banner img { min-height: 110px; object-fit: cover; }
   .menu { padding-left: 0; }
   .menu a, .menu summary { padding: 10px 9px; }
+  .submenu { position: static; width: min(215px, calc(100vw - 32px)); box-shadow: none; }
   main { padding-top: 28px; }
   .instagram { font-size: 21px; }
   .introduction { text-align: left; }
@@ -85,3 +86,10 @@ footer span, footer span a, footer span a:visited { color: #666; }
   nav, .rhonometre, .skip-link { display: none; }
   main { max-width: none; }
 }
+
+/* Archive media is shared between pages instead of embedded in every document. */
+.gallery figure > a { display: block; }
+.entry-content video { display: block; max-width: 100%; max-height: 75vh; margin: auto; }
+.video-embed { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; margin: 24px 0; }
+.caption { font-size: 12px; color: #666; text-align: right; }
+[id] { scroll-margin-top: 20px; }

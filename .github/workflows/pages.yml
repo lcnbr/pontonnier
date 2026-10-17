@@ -27,6 +27,8 @@ jobs:
       - uses: typst-community/setup-typst@fee4b65b091cc546f02ce3be15fad8760f38a108 # v5.3.0
         with:
           typst-version: ${{ steps.typst.outputs.version }}
+      - name: Test published-site validation
+        run: python3 -m unittest discover -s tests -v
       - name: Check root deployment
         run: |
           bash scripts/build.sh

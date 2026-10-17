@@ -9,11 +9,11 @@
 
 #section("news-label")[NEWS:]
 #section("news")[
-  *26.06.2025* #link("https://www.pontonniers-geneve.ch/galerie/images-2025/#26062025")[Eidgenössisches Pontonier Wettfahren 2025 Schmerikon]
+  *26.06.2025* #site-link("galerie/images-2025/#26062025")[Eidgenössisches Pontonier Wettfahren 2025 Schmerikon]
 
-  *14.06.2025* #link("https://www.pontonniers-geneve.ch/galerie/images-2025/#14062025")[Wettfahren Wynau]
+  *14.06.2025* #site-link("galerie/images-2025/#14062025")[Wettfahren Wynau]
 
-  *15.05.2025* #link("https://www.pontonniers-geneve.ch/galerie/images-2025/#15052025")[GRIMP Day 2025]
+  *15.05.2025* #site-link("galerie/images-2025/#15052025")[GRIMP Day 2025]
 ]
 #html.hr()
 
@@ -47,3 +47,5 @@
 )[#link("https://rhonometre.pontonniers-geneve.ch/")[Consulter le Rhonomètre]]
 
 #link("https://rhonometre.pontonniers-geneve.ch/")[Ouvrir le Rhonomètre]
+
+#site-link("news/")[Autres actualités en vidéo]

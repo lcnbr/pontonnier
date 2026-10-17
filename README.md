@@ -3,7 +3,10 @@
 A reproduction of [pontonniers-geneve.ch](https://www.pontonniers-geneve.ch/),
 with French content authored in Typst and HTML generated directly by Typst.
 
-Edit `content/*.typ`, push to `main`, and GitHub Actions publishes to
+The articles, photo albums, PDFs and hosted videos are served locally; the live
+Rhonomètre remains an external integration.
+
+Edit the `.typ` files under `content/`, push to `main`, and GitHub Actions publishes to
 [GitHub Pages](https://lcnbr.github.io/pontonnier/).
 
 With Typst 0.15.1 installed:

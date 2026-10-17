@@ -10,7 +10,8 @@ all page markup from Typst; the browser applies the CSS in `assets/site.css`.
   use Typst markup.
 - `site.typ`: the site name, contact address and navigation.
 - `theme.typ`: the HTML structure, page template and reusable content functions.
-- `assets/`: local photographs, diagrams and CSS.
+- `assets/`: local photographs, diagrams, PDFs, videos and CSS.
+- `assets/manifest.json`: published asset paths and provenance for imported media.
 - `main.typ`: the list of pages emitted by Typst’s bundle exporter.
 - `dist/`: generated deployment files, ignored by Git.
 
@@ -34,8 +35,17 @@ Une nouvelle description de notre association.
 
 Use `site-link` for links within this website so they work beneath the GitHub
 Pages repository path. Use Typst’s `link` for external URLs. Add images to
-`assets/` and use `photo` with a meaningful alternative description. The theme
-embeds CSS and images into the HTML, so each page is also independently viewable.
+`assets/` and use `photo` with a meaningful alternative description. Add each new
+media file to `assets/manifest.json` with its repository-relative `path`; for
+example, `{"path": "assets/ma-photo.jpg"}`. Imported media also records its source
+URL, byte size and SHA-256 checksum for provenance.
+
+Typst emits the shared media files into the bundle. Published images load lazily
+and open a local full-size view when clicked. Individual HTML previews in the
+Typst editor embed images so those previews remain self-contained. CSS is embedded
+in both modes. Videos and PDF downloads use local asset URLs in the published site.
+Use `video("archive/année/mois/fichier.mp4", "Description")` for a hosted video and
+`site-link("assets/chemin/document.pdf")[Titre]` for a download.
 
 == Editing in the Typst web app
 
@@ -77,7 +87,8 @@ warning is expected. Keep the version pin until a newer compiler has been tested
 For a live preview of the complete site:
 
 ```sh
-typst watch --root . --features html,bundle --format bundle main.typ dist
+typst watch --root . --features html,bundle --format bundle \
+  --input external-assets=true main.typ dist
 ```
 
 Typst prints the local preview URL and rebuilds when a source or asset changes.
@@ -98,7 +109,7 @@ root build for Typst’s local preview server.
 
 Push a commit to `main`. The GitHub Actions workflow compiles and validates the
 root build, then builds for the base path returned by GitHub Pages. It checks
-local links, anchors, image descriptions and the page structure before uploading
+local links, event anchors, images, videos, PDF paths and page structure before uploading
 the artifact and deploying it. A pull request runs checks without deployment.
 
 The repository’s Pages setting must use *GitHub Actions* as its build source.
@@ -117,9 +128,21 @@ Run the build and validation at both root and repository paths before pushing.
 
 == Reference scope
 
-The main sections are reproduced as editable Typst pages. Introductory text is
-adapted from the source, and the layout follows its centered Twenty Ten design.
-Historical albums, detailed technical references, videos and downloadable PDFs
-link to their existing locations. The Rhonomètre remains an external embed.
-The static contact page opens email or telephone links; it does not run the
-original WordPress contact form. The live club’s domain is not modified.
+All public content sections and albums from 2012 through 2025 are local Typst
+pages, including the historical collection, Castor, technical course material,
+full articles, videos and downloadable documents. The imported sources preserve
+paragraphs, picture counts and event anchors. The existing history introduction,
+including local edits, is retained alongside the additional historical material.
+WordPress attachment links now open the corresponding local image.
+
+The main website and its former WordPress media host are no longer dependencies
+of the published pages. CI rejects links or media URLs pointing back to those
+hosts. The live Rhonomètre integration is intentionally retained, as requested;
+third-party references and YouTube embeds also keep their original destinations.
+Contact and registration use the society’s email address, without the WordPress
+form backend. Empty internal pages and test pages are not published.
+
+The archive uses source-provided web renditions where available, and all hosted
+PDFs and videos are stored locally. The asset inventory records the precise
+source for each file. Documentary source URLs remain in the repository’s
+provenance records; they are not published navigation or media dependencies.

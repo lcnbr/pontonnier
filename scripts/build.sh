@@ -16,7 +16,7 @@ fi
 output=$(mktemp -d .build-XXXXXX)
 trap 'rm -rf "$output"' EXIT
 "$compiler" compile --root . --features html,bundle --format bundle \
-  --input "base-path=$base" main.typ "$output"
+  --input "base-path=$base" --input external-assets=true main.typ "$output"
 # Replace only this project's generated directory, after a successful compile.
 rm -rf dist
 mv "$output" dist

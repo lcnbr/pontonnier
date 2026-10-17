@@ -17,4 +17,25 @@ Cette tradition se prolonge aujourd’hui dans la navigation sportive.
 - #site-link("la-societe/")[La Société des Pontonnier·ère·s de Genève]
 - #site-link("histoire/revival-du-bac-daire/")[Les bacs genevois]
 - #site-link("la-descente-du-rhone/")[La descente du Rhône]
-- #link("https://www.pontonniers-geneve.ch/histoire/")[Consulter les illustrations et les sources historiques]
+- #site-link("lepoque-gallo-romaine/")[L’époque gallo-romaine]
+
+== Illustrations et sources historiques
+
+Le tableau de Konrad Witz a été peint pour la cathédrale Saint-Pierre. Le Salève,
+les Voirons et le Mont-Blanc apparaissent à l’arrière-plan.
+
+#site-link("assets/archive/2018/05/01_fichecdo_witz.pdf")[La Pêche miraculeuse : fiche du Musée d’art et d’histoire (PDF)]
+
+D’autres illustrations anciennes, comme celle de la vue de Genève ci-dessous par #link("https://de.wikisource.org/wiki/Topographia_Helvetiae,_Rhaetiae_et_Valesiae:_Genff")[Matthäus Merian 1672] montrent l’importance des métiers des bateliers à cette époque:
+
+#photo("archive/2018/05/meriana-1024x697.jpg", "Histoire — photographie 2")
+
+#html.p(class: "caption")[ Source image: #link("http://www.ville-ge.ch/musinfo/bd/bge/cig/detail.php?type_search=simple&lang=fr&criteria=merian&terms=all&page=1&pos=2&id=1545523")[Centre d’Iconographie Genève]]
+
+#html.hr()
+
+#photo("archive/2016/09/meisnera.jpg", "meisnera")
+
+La vue de Genève de Meisner “Sciographia Cosmica” de 1638, montre plusieurs bateaux du type Weidling à un ou deux rameurs dans la Rade et sur le Rhône.
+
+#html.hr()

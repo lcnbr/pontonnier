@@ -1,11 +1,99 @@
 #import "/theme.typ": *
 #show: page.with(title: "La descente du Rhône", path: "la-descente-du-rhone/")
 
-Le Rhône est au cœur des activités de la société. Les récits et les photographies
-des descentes témoignent de la vie du club sur le fleuve.
+par #strong[Armand Brulhart] (paru dans le #link("http://www.bains-des-paquis.ch/fr/le-journal-des-bains/")[Journal des Bains, numéro 11 · été 2014])
 
-#photo("navigation.jpg", "Une sortie en barque sur l’eau")
+Accosté sur la rive droite de l’Ile, dans l’enfilade des baies en plein cintre des Halles, tout à côté de la libraire d’architecture, le bateau du Rhône vous attend. Vous êtes à la rue des Moulins, qui furent si nombreux sur le Rhône et tous morts depuis belle lurette.
 
-#link("https://www.pontonniers-geneve.ch/la-descente-du-rhone/")[Retrouver les récits et les archives des descentes du Rhône]
+Installés dans la mouette, vous jetterez un oeil sur le quai d’en face et l’hôtel cinq étoiles autrefois Hôtel du Rhône, aujourd’hui Mandarin Oriental, sans savoir nécessairement qu’un ancien quartier médiéval s’étalait au soleil, avant d’être rasé en 1932. Ici, Le Corbusier avait dessiné une seule des trois tours triangulées qui auraient dû remplacer le vieux faubourg de Saint-Gervais. Il faut l’imaginer culminant à 100 mètres de hauteur «offerte à l’air et à la lumière, éteincelante de clarté radieuse…». Ici, l’architecte Maurice Braillard avait projeté plus simplement une suite d’immeubles luxueux avec pergolas perpendiculaires au Rhône, tandis qu’après la Première Guerre mondiale d’autres architectes auraient bien vu des immeubles avec frontons cintrés ou triangulaires –comme à la rue des Granges – le long du quai baptisé quai Turrettini en souvenir de l’ingénieur qui fut à l’origine des Forces motrices du Rhône à la Coulouvrenière.
 
-Pour connaître les prochaines activités, #site-link("contact/")[contactez la société].
+Vous pouvez voir deux puissantes statues équestres de part et d’autre du quai à gradins légèrement incurvé, construit après la correction du bras droit du Rhône en 1937-1939. Les gradins et les socles des statues sont tout ce que Maurice Braillard a laissé de son rêve sur le faubourg et si vous regardez bien l’homme nu tenant une colombe de la Paix contre sa poitrine, vous ne verrez pas ses jambes; il monte en amazone, comme si le sculpteur, Frédéric Schmied, voulait exprimer la fragilité de la paix; rien de tel sur l’autre cavalier bien campé, l’Aigle de Genève sur son épaule gauche.
+
+Quant à l’hôtel, construit par l’architecte Marc J. Saugey en 1947-1950, il inaugurait à Genève la renaissance de la Société des Nations (SDN), sous le nom d’Organisation des Nations Unies (ONU). Si Saugey reprend à l’extérieur le travertin classique du Palais des Nations, il innove à l’intérieur, expérimentant pour la première fois à Genève la flexibilité saisonnière entre les chambres d’hôtel et les bureaux.
+
+#photo("archive/2017/11/descente1.jpg", "La descente du Rhône — photographie 1")
+
+Ouf, le bateau part enfin! En passant sous la grande arche du pont de la Coulouvrenière, vous aurez une pensée pour l’Exposition nationale suisse de 1896, pour laquelle il fut construit, quand bien même les colonnes de marbres roses qui ornaient la partie centrale ne sont plus.
+
+Sur votre gauche, le long bâtiment industriel à cheval sur le fleuve, en pierre de Meillerie et toiture d’ardoise, fut solennellement inauguré en 1889 et connu sous le nom de Forces motrices de la Coulouvrenière. Désaffectée, l’usine fut transformée en salle de spectacles. En retrait, l’ancienne Usine genevoise de dégrossissage d’or (UGDO), fleuron de l’industrie du luxe, fut conquise par la jeunesse turbulente et culturelle de Genève.
+
+L’écluse du barrage du Seujet est un obstacle à franchir au départ et au retour. Vous aurez le temps de vous voir écrasés par les immeubles du Seujet qui ont remplacé le quartier de la bière et des pierres précieuses de Sous-Saint-Jean. L’ancien pont privé de Sous-Terre a été reconstruit en 1967-1968, dominé par l’Ecole de commerce cubiste et audacieuse dédiée à l’écrivain-voyageur Nicolas Bouvier.
+
+#photo("archive/2017/11/descente3.jpg", "La descente du Rhône — photographie 2")
+
+En contrebas du pont, les ruines de l’ancien couvent augustin de Saint-Jean-hors-les murs, démoli en 1536, furent aménagées en promenade archéologique, là où le cousin de Benjamin Constant, Charles «le Chinois» s’était fait construire son bain du Rhône. Vous avez laissé sur la rive gauche la fin de l’ancien quartier industriel de la Coulouvrenière et son usine de chocolat désaffectée, le bâtiment administratif et sec des Services industriels, l’institution par excellence de l’eau, qui masque le chantier d’un nouveau quartier écologique sur l’ancien emplacement d’une usine à gaz abandonnée après une explosion meurtrière, et une vue lointaine sur le rond point de la Jonction.
+
+Du haut du pont Sous-Terre, vous verrez peut-être plonger d’intrépides adolescents dans les eaux jades et sombres du fleuve. Le bateau navigue maintenant entre deux sentiers «célèbres», le sentier jadis romantique des Saules, planté de peupliers italiens, et celui des Falaises, classé il y a moins d’un siècle. Si vous levez la tête, le clocher de l’école primaire de Saint-Jean vous donnera peut-être l’heure.
+
+D’anciennes usines d’horlogerie, de briquets de luxe, la robinetterie Kugler, transformée en ateliers d’artistes, un dépôt d’autobus, une plateforme pour la baignade annoncent le point de jonction du Rhône et de l’Arve dont les eaux boueuses (embourbées) colorent le fleuve. Une digue freine les eaux rapides de la rivière qui autrefois avaient tendance à remonter le cours du fleuve et à faire tourner les moulins en sens inverse. La magie du site a exercé sur les Anglais de 1830 son charme annoncé dans les meilleurs guides. L’écrivain Luis Borges aimait cette confluence.
+
+C’est ici que finit la ville en queue de poisson et que s’ouvre le paysage du Rhône touffu et ses mystères. La puissance du fleuve qui a creusé son lit durant des millénaires peut se mesurer grâce au viaduc du chemin de fer, construit en pleine guerre, entre 1942 et 1946, sur un dessin structurel de l’architecte Arthur Lozeron.
+
+Tout commence avec le Bois de la Bâtie, ainsi nommé à cause de son ancien château de la Bâtie-Mellié, cité au XIVe siècle, détruit, puis reconstruit en pierre et à nouveau ruiné, probablement par les Bernois, au temps de la Réforme.
+
+#photo("archive/2017/11/descente4.jpg", "La descente du Rhône — photographie 3")
+
+Si la première gravure de Genève, parue dans la Cosmographie universelle de Sebastian Munster et datée 1548, représente bien la jonction du Rhône et de l’Arve, le Bois ne devient le point de vue privilégié des artistes sur la ville que dès la fin du XVIe siècle. L’artiste anonyme qui a gravé Genève depuis le lac, publiée par Chouet en 1655, est le seul à fournir du Bois de la Bâtie une vision préciseet en même temps imaginaire en «reconstruisant » un château fantastique.
+
+Le bois et les ruines de la Bâtie furent rachetés par la Seigneurie au marquis de Challes en 1756, deux ans après le Traité de Turin. Passé en mains privées, le Bois fut presque entièrement coupé par les soldats autrichiens durant le terrible hiver de 1813-1814. Affaiblie, la colline subit de gros dégâts par les crues de l’Arve, offrant au savant géologue Louis-Albert Necker-de Saussure l’occasion unique, dès l’hiver 1825, d’étudier et dessiner «le terrain diluvien cataclysmique qui recouvre l’alluvion ancienne», puis du côté du Rhône, «à l’ouest des ruines du vieux fort de la Bastie». L’auteur de la première carte géologique du canton de Genève, Alfonse Favre, a repris la lecture des couches en analysant la marche passionnante des glaciers du Valais à Lyon, qui s’est tant complexifiée depuis lors.
+
+Le Bois fut mis en vente en 1868, racheté par les frères Auguste et William Turrettini et offert à la Ville de Genève en 1872 pour y aménager une promenade publique.
+
+Alphonse Favre note encore la découverte, en 1878, d’ossements et d’une défense de mammouth et rappelle que son illustre prédécesseur, Horace-Bénédict de Saussure, avait trouvé sur la rive du fleuve, «vers 1786», une défense d’éléphant à 150 mètres en aval du moulin des Evaux (Onex), interprétée comme une preuve du passage d’Hannibal. En 1948, lors du percement du tunnel de la Bâtie, une nouvelle défense de mammouth fut découverte.
+
+L’histoire du Bois de la Bâtie n’a jamais été contée. En plus de sa réelle valeur géologique, de son histoire médiévale, de son importance artistique, des légendes «fantomatiques» de la période française, de ses embellissements «jardiniers» (mieux connus), il faudrait décrire la première passerelle du Bois-de-la-Bâtie, agrandie après la création du réservoir pour la distibution d’eau en 1873 (doublé en 1934), la construction de la rampe de Saint-Georges et ses portes masquant les galeries de la culture des champignons de Paris, les industries de la bière dont les vestiges ont été vécus «de l’intérieur» par les adolescents à travers les «Grottes du Cardinal», creusées et fermées par de très hautes portes, ainsi que le montre le dessin du géologue Ernest Favre, à droite de la brasserie.
+
+Pour protéger et soutenir l’entretien de ce Bois, la Confédération l’a soumis à la loi sur les forêts dès 1903 en même temps que le Bois des Frères de Vernier. Les lois de protection des rives du Rhône ont complété ce dispositif légal. En 1977, fut créé l’extraordinaire Festival du Bois de la Bâtie. Au pied de la colline, vous verrez peut-être sur le chemin «côtier» des camions déchargeant leur contenu d’ordures dans une barge, car elles empruntent le même parcours que votre bateau jusqu’à l’usine des Cheneviers, où les ordures de la ville seront brûlées.
+
+Sur la droite, entre le viaduc et le pont Butin s’étend un plateau rapidement colonisé par deux vastes campagnes de notables après que l’ingénieur de la République, Pierre Raby, eut tracé, à la fin du XVIIe siècle, une large avenue conduisant à Aïre, limitée à l’intérieur des franchises de la ville. La seule maison de maître visible est celle des Fuzier-Cayla, proche du viaduc, la seconde appartient aujourd’hui au dessinateur Zep, le père de Titeuf.
+
+Sur les rives, le fleuve, encaissé, chariant encore les alluvions de l’Arve (plus de 2500 tonnes quotidiennement), les arbres qui ont pris leur essor se battent vainement contre la puissance de l’eau qui les fait pourrir. Le spectacle de cette bataille inégale se reproduira à plusieurs reprises, augmenté par la vitalité des castors. L’homme a tenté de les protéger en construisant sur la rive droite un mur bas et quelques empierrements. Le règne des oiseaux commence et vous aurez peut-être le loisir d’admirer des hérons cendrés, des mouettes rieuses, des cygnes, des grèbes, des foulques, des canards colverts ou quelque épervier.
+
+Bien vite, le pont Butin se dresse de toute sa hauteur, évoquant l’image romaine et monumentale d’un pont du Gard qu’on aurait compressée. Son histoire commence en 1914 par un concours national d’architecture auquel le jeune Charles-Edouard Jeanneret participa. On lui préféra ce mastodonte dessiné par l’architecte Henri Garcin qui venait de s’illustrer par la construction de la Maison Royale sur le quai des Eaux-Vives (actuel quai Gustave-Ador). Impression trompeuse, car lors de l’orage du 5-6 juillet 1924, une des cinq arches s’écroula avec sa charpente du côté du plateau de Saint-Georges. L’inauguration eut lieu le 4 mars 1927. Le riche David Butin qui avait légué un million pour cette opération pouvait être à demi-satisfait, le pont n’était pas en fer et le chemin de fer prévu fut abandonné, triste destin pour un marchand de fer, même si le béton était armé.
+
+Comme le dit le poète Pierre Duniton, alias Antoine Dufaux:
+
+#emph[Douze millions, mazette! avec cinq vies humaines]#html.br()
+#emph[ Pour élever un pont qui ne conduit à rien! ]#html.br()
+#emph[Butin, «cher» donateur, ce n’était pas la peine.]#html.br()
+#emph[De leur léguer ton bien.]
+
+#photo("archive/2017/11/descente5.jpg", "La descente du Rhône — photographie 4")
+
+La grande arche à peine franchie, on se trouve sur le tracé transversal de l’ancien bac d’Aïre concédé en 1886 avec sa «traille» (câble métallique) au dénommé John Branchu, un cafetier-restaurateur-passeur qui vous faisait traverser d’une rive à l’autre pour moins de 4 sous. On ne voit pas l’ancien site du prieuré de Saint-Georges fondé par les Augustins de l’abbaye de Filly en Haute-Savoie avant 1311 et dont il subsiste la ferme avec sa tour. Sur la rive droite, en revanche, bordant la crête d’Aïre, la maison-forte, dite le Prieuré d’Aïre dont «le couvent», démoli en 1882, fut peint par le maître de Hodler, Barthélémy Menn.
+#photo("archive/2017/11/descente8.jpg", "La descente du Rhône — photographie 5")
+
+Sur la rive gauche, noyé dans la végétation, juste avant la grande boucle du Rhône, le premier des moulins de la campagne, le très ancien moulin des Evaux, dont il ne reste qu’une portion de mur. Avec sa machine hydraulique, il fut abandonné à l’aube du XXe siècle.
+#photo("archive/2017/11/descente9.jpg", "Descente9")
+
+A la fin du XVIIIe siècle existait ici un bac un peu «spécial», dont le passeur bien connu fut accusé de contrebande entre le royaume de Piémont-Sardaigne et la France. En face, la «Grande Isle», appelée aujourd’hui la presqu’île d’Aïre, où autrefois des orpailleurs tamisaient le sable pour retrouver les paillettes d’or de l’Arve. En plein contour, après un ponton blanc, vous sentirez une légère odeur qui annonce la plus importante station de traitement des eaux usées (STEP) du canton et dont le bâtiment principal, achevé en 1967, ponctue les installations. Vous êtes dans l’axe du hameau de Loëx, accroché à la crête. Les meilleurs connaisseurs des paysages genevois l’ont choisi comme site à protéger dès 1919. La photographie de Fred Boissonnas vous offre le jeu des différences. Surgissent alors sur votre droite, à l’arrière du cordon boisé, les deux tours totémiques du Lignon, emblèmes de modernité. La cité satellite, construite entre 1963 et 1971, fait aujourd’hui partie du patrimoine de l’architecture du XXe siècle et comprend un long zig-zag de plus d’un kilomètre dont chaque allée est placée sous le signe du Candide de Voltaire, illustré par Hans Erni.
+
+Le bateau passe maintenant sous la passerelle piétonne du Lignon, qui soutient l’oléoduc en provenance du complexe pétrolier de Lavera (Port de Bouc, Marseille) alimentant en carburant les citernes de Vernier. Elle conduit sur la presqu’île de Loëx, ancien domaine agricole de Lullin de Châteauvieux dès 1723 et qui devint en 1891 l’asile de Loëx, puis hôpital en 2001. La résistance à l’érosion de la presqu’îles’explique par la présence d’une carrière de molasse encore exploitée au XIXe siècle. Vers 1840, un bac reliait la presqu’île à Vernier, créé par l’astucieux Veinié, mécanicien et surveil lant de la Machine hydraulique de l’Ile.
+
+#photo("archive/2017/11/descente12.jpg", "Descente12")
+
+Sur votre droite, le Bois des Frères, au-dessus d’une carrière de molasse, doit son nom aux Frères mineurs, les Dominicains de Plainpalais qui en héritèrent en 1422. Géré dès la Réforme par l’Hôpital de Genève, le Bois fut vendu en 1786 au Seigneur de Vernier Jean- Louis de Gallatin, propriétaire du château de Vernier nommé château de Poussy, que l’on aperçoit au-dessous de la silhouette du village de Vernier. Vous pouvez voir le long de la rive le «chemin du Moulin des Frères» et le petit pont qui traverse le nant d’Avanchet au-dessous du Bois de la Grille. Ce bois, menacé par un projet de zone industrielle, fut finalement classé en zone forêt en 1987, tandis que le moulin signalé dès le XVIe siècle sur les bords de l’Avanchet fut reconstruit sur le Rhône par le même comte de Gallatin et rendu inutile par la construction du barrage de Chèvres.
+
+En vous retournant, vous apercevrez la terrasse et la maison de maître du domaine du «Lignon», du nom d’un affluent de la Loire et d’une contrée rendue célèbre par le roman délicieusement mièvre de L’Astrée d’Honoré d’Urfé. Jean-Jacques Rousseau, qui s’attendait à y voir des bergers et des bergères énamourées, conclut sèchement: «Ce n’est qu’un pays de forges et mon voyage m’enleva toute illusion. » Le Lignon genevois fut vendu en 1791 par une dame Prévost-Revilliod à François (Sir Francis) d’Ivernois qui l’agrandit.
+
+Dans la seconde boucle en épingle du Rhône, contre la presqu’île de Loëx, vous verrez la «roselière des Fonds» (2004), précieuse réserve aussi bien pour les oiseaux, les poissons et où sont recensées périodiquement les espèces. C’est sur ce site naturel qu’en février 1929 Le Corbusier situait dans la boucle de Vernier l’arrivée d’un canal en droite ligne du lac Léman, jalon du rêve d’une liaison naviguable entre le Rhin et le Rhône, avec en prime une «cité industrielle», sur la rive opposée. Ouf! Vous l’avez échappé belle! C’est ensuite le «Canada», toponyme mystérieux sur la limite sud de Vernier, où s’installa dès 1898 l’odorante usine de parfumerie Givaudan et une cité ouvrière. Le site fut choisi après l’inauguration du barrage de Chèvres, dont il ne reste que la passerelle piétonne. Près de l’ancien moulin de Chèvres, «on a pris soin – écrit A. Favre de réunir une collection de blocs erratiques, qui proviennent surtout des bords du Rhône; ce sont: euphotide que l’eau a rongé en forme de marmite de géant, poudingue de Valorsine, amphibolite noire, schiste chloriteux, quartzite blanc, grès du Trient, éclogite presque noire, parsemée de grenats.» Cet inventaire poétique et pré-historique du Rhône a-t-il disparu?
+
+L’usine de Chèvres, inaugurée en 1896 et dynamitée en 1953, fut construite par la Ville de Genève, qui confia à Théodore Turrettini, encore lui, de signer la monographie qui accompagnait la maquette transportée à l’Exposition universelle de Paris de 1900, en même temps que celle de la Coulouvrenière. Juste après la passerelle, sous laquelle on retrouve une roselière – dite «Roselière de Chèvres» (créée en 2000) alors qu’elle se trouve au «Canada»! –, le pont incliné de l’autoroute de contournement, construit en 1986, laisse échapper sa rumeur. Les parois érodées du bois de Chébé annoncent la commune de Satigny. Des hirondelles viennent y nicher.
+
+#photo("archive/2017/11/descente11.jpg", "Descente11")
+
+Empruntant la courbure interne du Rhône, l’île de Planfonds (2000) s’agrandit chaque an née, tandis qu’en face le bois de Bay annonce la plus grande zone industrielle des bords du fleuve où s’imposait là encore une île – l’île de Peney (2007-2008) – caractérisée par des saules, excel lente nourriture des castors.
+
+Avant d’arriver au pont de Peney, il faut encore noter le grand bois de Châtillon et le petit estuaire du nant Bordaz. La commune d’Aire-la-Ville évoque la conquête d’Henri IV de toute la rive droite sur la Savoie en 1601 et le premier pont construit après la révolution radicale de 1846, reconstruit en 1942 avec une fragilité telle qu’il a fallut y placer un feu rouge.
+
+Le moulin de Peney et la machine hydraulique ont disparu depuis longtemps. Sur les «hauteurs», le site médiéval de Peney-Dessus possédait un château édifié par l’évêque Aymond de Grandson le même qui avait fait constuire le château de l’Ile. Parmi ses châtelains se retrouve étrangement Philibert Berthelier, héros de la liberté décapité devant le château de l’Ile. Peney-Dessus a joué un rôle bien connu au temps de la Réforme puisque les Peneysans, catholiques, s’y retranchèrent avant que les Bernois rasent le château.
+
+#photo("archive/2017/11/descente10.jpg", "Descente10")
+
+A Peney-Dessous, l’estuaire du nant d’Avril forme un petit port qui engendra de grandes idées.Et l’on retrouve, après la Seconde Guerre mondiale, le canal du Rhin au Rhône.
+
+Impossible d’échapper à l’usine des Cheneviers, construite par les architectes Guex & Kirchhoff en 1962-1963, et ses deux cheminées helvétiques. Les radeaux que vous voyez servent aux sternes pierregrains. Quant aux barges du Bois de la Bâtie, vous en apercevrez quel ques-unes.
+
+Le paysage s’élargit et commence alors le lac de retenue au nom si étrange de Verbois. Du bois vous en verrez, car les castors y contribuent. La construction du plus grand barrage genevois fut conçue à partir d’un projet de l’entreprise Zschokke et réalisé entre 1938 et 1943. Quand vous serez sur le barrage, la chute de l’eau du Rhône vous démontrera que l’homme peut pulvériser un fleuve et le canaliser, on appelle cela le rêve ou le cauchemar du Niagara. La vue des falaises de Cartigny et du Moulin-de-Vert vous apaisera.
+
+#site-link("assets/archive/2017/11/descenterhone_jdb-11.pdf")[Article original du journal des bains et PDF]

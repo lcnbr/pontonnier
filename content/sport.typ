@@ -1,21 +1,25 @@
 #import "/theme.typ": *
 #show: page.with(title: "Sport", path: "sport/")
 
-Ramer debout dans une barque est une tradition bien antérieure au stand-up paddle.
-Notre embarcation, le *Weidling*, possède un fond plat adapté à la navigation
-sur les cours d’eau.
+#photo("archive/2016/09/ezgif-com-optimize.gif", "Sport — photographie 1")
 
-Pour remonter le Rhône, nous prenons appui sur le fond avec une longue gaffe.
-Pour traverser le fleuve ou naviguer sur le lac, nous utilisons les rames.
-La personne placée à l’arrière dirige le bateau.
+La tradition de ramer debout dans un bateau est bien plus ancienne que le “standup paddle”, qui gagne de la popularité ces jours.
 
-#photo("rame.jpg", "Navigation à la rame dans un Weidling")
+Notre activité sportive consiste à naviguer des cours d’eau avec un bateau à fond plat qu’on appelle un Weidling.
 
-Nous nous entraînons principalement entre le pont Sous-Terre et la Jonction.
-Des sorties permettent aussi de découvrir le Rhône en aval de Genève.
+La rivière est remontée en poussant sur une longue gaffe. Soit tout seul ou à deux. Le bateau est géré par la personne à l’arrière.
 
-- #site-link("sport/cours/")[Cours de Navigation]
-- #site-link("sport/materiel/")[Les bateaux, les rames et les gaffes]
-- #site-link("sport/cordages/")[Les cordages et les nœuds]
+#photo("archive/2016/09/stacheln.jpg", "stacheln")
 
-La section de Genève est affiliée à l’Association Sportive Suisse des Pontonniers.
+Pour traverser ou pour naviguer sur le lac, nous utilisons des rames qui sont rattachées à l’avant et à l’arrière du Weidling.
+#photo("archive/2016/09/ruder.jpg", "ruder")
+
+Nous nous entraînons surtout sur le Rhone entre le Pont Sous-Terre et la Jonction , mais nous explorons régulièrement la région jusqu’au barrage de Verbois:
+
+#photo("archive/2016/09/cropped-cartebbb.jpg", "cropped-cartebbb.jpg", destination: "https://s.geo.admin.ch/6ea2260c90")
+
+#photo("archive/2016/09/carted-1080x210.jpg", "carted", destination: "https://s.geo.admin.ch/6e21e4d64e")
+
+#photo("archive/2018/03/stravamaprhone-1024x207.png", "StravaMapRhone", destination: "https://labs.strava.com/heatmap/#14.41/6.09843/46.20279/hot/water")
+
+La Section Genève est affiliée à #link("http://www.pontonier.ch/cms/")[l’Association Sportive Suisse des Pontonniers] et à #link("http://www.swissolympic.ch/")[Swiss Olympic].

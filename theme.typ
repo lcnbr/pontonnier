@@ -3,9 +3,24 @@
 #let base = sys.inputs.at("base-path", default: "/")
 #assert(base.starts-with("/") and base.ends-with("/"), message: "base-path must start and end with /")
 #let site-link(path, body) = link(base + path, body)
-#let photo(file, alt, caption: none) = html.figure[
-  #image("assets/" + file, alt: alt)
-  #if caption != none { html.figcaption(caption) }
+// Standalone editor previews embed images; bundles publish shared, lazy-loaded files.
+#let external-assets = sys.inputs.at("external-assets", default: "false") == "true"
+#let photo(file, alt, caption: none, destination: none) = {
+  let picture = if external-assets {
+    html.img(src: base + "assets/" + file, alt: alt, loading: "lazy", decoding: "async")
+  } else { image("assets/" + file, alt: alt) }
+  let href = if destination == none { base + "assets/" + file } else { destination }
+  html.figure[
+    #link(href, picture)
+    #if caption != none { html.figcaption(caption) }
+  ]
+}
+#let video(file, description) = html.figure[
+  #html.video(src: base + "assets/" + file, controls: true, preload: none,
+    ..("aria-label": description))[
+    #site-link("assets/" + file)[Télécharger la vidéo]
+  ]
+  #html.figcaption(description)
 ]
 #let gallery(body) = html.div(class: "gallery", body)
 #let section(class, body) = html.div(class: class, body)
