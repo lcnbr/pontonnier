@@ -1,18 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2022", path: "galerie/images-2022/")
 
-#site-link("galerie/images-2022/#30112022")[ Soirée flambeaux ]#html.br()
-#site-link("galerie/images-2022/#05112022")[ Session photo avec Greg Clement & High Sea Looters ]#html.br()
-#site-link("galerie/images-2022/#01072022")[ Formation Castor avec le Sauvetage de Genève & nage de nuit]#html.br()
-#site-link("galerie/images-2022/#24062022")[ Compétition  Nationale ]#site-link("galerie/images-2022/#24062022")[de Pontonniers à ]#site-link("galerie/images-2022/#24062022")[Aarburg]#html.br()
-#site-link("galerie/images-2022/#19062022")[ Festival EXPLORE ]#html.br()
-#site-link("galerie/images-2022/#28052022")[ Ville Est A Vous JONXION ]#html.br()
-#site-link("galerie/images-2022/#15042022")[ Renovation “Nacelle de Traversée 39” ]
-
-#html.span(id: "30112022")[]
-#html.br()
-#strong[Soirée flambeaux]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2022", path: "galerie/images-2022/",
+  cover: "archive/2023/10/IMG_7400.jpg",
+  events: (
+    album-event(
+      id: "30112022", title: [#strong[Soirée flambeaux]],
+      cover: "archive/2023/10/GOOA3046.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/GOOA3046.jpg", "Images 2022 — photographie 1")
@@ -24,11 +20,11 @@
 #photo("archive/2023/10/MMCT9236.jpg", "Images 2022 — photographie 4")
 
 ]
-
-#html.span(id: "05112022")[]
-#html.br()
-#strong[Session photo avec #link("https://gregclement.ch/")[Greg Clement] & #link("https://highsealooters.bandcamp.com/album/hcheum-ep")[High Sea Looters]]
-
+    ],
+    album-event(
+      id: "05112022", title: [#strong[Session photo avec #link("https://gregclement.ch/")[Greg Clement] & #link("https://highsealooters.bandcamp.com/album/hcheum-ep")[High Sea Looters]]],
+      cover: "archive/2023/10/IMG_7400.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_7400.jpg", "Images 2022 — photographie 5")
@@ -38,11 +34,11 @@
 #photo("archive/2023/10/IMG_7405.jpg", "Images 2022 — photographie 7")
 
 ]
-
-#html.span(id: "01072022")[]
-#html.br()
-#strong[Formation Castor avec le #link("https://www.sauvetage-geneve.ch/")[Sauvetage de Genève ]& nage de nuit]
-
+    ],
+    album-event(
+      id: "01072022", title: [#strong[Formation Castor avec le #link("https://www.sauvetage-geneve.ch/")[Sauvetage de Genève ]& nage de nuit]],
+      cover: "archive/2023/10/IMG_7176.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_7176.jpg", "Images 2022 — photographie 8")
@@ -86,11 +82,11 @@
 #photo("archive/2023/10/IMG_7252.jpg", "Images 2022 — photographie 27")
 
 ]
-
-#html.span(id: "24062022")[]
-#html.br()
-#strong[Compétition #link("https://www.aarburg2022.ch/")[Nationale]]#strong[de Pontonniers à ]#strong[Aarburg]
-
+    ],
+    album-event(
+      id: "24062022", title: [#strong[Compétition #link("https://www.aarburg2022.ch/")[Nationale]]#strong[de Pontonniers à ]#strong[Aarburg]],
+      cover: "archive/2023/10/IMG_4360.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/GBMR3295.jpg", "Images 2022 — photographie 28")
@@ -122,11 +118,11 @@
 #photo("archive/2023/10/IMG_4530.jpg", "Images 2022 — photographie 41")
 
 ]
-
-#html.span(id: "19062022")[]
-#html.br()
-#strong[Festival #link("https://exploregeneve.ch/")[EXPLORE à Onex ]]
-
+    ],
+    album-event(
+      id: "19062022", title: [#strong[Festival #link("https://exploregeneve.ch/")[EXPLORE à Onex ]]],
+      cover: "archive/2023/10/IMG_4148.jpg",
+    )[
 #link("https://www.lemanbleu.ch/fr/Actualites/Geneve/20220819100451-Porteous-achemine-son-materiel-de-construction-par-le-Rhone.html")[Émission de Leman Bleue] sur le transport de bois vers Porteous
 
 #gallery[
@@ -158,11 +154,11 @@
 #photo("archive/2023/10/IMG_5941.jpg", "Images 2022 — photographie 54")
 
 ]
-
-#html.span(id: "28052022")[]
-#html.br()
-#strong[Ville Est A Vous JONXION]
-
+    ],
+    album-event(
+      id: "28052022", title: [#strong[Ville Est A Vous JONXION]],
+      cover: "archive/2022/06/IMG_3402.jpg",
+    )[
 #gallery[
 
 #photo("archive/2022/06/PIVN2343.jpg", "Images 2022 — photographie 55")
@@ -194,11 +190,11 @@
 #photo("archive/2022/06/IMG_3472.jpg", "Images 2022 — photographie 68")
 
 ]
-
-#html.span(id: "15042022")[]
-#html.br()
-#strong[Renovation “Nacelle de Traversée 39”]
-
+    ],
+    album-event(
+      id: "15042022", title: [#strong[Renovation “Nacelle de Traversée 39”]],
+      cover: "archive/2022/04/IMG_2202.jpg",
+    )[
 #gallery[
 
 #photo("archive/2022/04/4347007443-1.jpg", "Images 2022 — photographie 69")
@@ -250,5 +246,9 @@
 #photo("archive/2022/06/MUIR9350.jpg", "Images 2022 — photographie 92")
 
 ]
+    ],
+  ),
+)
 
-#html.hr()
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

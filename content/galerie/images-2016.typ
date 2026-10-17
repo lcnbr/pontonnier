@@ -1,16 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2016", path: "galerie/images-2016/")
 
-#site-link("galerie/images-2016/#Course")[Course de Noël 2016]#html.br()
-#site-link("galerie/images-2016/#Descente")[Descente du Rhone 8.9.2016]#html.br()
-#site-link("galerie/images-2016/#Visite")[Visite de nos voisins de l’école des Troupes de Sauvetage 76]
-
-#html.hr()
-
-#html.span(id: "Course")[]
-#html.br()
-Course de Noël 2016
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2016", path: "galerie/images-2016/",
+  cover: "archive/2016/10/img_4771-1080x810.jpg",
+  events: (
+    album-event(
+      id: "Course", title: [Course de Noël 2016],
+      cover: "archive/2016/12/p1080525_b.jpg",
+    )[
 #gallery[
 
 #photo("archive/2016/12/p1080553_b.jpg", "Images 2016 — photographie 1")
@@ -22,13 +20,11 @@ Course de Noël 2016
 #photo("archive/2016/12/img_7033_b-1080x1440.jpg", "Images 2016 — photographie 4")
 
 ]
-
-#html.hr()
-
-#html.span(id: "Descente")[]
-#html.br()
-Descente du Rhone 8.9.2016
-
+    ],
+    album-event(
+      id: "Descente", title: [Descente du Rhone 8.9.2016],
+      cover: "archive/2016/10/whatsapp-image-2016-09-08-at-22-48-23-1.jpeg",
+    )[
 #gallery[
 
 #photo("archive/2016/10/whatsapp-image-2016-09-08-at-22-48-23-1.jpeg", "Images 2016 — photographie 5")
@@ -44,13 +40,11 @@ Descente du Rhone 8.9.2016
 #photo("archive/2016/10/whatsapp-image-2016-09-08-at-23-10-50-2.jpeg", "Images 2016 — photographie 10")
 
 ]
-
-#html.hr()
-
-#html.span(id: "Visite")[]
-#html.br()
-Visite de nos voisins de l’école des Troupes de Sauvetage 76 des casernes des Vernets
-
+    ],
+    album-event(
+      id: "Visite", title: [Visite de nos voisins de l’école des Troupes de Sauvetage 76 des casernes des Vernets],
+      cover: "archive/2016/10/img_4771-1080x810.jpg",
+    )[
 #gallery[
 
 #photo("archive/2016/10/img-20161017-wa0003.jpg", "Images 2016 — photographie 11")
@@ -74,3 +68,9 @@ Visite de nos voisins de l’école des Troupes de Sauvetage 76 des casernes des
 #photo("archive/2016/10/img-20161017-wa0006-1080x608.jpg", "Images 2016 — photographie 20")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

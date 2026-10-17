@@ -1,16 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2021", path: "galerie/images-2021/")
 
-#site-link("galerie/images-2021/#26062021")[ La Ville est a Vous Jonxion (26.06.2021)]#html.br()
-#site-link("galerie/images-2021/#21052021")[ Abaissement du Rhône (21.5.2021)]#html.br()
-#site-link("galerie/images-2021/#13052021")[ Sortie Mapping Festival (13.05.2021) ]#html.br()
-#site-link("galerie/images-2021/#20032021")[ Enfin le beau temps… ]#html.br()
-#site-link("galerie/images-2021/#06022021")[ Courses Antigel (06-28.2.2021)]
-
-#html.span(id: "26062021")[]
-#html.br()
-#strong[La Ville est a Vous Jonxion (26.06.2021)]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2021", path: "galerie/images-2021/",
+  cover: "archive/2021/08/KSBQ4647.jpg",
+  events: (
+    album-event(
+      id: "26062021", title: [#strong[La Ville est a Vous Jonxion (26.06.2021)]],
+      cover: "archive/2021/08/KSBQ4647.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/08/KSBQ4647.jpg", "Images 2021 — photographie 1")
@@ -30,13 +28,11 @@
 #photo("archive/2021/08/GPZQ5417.jpg", "Images 2021 — photographie 8")
 
 ]
-
-#html.hr()
-
-#html.span(id: "21052021")[]
-#html.br()
-#strong[Abaissement du Rhône (21.5.2021)]
-
+    ],
+    album-event(
+      id: "21052021", title: [#strong[Abaissement du Rhône (21.5.2021)]],
+      cover: "archive/2021/08/IMG_3320.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/08/IMG_3320.jpg", "Images 2021 — photographie 9")
@@ -50,13 +46,11 @@
 #video("archive/2021/08/IMG_3330-13_x264.mp4", "Images 2021 — vidéo")
 
 #video("archive/2021/08/IMG_3380_S.mp4", "Images 2021 — vidéo")
-
-#html.hr()
-
-#html.span(id: "13052021")[]
-#html.br()
-#strong[Sortie Mapping Festival (13.05.2021) ]
-
+    ],
+    album-event(
+      id: "13052021", title: [#strong[Sortie Mapping Festival (13.05.2021) ]],
+      cover: "archive/2021/08/EFGJ9828.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/08/EFGJ9828.jpg", "Images 2021 — photographie 12")
@@ -76,12 +70,11 @@
 ]
 
 #link("https://2051.mappingfestival.com/", "https://2051.mappingfestival.com")
-
-#html.hr()
-
-#html.span(id: "20032021")[]
-#strong[Enfin du beau temps…]
-
+    ],
+    album-event(
+      id: "20032021", title: [#strong[Enfin du beau temps…]],
+      cover: "archive/2021/08/CBJF1089.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/08/AGDP7512.jpg", "Images 2021 — photographie 19")
@@ -115,13 +108,11 @@
 #photo("archive/2021/08/GWLD7406.jpg", "Images 2021 — photographie 33")
 
 ]
-
-#html.hr()
-
-#html.span(id: "06022021")[]
-#html.br()
-#strong[Les courses Antigel (06-28.2.2021)]
-
+    ],
+    album-event(
+      id: "06022021", title: [#strong[Les courses Antigel (06-28.2.2021)]],
+      cover: "archive/2021/08/IMG_1047.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/08/WXCH3546.jpg", "Images 2021 — photographie 34")
@@ -147,3 +138,9 @@
 #html.hr()
 
 \<
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

@@ -1,20 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2025", path: "galerie/images-2025/")
 
-#site-link("galerie/images-2025/#01072025")[Sorties Estivales 2025]#html.br()
-#site-link("galerie/images-2025/#17072025")[Decouverte du Rhône]#html.br()
-
-#site-link("galerie/images-2025/#26062025")[Eigenössisches Pontonier Wettfahren 2025 Schmerikon]#html.br()
-#site-link("galerie/images-2025/#14062025")[Wettfahren Wynau]#html.br()
-#site-link("galerie/images-2025/#15052025")[GRIMP Day 2025]#html.br()
-#site-link("galerie/images-2025/#03052025")[Le Feuillu]#html.br()
-#site-link("galerie/images-2025/#30012025")[Entraînements hivernales]#html.br()
-
-#html.hr()
-
-#html.span(id: "01072025")[]
-#strong[Sorties Estivales 2025]#html.br()
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2025", path: "galerie/images-2025/",
+  cover: "archive/2025/08/IMG_6502-1024x768.jpg",
+  events: (
+    album-event(
+      id: "01072025", title: [#strong[Sorties Estivales 2025]],
+      cover: "archive/2025/08/IMG_5719-1024x810.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/08/IMG_5075-1152x1536.jpg", "Images 2025 — photographie 1")
@@ -52,12 +46,11 @@
 #photo("archive/2025/08/IMG_6431-1076x1536.jpg", "Images 2025 — photographie 17")
 
 ]
-
-#html.hr()
-
-#html.span(id: "17072025")[]
-#strong[Decouverte du Rhône ]
-
+    ],
+    album-event(
+      id: "17072025", title: [#strong[Decouverte du Rhône ]],
+      cover: "archive/2025/08/IMG_6502-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/08/IMG_6449-1076x1536.jpg", "Images 2025 — photographie 18")
@@ -75,11 +68,11 @@
 #photo("archive/2025/08/IMG_1172-e1754251308871-1024x384.jpg", "Images 2025 — photographie 24")
 
 ]
-
-#html.hr()
-
-#html.span(id: "26062025")[]
-#strong[Eigenössisches Pontonier Wettfahren 2025 Schmerikon ]#html.br()
+    ],
+    album-event(
+      id: "26062025", title: [#strong[Eigenössisches Pontonier Wettfahren 2025 Schmerikon ]],
+      cover: "archive/2025/08/IMG_1697-1024x768.jpg",
+    )[
 #link("https://www.epw2025.ch/einzelwettfahren/", "https://www.epw2025.ch/einzelwettfahren/")
 
 #gallery[
@@ -121,11 +114,11 @@
 #photo("archive/2025/08/IMG_E5873-1061x1536.jpg", "Images 2025 — photographie 42")
 
 ]
-
-#html.hr()
-
-#html.span(id: "14062025")[]
-#strong[Wettfahren Wynau]#html.br()
+    ],
+    album-event(
+      id: "14062025", title: [#strong[Wettfahren Wynau]],
+      cover: "archive/2025/08/IMG_5777-1024x768.jpg",
+    )[
 #link("https://www.epw2025.ch/einzelwettfahren/", "https://www.epw2025.ch/einzelwettfahren/")
 
 #gallery[
@@ -143,11 +136,11 @@
 #photo("archive/2025/08/IMG_5748-1024x768.jpg", "Images 2025 — photographie 48")
 
 ]
-
-#html.hr()
-
-#html.span(id: "15052025")[]
-#strong[GRIMP Day 2025 ]#html.br()
+    ],
+    album-event(
+      id: "15052025", title: [#strong[GRIMP Day 2025 ]],
+      cover: "archive/2025/08/IMG_5549-1024x768.jpg",
+    )[
 #link("https://www.grimpday.com/", "https://www.grimpday.com/")#html.br()
 Organisé par #link("https://www.sisge.ch/fr/accueil")[SIS Genève]#html.br()
 
@@ -184,11 +177,11 @@ Organisé par #link("https://www.sisge.ch/fr/accueil")[SIS Genève]#html.br()
 #photo("archive/2025/08/IMG_5535-720x1024.jpg", "Images 2025 — photographie 63")
 
 ]
-
-#html.hr()
-
-#html.span(id: "03052025")[]
-#strong[Le Feuillu ]#html.br()
+    ],
+    album-event(
+      id: "03052025", title: [#strong[Le Feuillu ]],
+      cover: "archive/2025/08/DSC_6667_c-1024x777.jpg",
+    )[
 #link("https://www.lebendige-traditionen.ch/tradition/en/home/traditions/le-feuillu.html")[L’histoire du Feuillu]#html.br()
 En collaboration avec #link("https://hydromondes.org/")[hydromondes]#html.br()
 
@@ -215,12 +208,11 @@ En collaboration avec #link("https://hydromondes.org/")[hydromondes]#html.br()
 #photo("archive/2025/08/DSC_6667_c-1024x777.jpg", "Images 2025 — photographie 73")
 
 ]
-
-#html.hr()
-
-#html.span(id: "16052025")[]
-#strong[Examens des Jeunes ]#html.br()
-
+    ],
+    album-event(
+      id: "16052025", title: [#strong[Examens des Jeunes ]],
+      cover: "archive/2025/08/IMG_1645-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/08/IMG_1632-1152x1536.jpg", "Images 2025 — photographie 74")
@@ -232,12 +224,11 @@ En collaboration avec #link("https://hydromondes.org/")[hydromondes]#html.br()
 #photo("archive/2025/08/IMG_1645-1024x768.jpg", "Images 2025 — photographie 77")
 
 ]
-
-#html.hr()
-
-#html.span(id: "30012025")[]
-#strong[Entrainements hivernales ]
-
+    ],
+    album-event(
+      id: "30012025", title: [#strong[Entrainements hivernales ]],
+      cover: "archive/2025/02/IMG_3397-1152x1536.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/02/IMG_3397-1152x1536.jpg", "Images 2025 — photographie 78")
@@ -249,3 +240,9 @@ En collaboration avec #link("https://hydromondes.org/")[hydromondes]#html.br()
 #photo("archive/2025/02/IMG_3365-1152x1536.jpg", "Images 2025 — photographie 81")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

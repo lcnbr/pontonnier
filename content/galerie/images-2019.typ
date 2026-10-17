@@ -1,25 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2019", path: "galerie/images-2019/")
 
-#site-link("galerie/images-2019/#15122019")[ Entraînements de nage & Coupe de Noël (15.12.2019)]#html.br()
-#site-link("galerie/images-2019/#10122019")[ Sortie Soupe sur l’Arve (10.12.2019)]#html.br()
-#site-link("galerie/images-2019/#07112019")[ Échange des bateaux (7.11.2019)]#html.br()
-#site-link("galerie/images-2019/#02102019")[ Examen annuel des Jeunes Pontonniers (2.10.2019)]#html.br()
-#site-link("galerie/images-2019/#24082019")[Stand au Festival A Contre Courant (24-25.8.2019)]#html.br()
-#site-link("galerie/images-2019/#21082019")[Préparatifs pour le Festival A Contre Courant (21.8.2019)]#html.br()
-#site-link("galerie/images-2019/#16082019")[Nettoyage des berges du Rhône (16-17.8.2019)]#html.br()
-#site-link("galerie/images-2019/#14082019")[Aubes musicales au Paquis(14.8.2019)]#html.br()
-#site-link("galerie/images-2019/#10082019")[Feu d’artifices de Genève (10.8.2019)]#html.br()
-#site-link("galerie/images-2019/#05062019")[Joutes nautiques improvisés (5.6.2019)]#html.br()
-#site-link("galerie/images-2019/#18052019")[Descente du Rhône avec Cap Loisirs (18.5.2019)]#html.br()
-#site-link("galerie/images-2019/#19042019")[Nettoyage printanier]#html.br()
-#site-link("galerie/images-2019/#23012019")[Sortie hivernale sur l’Arve (23.1.2019)]#html.br()
-#site-link("galerie/images-2019/#20012019")[Premières sorties autour des Paquis]
-
-#html.span(id: "15122019")[]
-#html.br()
-#strong[Entraînements de nage & Coupe de Noël (15.12.2019)]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2019", path: "galerie/images-2019/",
+  cover: "archive/2019/12/IMG_0022-1024x768.jpg",
+  events: (
+    album-event(
+      id: "15122019", title: [#strong[Entraînements de nage & Coupe de Noël (15.12.2019)]],
+      cover: "archive/2019/12/IMG_0022-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/12/IMG_1278-2.jpg", "Images 2019 — photographie 1")
@@ -53,13 +42,11 @@
 #photo("archive/2019/12/SDUK6346-1024x459.jpg", "Images 2019 — photographie 15")
 
 ]
-
-#html.hr()
-
-#html.span(id: "10122019")[]
-#html.br()
-#strong[Sortie Soupe sur l’Arve (10.12.2019)]
-
+    ],
+    album-event(
+      id: "10122019", title: [#strong[Sortie Soupe sur l’Arve (10.12.2019)]],
+      cover: "archive/2019/12/KKRR3417-1024x576.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/12/KKRR3417-1024x576.jpg", "Images 2019 — photographie 16")
@@ -73,13 +60,11 @@
 #photo("archive/2019/12/GAKP3680.jpg", "Images 2019 — photographie 20")
 
 ]
-
-#html.hr()
-
-#html.span(id: "07112019")[]
-#html.br()
-#strong[Échange des bateaux (7.11.2019)]
-
+    ],
+    album-event(
+      id: "07112019", title: [#strong[Échange des bateaux (7.11.2019)]],
+      cover: "archive/2019/12/IMG_0357-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/12/IMG_0374.jpg", "Images 2019 — photographie 21")
@@ -93,13 +78,11 @@
 #photo("archive/2019/12/IMG_0403-1024x768.jpg", "Images 2019 — photographie 25")
 
 ]
-
-#html.hr()
-
-#html.span(id: "02102019")[]
-#html.br()
-#strong[Examen annuel des Jeunes Pontonniers (2.10.2019)]
-
+    ],
+    album-event(
+      id: "02102019", title: [#strong[Examen annuel des Jeunes Pontonniers (2.10.2019)]],
+      cover: "archive/2019/10/c5e4c794-ad37-48de-a766-ff9f0c447568-1-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/10/20191002-_DSC0477-1024x683.jpg", "Images 2019 — photographie 26")
@@ -143,13 +126,11 @@
 #photo("archive/2019/10/853ed24f-0fd2-45da-bfde-9ca9a6ed4e07-1024x768.jpg", "Images 2019 — photographie 45")
 
 ]
-
-#html.hr()
-
-#html.span(id: "24082019")[]
-#html.br()
-#strong[Stand au Festival A Contre Courant (24-25.8.2019)]
-
+    ],
+    album-event(
+      id: "24082019", title: [#strong[Stand au Festival A Contre Courant (24-25.8.2019)]],
+      cover: "archive/2019/08/IMG_3653.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/08/IMG_3645.jpg", "Images 2019 — photographie 46")
@@ -223,13 +204,11 @@
 #photo("archive/2019/08/IMG_3740.jpg", "Images 2019 — photographie 80")
 
 ]
-
-#html.hr()
-
-#html.span(id: "21082019")[]
-#html.br()
-#strong[Préparatifs pour le Festival A Contre Courant (21.8.2019)]
-
+    ],
+    album-event(
+      id: "21082019", title: [#strong[Préparatifs pour le Festival A Contre Courant (21.8.2019)]],
+      cover: "archive/2019/08/IMG_8564-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/08/IMG_8576.jpg", "Images 2019 — photographie 81")
@@ -265,13 +244,11 @@
 #photo("archive/2019/08/IMG_8587.jpg", "Images 2019 — photographie 96")
 
 ]
-
-#html.hr()
-
-#html.span(id: "16082019")[]
-#html.br()
-#strong[Nettoyage des berges du Rhône (16-17.8.2019)]
-
+    ],
+    album-event(
+      id: "16082019", title: [#strong[Nettoyage des berges du Rhône (16-17.8.2019)]],
+      cover: "archive/2019/08/IMG_3494-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/08/IMG_3494-1024x768.jpg", "Images 2019 — photographie 97")
@@ -287,13 +264,11 @@
 #photo("archive/2019/08/YGNU5592-1024x768.jpg", "Images 2019 — photographie 102")
 
 ]
-
-#html.hr()
-
-#html.span(id: "14082019")[]
-#html.br()
-#strong[Aubes musicales au Paquis(14.8.2019)]
-
+    ],
+    album-event(
+      id: "14082019", title: [#strong[Aubes musicales au Paquis(14.8.2019)]],
+      cover: "archive/2019/08/IMG_8099-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/08/IMG_8099-1024x768.jpg", "Images 2019 — photographie 103")
@@ -303,13 +278,11 @@
 #photo("archive/2019/08/IMG_8100.jpg", "Images 2019 — photographie 105")
 
 ]
-
-#html.hr()
-
-#html.span(id: "10082019")[]
-#html.br()
-#strong[Feu d’artifices de Genève (10.8.2019)]
-
+    ],
+    album-event(
+      id: "10082019", title: [#strong[Feu d’artifices de Genève (10.8.2019)]],
+      cover: "archive/2019/08/DSC06778-1024x683.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/08/DSC06778-1024x683.jpg", "Images 2019 — photographie 106")
@@ -323,13 +296,11 @@
 #photo("archive/2019/08/IMG_8029-1024x1024.jpg", "Images 2019 — photographie 110")
 
 ]
-
-#html.hr()
-
-#html.span(id: "05062019")[]
-#html.br()
-#strong[Joutes nautiques improvisés (5.6.2019)]
-
+    ],
+    album-event(
+      id: "05062019", title: [#strong[Joutes nautiques improvisés (5.6.2019)]],
+      cover: "archive/2019/06/IMG_5948-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/06/IMG_5948-1024x768.jpg", "Images 2019 — photographie 111")
@@ -353,13 +324,11 @@
 .
 
 En comparaison: les joutes nautiques du #link("https://limmat-club.ch/index.php/schifferstechen.html")[Limmatclub de Zürich]: #link("https://www.youtube.com/watch?v=h6QCgnpBkKQ")[Vidéo] et du #link("http://www.schifferstechen-bern.ch/")[Schifferstechen à Berne]: #link("https://www.youtube.com/watch?v=ZaGfgpa9yG8")[Vidéo]
-
-#html.hr()
-
-#html.span(id: "18052019")[]
-#html.br()
-#strong[Descente du Rhône avec Cap Loisirs (18.5.2019)]
-
+    ],
+    album-event(
+      id: "18052019", title: [#strong[Descente du Rhône avec Cap Loisirs (18.5.2019)]],
+      cover: "archive/2019/05/DSC05550B-1024x617.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/05/DSC05466B-1024x601.jpg", "Images 2019 — photographie 117")
@@ -377,13 +346,11 @@ En comparaison: les joutes nautiques du #link("https://limmat-club.ch/index.php/
 ]
 
 #video("archive/2019/05/PontButin4.mp4", "Images 2019 — vidéo")
-
-#html.hr()
-
-#html.span(id: "19042019")[]
-#html.br()
-#strong[Nettoyage printanier (19.4.2019)]
-
+    ],
+    album-event(
+      id: "19042019", title: [#strong[Nettoyage printanier (19.4.2019)]],
+      cover: "archive/2019/04/AOGU7522.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/04/XWAJ0666.jpg", "Images 2019 — photographie 123")
@@ -407,13 +374,11 @@ En comparaison: les joutes nautiques du #link("https://limmat-club.ch/index.php/
 #photo("archive/2019/04/IMG_5111-768x1024.jpg", "Images 2019 — photographie 132")
 
 ]
-
-#html.hr()
-
-#html.span(id: "23012019")[]
-#html.br()
-#strong[Sortie hivernale sur l’Arve (23.1.2019)]
-
+    ],
+    album-event(
+      id: "23012019", title: [#strong[Sortie hivernale sur l’Arve (23.1.2019)]],
+      cover: "archive/2019/01/DSC04973cc-1024x737.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/01/DSC04945cc.jpg", "Images 2019 — photographie 133")
@@ -431,13 +396,11 @@ En comparaison: les joutes nautiques du #link("https://limmat-club.ch/index.php/
 #photo("archive/2019/01/DSC05051cc-1024x636.jpg", "Images 2019 — photographie 139")
 
 ]
-
-#html.hr()
-
-#html.span(id: "20012019")[]
-#html.br()
-#strong[Premières sorties autour des Paquis]
-
+    ],
+    album-event(
+      id: "20012019", title: [#strong[Premières sorties autour des Paquis]],
+      cover: "archive/2019/01/IMG_3357-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2019/01/IMG_3270.jpg", "Images 2019 — photographie 140")
@@ -449,5 +412,9 @@ En comparaison: les joutes nautiques du #link("https://limmat-club.ch/index.php/
 #photo("archive/2019/01/IMG_3391-1024x738.jpg", "Images 2019 — photographie 143")
 
 ]
+    ],
+  ),
+)
 
-#html.hr()
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

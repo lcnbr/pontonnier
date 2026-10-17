@@ -1,13 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2014", path: "galerie/images-2014/")
 
-#site-link("galerie/images-2014/#Examen")[Examen Octobre 2014]
-
-#html.hr()
-
-#html.span(id: "Examen")[]
-Examen Octobre 2014
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2014", path: "galerie/images-2014/",
+  cover: "archive/2016/12/gab_2014d.jpg",
+  events: (
+    album-event(
+      id: "Examen", title: [Examen Octobre 2014],
+      cover: "archive/2016/12/gab_2014d.jpg",
+    )[
 #gallery[
 
 #photo("archive/2016/12/gab_2014a.jpg", "Images 2014 — photographie 1")
@@ -25,5 +26,9 @@ Examen Octobre 2014
 #photo("archive/2016/12/gab_2014f.jpg", "Images 2014 — photographie 7")
 
 ]
+    ],
+  ),
+)
 
-#html.hr()
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

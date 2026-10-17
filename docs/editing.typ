@@ -9,7 +9,10 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 
 - `content/`: editable French page sources.
 - `site.typ`: the name, contact details, published URL and album inventory.
-- `theme.typ`: the shared Typst HTML template and media elements.
+- `theme.typ`: the shared Typst HTML page template.
+- `media.typ`: photos, videos and lightweight editor media.
+- `album.typ`: cover choices, media counts and album/event cards.
+- `album-catalog.typ`: the overview, derived from the album sources in `site.typ`.
 - `assets/site.css`: the visual layout.
 - `gallery.typ`: Typst-generated photo viewer controls.
 - `assets/gallery.mjs`: mosaic layout, carousel navigation and zoom.
@@ -146,29 +149,66 @@ selects the media version, making builds reproducible. Keep binary files out of
 this editor repository except for the bounded `preview/` thumbnail cache. CI
 checks that cache, the source file count, file sizes and reachable history size.
 
-== Gallery years and new pages
+== Album covers, events and new years
 
-Wrap photos in `gallery[...]` for the responsive mosaic. Images keep their
-original proportions with square corners and narrow gaps. On album pages,
-clicking a photo opens the carousel for the entire page. Scroll, pinch or use
-the magnifier buttons to zoom; drag to pan, click the percentage to reset, and
-use the arrows or swipe at normal zoom to change photos. Escape or the close
-icon returns to the original gallery position.
+Each album source exports `album` and renders it with `album-page`. Its top-level
+`cover:` selects the year or collection cover. Each `album-event` has its own
+optional `cover:`. Paths are relative to the media repository’s `assets/` folder.
+The existing choices are pinned to the covers approved in the layout preview.
+
+```typst
+#import "/theme.typ": *
+
+#let album = album-data(
+  title: "2026", path: "galerie/images-2026/",
+  cover: "archive/2026/10/sortie.jpg",
+  events: (
+    album-event(
+      id: "sortie-octobre", title: [Sortie d’octobre],
+      cover: "archive/2026/10/equipe.jpg",
+    )[
+      #gallery[
+        #photo("archive/2026/10/sortie.jpg", "Une barque sur le Rhône")
+        #photo("archive/2026/10/equipe.jpg", "Notre équipe",
+          caption: [Photo : notre équipe.])
+      ]
+    ],
+  ),
+)
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)
+```
+
+Change either cover by editing that one path and pushing. Set `cover: none`, or
+omit it, to use the first photo in that event or album. Explicit choices stay
+unchanged when photos are inserted or reordered. Covers must be images listed
+in `assets/manifest.json`; an unknown path produces a clear build error. They
+retain their original proportions inside the cover frame.
+
+Photo/video counts and overview cards are calculated from the same Typst content;
+there is no separate generated catalog to maintain. Photos, videos, credits,
+source links and explanatory text belong inside the event body. Video-only
+events are supported; they can use an explicit image as their cover. Keep event
+ids stable because existing links use them, and reserve `all-photos` for the
+complete year view. Titles can contain links, which remain available in the
+opened event; cover cards display the title text.
+
+The navbar opens the album overview for a year. Select an event card for its
+photos and videos, or “Tout voir” for the whole year. The carousel follows that
+selection. Scroll, pinch or use the magnifier buttons to zoom; drag to pan, click
+the percentage to reset, and use the arrows or swipe at normal zoom to change
+photos. Escape or the close icon returns to the gallery position. Browser Back
+and old event anchors also work. Without JavaScript, the cards link to the event
+sections, which remain visible on the page.
 
 Alternative text identifies images for accessibility and is never displayed as
 a caption. Add `caption: [...]` to `photo` for a real caption, or to `gallery`
-for a shared caption or credit. Captions can contain source links. For example:
+for a shared caption or credit. Captions can contain source links. The editor
+continues to hide gallery media and covers while showing the editable text.
 
-```typst
-#gallery(caption: [Photos : notre équipe.])[
-  #photo("archive/2026/10/sortie.jpg", "Une barque sur le Rhône",
-    caption: [Sortie du 17 octobre 2026.])
-]
-```
-
-The `albums` inventory in `site.typ` supplies the year dropdown within the navbar. Extend the year range when
-adding an annual album, then register its source and output path in `main.typ`.
-The historic routes for 2012 and 2015 are preserved.
+To add a year, copy a recent album source, extend the `albums` year range in
+`site.typ`, and register the page in `main.typ`. The overview automatically reads
+that album source. The historic routes for 2012 and 2015 are preserved.
 
 For other new pages, copy an existing content file, register it in `main.typ`
 and add navigation in `site.typ` as needed. Check both root and project-path builds.

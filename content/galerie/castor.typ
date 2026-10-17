@@ -1,24 +1,28 @@
 #import "/theme.typ": *
-#show: page.with(title: "Castor", path: "galerie/castor/")
 
-#site-link("galerie/castor/#31122021")[Sortie fin d’année]#html.br()
-#site-link("galerie/castor/#15122021")[Sortie nocturne]#html.br()
-#site-link("galerie/castor/#09122021")[L’arrivée de Castor]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "Castor", path: "galerie/castor/",
+  cover: "archive/2022/01/IMG_9659-1024x768.jpg",
+  events: (
+    album-event(
+      id: "presentation", title: "Castor",
+      cover: "archive/2022/01/IMG_9659-1024x768.jpg",
+    )[
 #photo("archive/2022/09/DJI_0424_d.jpg", "Castor — photographie 1")
-
-#html.span(id: "31122021")[]
-#html.br()
-#strong[Sortie fin d’année]
-
+    ],
+    album-event(
+      id: "31122021", title: [#strong[Sortie fin d’année]],
+      cover: "archive/2022/01/IMG_9659-1024x768.jpg",
+    )[
 #video("archive/2022/01/P80_C_x264_001.mp4", "Castor — vidéo")
 
 #video("archive/2022/01/P80_A_x264.mp4", "Castor — vidéo")
-
-#html.span(id: "15122021")[]
-#html.br()
-#strong[Sortie nocturne]
-
+    ],
+    album-event(
+      id: "15122021", title: [#strong[Sortie nocturne]],
+      cover: "archive/2022/01/IMG_9659-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2022/09/DJI_0424_d.jpg", "Castor — photographie 2")
@@ -30,11 +34,11 @@
 #photo("archive/2022/01/IMG_9667-1152x1536.jpg", "Castor — photographie 5")
 
 ]
-
-#html.span(id: "09122021")[]
-#html.br()
-#strong[L’arrivée de Castor]
-
+    ],
+    album-event(
+      id: "09122021", title: [#strong[L’arrivée de Castor]],
+      cover: "archive/2021/12/IMG_9443.jpg",
+    )[
 #gallery[
 
 #photo("archive/2021/12/IMG_9443.jpg", "Castor — photographie 6")
@@ -68,3 +72,9 @@
 #video("archive/2021/12/IMG_9587_x264.mp4", "Castor — vidéo")
 
 #video("archive/2021/12/IMG_9594_x264.mp4", "Castor — vidéo")
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

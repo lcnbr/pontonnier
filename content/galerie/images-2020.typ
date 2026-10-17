@@ -1,19 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2020", path: "galerie/images-2020/")
 
-#site-link("galerie/images-2020/#09122020")[ Sortie de l’escalade (09.12.2020)]#html.br()
-#site-link("galerie/images-2020/#21112020")[ Grande révision (21.11.2020)]#html.br()
-#site-link("galerie/images-2020/#14112020")[ Arrivée des Weidlings (14.11.2020)]#html.br()
-#site-link("galerie/images-2020/#08112020")[ Rame et Brisolée (8.11.2020)]#html.br()
-#site-link("galerie/images-2020/#14102020")[ Entraînements et examen annuel des jeunes pontonniers (14.10.2020)]#html.br()
-#site-link("galerie/images-2020/#30092020")[ Joutes et sortie des 90 ans (30.09.2020)]#html.br()
-#site-link("galerie/images-2020/#15082020")[Un jolie été malgré tout]#html.br()
-#site-link("galerie/images-2020/#24062020")[Sortie estivale (24.06.2020)]
-
-#html.span(id: "09122020")[]
-#html.br()
-#strong[Sortie de l’escalade (09.12.2020)]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2020", path: "galerie/images-2020/",
+  cover: "archive/2020/12/11-MALM8631-1024x768.jpg",
+  events: (
+    album-event(
+      id: "09122020", title: [#strong[Sortie de l’escalade (09.12.2020)]],
+      cover: "archive/2020/12/11-MALM8631-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/12/12-DSC07457-1024x683.jpg", "Images 2020 — photographie 1")
@@ -43,13 +38,11 @@
 ]
 
 #video("archive/2020/12/20-DTXM7986.mp4", "Images 2020 — vidéo")
-
-#html.hr()
-
-#html.span(id: "21112020")[]
-#html.br()
-#strong[Grande révision (21.11.2020)]
-
+    ],
+    album-event(
+      id: "21112020", title: [#strong[Grande révision (21.11.2020)]],
+      cover: "archive/2020/12/03-IMG_3950-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/12/01-IMG_8257-1152x1536.jpg", "Images 2020 — photographie 13")
@@ -81,13 +74,11 @@
 #photo("archive/2020/12/10-IQGE5231-1024x768.jpg", "Images 2020 — photographie 26")
 
 ]
-
-#html.hr()
-
-#html.span(id: "14112020")[]
-#html.br()
-#strong[Arrivée des Weidlings (14.11.2020)]
-
+    ],
+    album-event(
+      id: "14112020", title: [#strong[Arrivée des Weidlings (14.11.2020)]],
+      cover: "archive/2020/11/016-IMG_8531.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/11/015-IMG_8529.jpg", "Images 2020 — photographie 27")
@@ -113,13 +104,11 @@
 #photo("archive/2020/11/021-IMG_8579.jpg", "Images 2020 — photographie 37")
 
 ]
-
-#html.hr()
-
-#html.span(id: "08112020")[]
-#html.br()
-#strong[Rame et Brisolée (8.11.2020)]
-
+    ],
+    album-event(
+      id: "08112020", title: [#strong[Rame et Brisolée (8.11.2020)]],
+      cover: "archive/2020/11/002-IMG_8421.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/11/002-IMG_8421.jpg", "Images 2020 — photographie 38")
@@ -141,13 +130,11 @@
 #photo("archive/2020/11/013-USAY0682.jpg", "Images 2020 — photographie 46")
 
 ]
-
-#html.hr()
-
-#html.span(id: "14102020")[]
-#html.br()
-#strong[Entraînements et examen annuel des jeunes pontonniers (14.10.2020)]
-
+    ],
+    album-event(
+      id: "14102020", title: [#strong[Entraînements et examen annuel des jeunes pontonniers (14.10.2020)]],
+      cover: "archive/2020/11/035-SLFW4522.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/11/032-CIIA0390.jpg", "Images 2020 — photographie 47")
@@ -163,13 +150,11 @@
 #photo("archive/2020/11/038-WAQJ0105.jpg", "Images 2020 — photographie 52")
 
 ]
-
-#html.hr()
-
-#html.span(id: "30092020")[]
-#html.br()
-#strong[Joutes et sortie des 90 ans (30.09.2020)]
-
+    ],
+    album-event(
+      id: "30092020", title: [#strong[Joutes et sortie des 90 ans (30.09.2020)]],
+      cover: "archive/2020/11/062-OFXO0281.jpg",
+    )[
 #video("archive/2020/11/055-PEGM6236.mp4", "Images 2020 — vidéo")
 
 #video("archive/2020/11/060-PBMC9079.mp4", "Images 2020 — vidéo")
@@ -185,13 +170,11 @@
 #photo("archive/2020/11/056-IMG_7824.jpg", "Images 2020 — photographie 55")
 
 ]
-
-#html.hr()
-
-#html.span(id: "15082020")[]
-#html.br()
-#strong[Un jolie été malgré tout]
-
+    ],
+    album-event(
+      id: "15082020", title: [#strong[Un jolie été malgré tout]],
+      cover: "archive/2020/11/072-QGFC4416.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/11/072-QGFC4416.jpg", "Images 2020 — photographie 56")
@@ -247,11 +230,11 @@
 #html.hr()
 
 #photo("archive/2020/12/QCYX5190_A-e1609193846689-1024x478.jpg", "Images 2020 — photographie 79")
-
-#html.span(id: "24062020")[]
-#html.br()
-#strong[Sortie estivale (24.06.2020)]#html.br()
-
+    ],
+    album-event(
+      id: "24062020", title: [#strong[Sortie estivale (24.06.2020)]],
+      cover: "archive/2020/11/128-USMH8805.jpg",
+    )[
 #gallery[
 
 #photo("archive/2020/11/128-USMH8805.jpg", "Images 2020 — photographie 80")
@@ -263,3 +246,9 @@
 #photo("archive/2020/11/117-DSC07129.jpg", "Images 2020 — photographie 83")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

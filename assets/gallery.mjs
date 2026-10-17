@@ -78,7 +78,8 @@ function initializeGallery(main) {
       caption: figure.querySelector('figcaption') || (groupCaption?.matches('.gallery-caption') ? groupCaption : null)
     };
   }).filter(item => item.image && item.width > 0 && item.height > 0);
-  if (!items.length) return;
+  if (!items.length && !content.querySelector('.album-events')) return;
+  let sequence = items;
   const itemByFigure = new Map(items.map(item => [item.figure, item]));
   const layouts = new Map();
   for (const gallery of content.querySelectorAll('.gallery')) {
@@ -232,42 +233,45 @@ function initializeGallery(main) {
   new ResizeObserver(() => { if (!viewer.hidden) paintZoom(); }).observe(viewport);
 
   function showPhoto(index) {
-    activePhoto = (index + items.length) % items.length;
-    const item = items[activePhoto];
+    activePhoto = (index + sequence.length) % sequence.length;
+    const item = sequence[activePhoto];
     content.hidden = true;
     viewer.hidden = false;
     viewerImage.src = item.anchor.href;
     viewerImage.alt = item.image.alt;
     photoRatio = item.width / item.height;
     resetZoom();
-    viewerCount.textContent = (activePhoto + 1) + ' / ' + items.length;
+    viewerCount.textContent = (activePhoto + 1) + ' / ' + sequence.length;
     // Captions are authored content, never the automatically numbered alt text.
     viewerCaption.replaceChildren(...(item.caption ? Array.from(item.caption.childNodes, node => node.cloneNode(true)) : []));
     viewerCaption.hidden = !item.caption;
     for (const step of [-1, 1]) {
       const preload = new Image();
-      preload.src = items[(activePhoto + step + items.length) % items.length].anchor.href;
+      preload.src = sequence[(activePhoto + step + sequence.length) % sequence.length].anchor.href;
     }
   }
-  function closePhoto() {
+  function closePhoto(restorePosition = true) {
     activePhoto = null;
     resetZoom();
     viewer.hidden = true;
     content.hidden = false;
     for (const gallery of layouts.keys()) layout(gallery);
-    opener?.focus({preventScroll: true});
-    window.scrollTo({top: originScroll, behavior: 'instant'});
+    if (restorePosition) {
+      opener?.focus({preventScroll: true});
+      window.scrollTo({top: originScroll, behavior: 'instant'});
+    }
   }
-  items.forEach((item, index) => item.anchor.addEventListener('click', event => {
+  items.forEach(item => item.anchor.addEventListener('click', event => {
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     opener = item.anchor;
     originScroll = window.scrollY;
-    showPhoto(index);
+    sequence = items.filter(photo => !photo.figure.closest('.album-event')?.hidden);
+    showPhoto(sequence.indexOf(item));
     closeButton.focus({preventScroll: true});
     main.scrollIntoView({block: 'start', behavior: 'instant'});
   }));
-  closeButton.addEventListener('click', closePhoto);
+  closeButton.addEventListener('click', () => closePhoto());
   viewer.querySelector('.pg-photo-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
   viewer.querySelector('.pg-photo-next').addEventListener('click', () => showPhoto(activePhoto + 1));
   main.addEventListener('keydown', event => {
@@ -280,6 +284,39 @@ function initializeGallery(main) {
       else changeZoom(zoom * (event.key === '-' ? 1 / 1.5 : 1.5));
     }
   });
+  const events = Array.from(content.querySelectorAll('.album-event'));
+  const eventContainer = content.querySelector('.album-events');
+  const overview = content.querySelector('.album-overview');
+  const title = main.querySelector('.entry-title');
+  const albumTitle = title.textContent;
+  const parent = main.querySelector('.album-parent');
+
+  function displayAlbum(scroll = false) {
+    if (!eventContainer) return;
+    if (activePhoto !== null) closePhoto(false);
+    let hash = '';
+    try { hash = decodeURIComponent(location.hash.slice(1)); } catch { /* Invalid fragments show the album overview. */ }
+    const target = document.getElementById(hash);
+    const event = target?.closest('.album-event');
+    const all = hash === 'all-photos' || events.length === 1;
+    if (overview) overview.hidden = !!event || all;
+    eventContainer.hidden = !event && !all;
+    for (const section of events) {
+      section.hidden = !all && section !== event;
+      section.classList.toggle('is-selected', section === event || events.length === 1);
+      if (section.hidden) for (const video of section.querySelectorAll('video')) video.pause();
+    }
+    if (event) title.replaceChildren(...Array.from(event.querySelector('.event-title').childNodes, node => node.cloneNode(true)));
+    else title.textContent = albumTitle;
+    if (parent) parent.hidden = (!event && !all) || events.length === 1;
+    for (const gallery of layouts.keys()) layout(gallery);
+    if (scroll) {
+      (parent && !parent.hidden ? parent.querySelector('a') : main.querySelector('.album-breadcrumb a'))?.focus({preventScroll: true});
+      main.scrollIntoView({block: 'start', behavior: 'instant'});
+    }
+  }
+  window.addEventListener('hashchange', () => displayAlbum(true));
+  displayAlbum();
 }
 
 if (typeof document !== 'undefined') {

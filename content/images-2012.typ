@@ -1,6 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2012", path: "images-2012/")
 
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2012", path: "images-2012/",
+  cover: "archive/2016/10/img_2143.jpg",
+  events: (
+    album-event(
+      id: "photos", title: "2012",
+      cover: "archive/2016/10/img_2143.jpg",
+    )[
 Echange des bateaux
 
 #gallery[
@@ -14,3 +22,9 @@ Echange des bateaux
 #html.br()
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

@@ -1,18 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2023", path: "galerie/images-2023/")
 
-#site-link("galerie/images-2023/#07102023")[ Inauguration du Schick & Schlag à Porteous ]#html.br()
-#site-link("galerie/images-2023/#25092023")[ Diagnostic croisé de santé du Rhône par les indiens Kogi ]#html.br()
-#site-link("galerie/images-2023/#24092023")[ Descente avec la Caravane Sans Fin ]#html.br()
-#site-link("galerie/images-2023/#23092023")[ Descente du Rhône avec “Cap Loisirs” ]#html.br()
-#site-link("galerie/images-2023/#14072023")[ Tournage de film Johanna en 16mm ]#html.br()
-#site-link("galerie/images-2023/#24062023")[ BIG biennale & préparatifs ]#html.br()
-#site-link("galerie/images-2023/#25022023")[ Disco boat & nage de nuit ]
-
-#html.span(id: "07102023")[]
-#html.br()
-#strong[Inauguration du Schick & Schlag à #link("https://porteous.ge/")[Porteous] (Octobre 2023)]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2023", path: "galerie/images-2023/",
+  cover: "archive/2023/10/IMG_3994.jpg",
+  events: (
+    album-event(
+      id: "07102023", title: [#strong[Inauguration du Schick & Schlag à #link("https://porteous.ge/")[Porteous] (Octobre 2023)]],
+      cover: "archive/2023/10/IMG_3994.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_3919.jpg", "Images 2023 — photographie 1")
@@ -52,11 +48,11 @@
 #photo("archive/2023/10/IMG_4204.jpg", "Images 2023 — photographie 18")
 
 ]
-
-#html.span(id: "25092023")[]
-#html.br()
-#strong[Diagnostic croisé de santé du Rhône par les indiens Kogi (Septembre 2023)]
-
+    ],
+    album-event(
+      id: "25092023", title: [#strong[Diagnostic croisé de santé du Rhône par les indiens Kogi (Septembre 2023)]],
+      cover: "archive/2023/10/IMG_3864.jpg",
+    )[
 La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Geneve/Une-delegation-kogi-ouvre-le-dialogue-sur-notre-gestion-du-territoire.html")[Léman Bleu] , #link("https://www.radiofrance.fr/franceinter/podcasts/une-semaine-en-france/le-18-20-une-semaine-en-france-du-vendredi-27-octobre-2023-8716477")[France Inter] , #link("https://www.rts.ch/play/tv/12h45/video/des-scientifiques-suisses-et-une-delegation-du-peuple-amerindien-kogi-ont-partage-leurs-savoirs-pour-etablir-un-diagnostic-du-rhone?urn=urn:rts:video:14355040")[RTS]
 
 #gallery[
@@ -70,10 +66,11 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2023/10/IMG_3853.jpg", "Images 2023 — photographie 22")
 
 ]
-
-#html.span(id: "24092023")[]
-#strong[Descente avec la #link("https://societe-nm.org/2023/07/14/drone-quichotte-et-la-caravane-sans-fin/")[Caravane Sans Fin] (Septembre 2023)]
-
+    ],
+    album-event(
+      id: "24092023", title: [#strong[Descente avec la #link("https://societe-nm.org/2023/07/14/drone-quichotte-et-la-caravane-sans-fin/")[Caravane Sans Fin] (Septembre 2023)]],
+      cover: "archive/2023/10/IMG_3780.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/NTWN2976.jpg", "Images 2023 — photographie 23")
@@ -95,11 +92,11 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2023/10/ACBCE4896.jpg", "Images 2023 — photographie 31")
 
 ]
-
-#html.span(id: "23092023")[]
-#html.br()
-#strong[Descente du Rhône avec #link("https://www.caploisirs.ch/")[“Cap Loisirs”] (Septembre 2023)]
-
+    ],
+    album-event(
+      id: "23092023", title: [#strong[Descente du Rhône avec #link("https://www.caploisirs.ch/")[“Cap Loisirs”] (Septembre 2023)]],
+      cover: "archive/2023/10/IMG_3721.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_E3718.jpg", "Images 2023 — photographie 32")
@@ -119,12 +116,12 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2023/10/IMG_3729.jpg", "Images 2023 — photographie 39")
 
 ]
-
+    ],
+    album-event(
+      id: "16072023", title: [#strong[Tournage de film Johanna en 16mm (Juillet 2023)]],
+      cover: "archive/2023/10/IMG_3003.jpg",
+    )[
 #html.span(id: "14072023")[]
-#html.span(id: "16072023")[]
-#html.br()
-#strong[Tournage de film Johanna en 16mm (Juillet 2023)]
-
 #gallery[
 
 #photo("archive/2023/10/IMG_2990.jpg", "Images 2023 — photographie 40")
@@ -142,11 +139,11 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2023/10/IMG_3001.jpg", "Images 2023 — photographie 46")
 
 ]
-
-#html.span(id: "24062023")[]
-#html.br()
-#strong[#link("https://bigbiennale.ch/")[BIG biennale] & préparatifs (Juin 2023)]
-
+    ],
+    album-event(
+      id: "24062023", title: [#strong[#link("https://bigbiennale.ch/")[BIG biennale] & préparatifs (Juin 2023)]],
+      cover: "archive/2023/10/SEMS1338.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_2466.jpg", "Images 2023 — photographie 47")
@@ -218,11 +215,11 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2025/08/BIG_image_newsletter-1024x640.jpg", "Images 2023 — photographie 80")
 
 ]
-
-#html.span(id: "25022023")[]
-#html.br()
-#strong[Disco boat & nage de nuit (Février 2023) ]
-
+    ],
+    album-event(
+      id: "25022023", title: [#strong[Disco boat & nage de nuit (Février 2023) ]],
+      cover: "archive/2023/10/IMG_6732.jpg",
+    )[
 #gallery[
 
 #photo("archive/2023/10/IMG_9168.jpg", "Images 2023 — photographie 81")
@@ -244,3 +241,9 @@ La visite des indiens Kogi sur: #link("https://www.lemanbleu.ch/fr/Actualites/Ge
 #photo("archive/2023/10/IMG_6740.jpg", "Images 2023 — photographie 89")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

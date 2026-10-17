@@ -1,6 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Avant 1960", path: "galerie/avant-1950/")
 
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "Avant 1960", path: "galerie/avant-1950/",
+  cover: "archive/2016/10/sentiersdessaules_1930b-1080x798.jpg",
+  events: (
+    album-event(
+      id: "photos", title: "Avant 1960",
+      cover: "archive/2016/10/sentiersdessaules_1930b-1080x798.jpg",
+    )[
 #gallery(caption: [Source: Flâneries Genevoises, 1954, Edition du Griffon, Photographe Max-F. Chiffelle])[
 
 #photo("archive/2017/10/jonction1954_a-882x1024.jpg", "Avant 1960 — photographie 1")
@@ -30,5 +38,9 @@
 #photo("archive/2016/10/sentiersdessaules_1920.jpg", "Avant 1960 — photographie 9")
 
 ]
+    ],
+  ),
+)
 
-#html.hr()
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

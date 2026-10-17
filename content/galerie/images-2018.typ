@@ -1,25 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2018", path: "galerie/images-2018/")
 
-#site-link("galerie/images-2018/#12122018")[“Oh Stachelbaum…” (12.11.2018)]#html.br()
-#site-link("galerie/images-2018/#14112018")[Sortie aux flambeaux sur l’Arve (14.11.2018)]#html.br()
-#site-link("galerie/images-2018/#06102018")[Fête populaire à Porteous (6.10.2018)]#html.br()
-#site-link("galerie/images-2018/#05102018")[Des sorties sur le lac]#html.br()
-#site-link("galerie/images-2018/#26092018")[Examen annuel des Jeunes Pontonniers (26.9.2018)]#html.br()
-#site-link("galerie/images-2018/#05082018")[Transport de la Weidling au lac (5.8.2018)]#html.br()
-#site-link("galerie/images-2018/#30062018")[40ième Concours Fédérale à Bremgarten (29.6-1.7.2018)]#html.br()
-#site-link("galerie/images-2018/#11052018")[Descente du Rhône avec la section Bex (11.5.2018)]#html.br()
-#site-link("galerie/images-2018/#23032018")[Les premiers rayons de soleil (23.3.2018)]#html.br()
-#site-link("galerie/images-2018/#03032018")[La grande neige (3.3.2018)]#html.br()
-#site-link("galerie/images-2018/#02032018")[Exem rêve de devenir pontonnier…]#html.br()
-#site-link("galerie/images-2018/#23012018")[La grande pluie (23.1.2018)]
-
-#html.hr()
-
-#html.span(id: "12122018")[]
-#html.br()
-#strong[Construction de sapin de Noël façon pontonniers(12.11.2018)]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2018", path: "galerie/images-2018/",
+  cover: "archive/2018/11/DLSF4281-1024x768.jpg",
+  events: (
+    album-event(
+      id: "12122018", title: [#strong[Construction de sapin de Noël façon pontonniers(12.11.2018)]],
+      cover: "archive/2018/12/DSC04719-1024x683.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/12/DSC04661-768x1151.jpg", "Images 2018 — photographie 1")
@@ -45,13 +34,11 @@
 ]
 
 #video("archive/2018/12/MAH04759_x264.mp4", "Images 2018 — vidéo")
-
-#html.hr()
-
-#html.span(id: "14112018")[]
-#html.br()
-#strong[Sortie aux flambeaux sur l’Arve (14.11.2018)]
-
+    ],
+    album-event(
+      id: "14112018", title: [#strong[Sortie aux flambeaux sur l’Arve (14.11.2018)]],
+      cover: "archive/2018/11/DLSF4281-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/11/DLSF4281-1024x768.jpg", "Images 2018 — photographie 11")
@@ -67,13 +54,11 @@
 #photo("archive/2018/11/PLYX4525-1024x767.jpg", "Images 2018 — photographie 16")
 
 ]
-
-#html.hr()
-
-#html.span(id: "06102018")[]
-#html.br()
-#strong[Fête populaire à #link("https://renverse.co/C-est-la-fete-a-Porteous-et-tu-est-invitee-1727")[Porteous] (6.10.2018)]
-
+    ],
+    album-event(
+      id: "06102018", title: [#strong[Fête populaire à #link("https://renverse.co/C-est-la-fete-a-Porteous-et-tu-est-invitee-1727")[Porteous] (6.10.2018)]],
+      cover: "archive/2018/10/NQZQ5703-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/10/FLEW2377.jpg", "Images 2018 — photographie 17")
@@ -109,13 +94,11 @@ Article dans la Tribune du 7.10.2018
 #html.hr()
 
 #link("https://www.mixcloud.com/RadioVostok/20-jours-doccupation-à-porteus-reportage-la-quotidienne/")[Écouter le reportage de Radio Vostok]
-
-#html.hr()
-
-#html.span(id: "05102018")[]
-#html.br()
-#strong[Sorties sur le lac]
-
+    ],
+    album-event(
+      id: "05102018", title: [#strong[Sorties sur le lac]],
+      cover: "archive/2018/10/IMG_0709-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/10/IMG_1035-e1539460744762-768x1024.jpg", "Images 2018 — photographie 29")
@@ -127,13 +110,11 @@ Article dans la Tribune du 7.10.2018
 #photo("archive/2018/10/IMG_0709-1024x768.jpg", "Images 2018 — photographie 32")
 
 ]
-
-#html.hr()
-
-#html.span(id: "26092018")[]
-#html.br()
-#strong[Examen annuel des Jeunes Pontonniers (26.9.2018)]
-
+    ],
+    album-event(
+      id: "26092018", title: [#strong[Examen annuel des Jeunes Pontonniers (26.9.2018)]],
+      cover: "archive/2018/09/QUMW4633-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/09/BXQD7149.jpg", "Images 2018 — photographie 33")
@@ -159,13 +140,11 @@ Article dans la Tribune du 7.10.2018
 #video("archive/2018/09/OABX5928.mp4", "Images 2018 — vidéo")
 
 Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniereaarburg.ch/")[Pontonniers de Aarburg].
-
-#html.hr()
-
-#html.span(id: "05082018")[]
-#html.br()
-#strong[Transport de la Weidling au lac (5.8.2018)]
-
+    ],
+    album-event(
+      id: "05082018", title: [#strong[Transport de la Weidling au lac (5.8.2018)]],
+      cover: "archive/2018/08/IMG_20180805_081439922.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/08/IMG_20180805_081439922.jpg", "Images 2018 — photographie 42")
@@ -207,13 +186,11 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 #video("archive/2018/08/IMG_9226_x264.mp4", "Images 2018 — vidéo")
 
 #video("archive/2018/08/IMG_9290_x264.mp4", "Images 2018 — vidéo")
-
-#html.hr()
-
-#html.span(id: "30062018")[]
-#html.br()
-#strong[40ième Concours Fédérale à Bremgarten (29.6-1.7.2018)]
-
+    ],
+    album-event(
+      id: "30062018", title: [#strong[40ième Concours Fédérale à Bremgarten (29.6-1.7.2018)]],
+      cover: "archive/2018/07/DSC03948-e1532812125981.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/07/IMG_8078-e1532812038601.jpg", "Images 2018 — photographie 59")
@@ -249,13 +226,11 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 ]
 
 #video("archive/2018/07/IMG_8245.mp4", "Images 2018 — vidéo")
-
-#html.hr()
-
-#html.span(id: "11052018")[]
-#html.br()
-#strong[Descente du Rhône avec la section Bex (11.5.2018)]
-
+    ],
+    album-event(
+      id: "11052018", title: [#strong[Descente du Rhône avec la section Bex (11.5.2018)]],
+      cover: "archive/2018/05/IMG_6723.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/05/IMG_6701.jpg", "Images 2018 — photographie 74")
@@ -357,13 +332,11 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 #photo("archive/2018/05/IMG_7182.jpg", "Images 2018 — photographie 122")
 
 ]
-
-#html.hr()
-
-#html.span(id: "23032018")[]
-#html.br()
-#strong[Les premiers rayons de soleil (23.3.2018)]
-
+    ],
+    album-event(
+      id: "23032018", title: [#strong[Les premiers rayons de soleil (23.3.2018)]],
+      cover: "archive/2018/03/img_5945-1024x1024.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/03/img_5936-768x1024.jpg", "Images 2018 — photographie 123")
@@ -373,13 +346,11 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 #photo("archive/2018/03/img_6004-768x1024.jpg", "Images 2018 — photographie 125")
 
 ]
-
-#html.hr()
-
-#html.span(id: "03032018")[]
-#html.br()
-#strong[La grande neige (3.3.2018)]
-
+    ],
+    album-event(
+      id: "03032018", title: [#strong[La grande neige (3.3.2018)]],
+      cover: "archive/2018/03/03032018_a.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/03/03032018_b-768x1024.jpg", "Images 2018 — photographie 126")
@@ -387,23 +358,19 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 #photo("archive/2018/03/03032018_a.jpg", "Images 2018 — photographie 127")
 
 ]
-
-#html.hr()
-
-#html.span(id: "02032018")[]
-#html.br()
-#strong[Exem rêve de devenir pontonnier…]#html.br()
-
+    ],
+    album-event(
+      id: "02032018", title: [#strong[Exem rêve de devenir pontonnier…]],
+      cover: "archive/2018/03/03032018_d-768x1087.jpg",
+    )[
 Magnifique planche du dessinateur genevois #link("http://www.series-rares.ch/")[Exem] lors de son expo “#link("https://www.carouge.ch/sites/default/files/u95/flyer_expo_exem-vf.pdf")[40 ans d’Affiches]” au #link("https://www.carouge.ch/exposition-en-cours")[Musée de Carouge.] Il rêve de conduire une barque à fonds plat à l’aide d’une gaffe vers une jonction…   Étrange coïncidence!
 
 #photo("archive/2018/03/03032018_d-768x1087.jpg", "Images 2018 — photographie 128")
-
-#html.hr()
-
-#html.span(id: "23012018")[]
-#html.br()
-#strong[La grande pluie (23.1.2018)]
-
+    ],
+    album-event(
+      id: "23012018", title: [#strong[La grande pluie (23.1.2018)]],
+      cover: "archive/2018/01/img_4476-1024x575.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/01/img_4476-1024x575.jpg", "Images 2018 — photographie 129")
@@ -413,3 +380,9 @@ Magnifique planche du dessinateur genevois #link("http://www.series-rares.ch/")[
 #photo("archive/2018/01/img_45071-1024x575.jpg", "Images 2018 — photographie 131")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

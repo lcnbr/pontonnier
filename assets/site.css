@@ -144,3 +144,34 @@ footer span, footer span a, footer span a:visited { color: #666; }
 
 .editor-media-note { margin: 16px 0; color: #666; font: italic 13px/1.5 Arial, sans-serif; }
 .editor-preview-notice { padding: 9px 12px; border-left: 2px solid #777; background: #f3f3f3; color: #555; font: 12px/1.5 Arial, sans-serif; }
+
+/* Album and event covers use the same uncropped, square-corner composition. */
+.album-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 18px; }
+.album-card, .album-card:visited { display: block; align-self: start; width: 100%; color: #111; text-decoration: none; font: 16px/1.4 Arial, sans-serif; }
+.album-cover { display: block; width: 100%; aspect-ratio: 4 / 3; background: #f1f1f1; }
+.album-cover img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.album-cover-empty { display: grid; place-items: center; width: 100%; height: 100%; color: #666; }
+.album-card-title { display: block; margin: 11px 0 3px; font-weight: bold; }
+.album-card:hover .album-card-title { text-decoration: underline; text-underline-offset: 3px; }
+.album-card-meta { display: block; color: #666; font: 13px/1.5 Arial, sans-serif; }
+.older-albums { margin: 30px 0; padding: 16px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.older-albums summary { color: #333; font: 16px/1.5 Arial, sans-serif; cursor: pointer; }
+.older-albums[open] summary { margin-bottom: 22px; }
+.album-summary { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 26px; }
+.album-summary p { margin: 0; }
+.album-summary > a { padding: 4px 0; font: 14px/1.5 Arial, sans-serif; }
+.album-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; background: transparent; color: #777; font: 13px/1.4 Arial, sans-serif; }
+.album-breadcrumb a, .album-breadcrumb a:visited { display: inline-block; padding: 6px 0; color: #555; }
+.album-parent { display: inline-flex; align-items: center; gap: 10px; }
+.album-event { margin: 28px 0; }
+.album-event > .event-title { margin: 0 0 12px; }
+.event-meta { margin: 0 0 24px; color: #666; font: 13px/1.5 Arial, sans-serif; }
+.album-event.is-selected > .event-title { display: none; }
+.album-overview[hidden], .album-events[hidden], .album-event[hidden], .album-parent[hidden] { display: none; }
+@media (max-width: 640px) {
+  .album-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+  .album-breadcrumb a, .older-albums summary, .album-summary > a { min-height: 44px; }
+}
+@media print {
+  .album-events[hidden], .album-event[hidden], .album-event.is-selected > .event-title { display: block; }
+}

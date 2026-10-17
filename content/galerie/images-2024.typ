@@ -1,19 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2024", path: "galerie/images-2024/")
 
-#site-link("galerie/images-2024/#23082024")[Rénovation de notre Nacelle de Traverseé 39 ]#html.br()
-#site-link("galerie/images-2024/#14092024")[Descente du Clou Rouge du Partimoine Suisse à Porteous]#html.br()
-#site-link("galerie/images-2024/#15092024")[Visite de ALTERNATIBA à Porteous]#html.br()
-#site-link("galerie/images-2024/#24082024")[Descente des Radeaux ]#html.br()
-#site-link("galerie/images-2024/#31082024")[Championnat de Pontonniers à Bex ]#html.br()
-#site-link("galerie/images-2024/#16112024")[Test du Pont Flottant 61]#html.br()
-#site-link("galerie/images-2024/#12122024")[Sortie Escalade 2024]
-
-#html.hr()
-
-#html.span(id: "23082024")[]
-#strong[Rénovation de notre Nacelle de Traverseé 39]
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2024", path: "galerie/images-2024/",
+  cover: "archive/2024/10/IMG_0069-1024x768.jpg",
+  events: (
+    album-event(
+      id: "23082024", title: [#strong[Rénovation de notre Nacelle de Traverseé 39]],
+      cover: "archive/2024/10/IMG_0069-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2024/10/IMG_0069-1024x768.jpg", "Images 2024 — photographie 1")
@@ -33,12 +28,11 @@
 #photo("archive/2024/10/IMG_0973-1152x1536.jpg", "Images 2024 — photographie 8")
 
 ]
-
-#html.span(id: "14092024")[]
-
-#html.hr()
-
-#strong[Descente du Clou Rouge du Partimoine Suisse à Porteous]#html.br()
+    ],
+    album-event(
+      id: "14092024", title: [#strong[Descente du Clou Rouge du Partimoine Suisse à Porteous]],
+      cover: "archive/2024/10/IMG_0986-1152x1536.jpg",
+    )[
 #link("https://clourouge.patrimoinesuisse.ch/", "https://clourouge.patrimoinesuisse.ch")
 
 #gallery[
@@ -60,11 +54,11 @@
 #photo("archive/2024/10/IMG_1035-1152x1536.jpg", "Images 2024 — photographie 16")
 
 ]
-
-#html.hr()
-
-#html.span(id: "15092024")[]
-#strong[ Visite de ALTERNATIBA à Porteous]#html.br()
+    ],
+    album-event(
+      id: "15092024", title: [#strong[ Visite de ALTERNATIBA à Porteous]],
+      cover: "archive/2024/10/IMG_1113-1024x768.jpg",
+    )[
 #link("https://alternatibaleman.org/", "https://alternatibaleman.org/")
 
 #gallery[
@@ -94,11 +88,11 @@
 #photo("archive/2024/10/IMG_1163-1152x1536.jpg", "Images 2024 — photographie 28")
 
 ]
-
-#html.hr()
-
-#html.span(id: "24082024")[]
-#strong[Les éléments du “Pont flottant 61” à la descente des Radeaux 2024]#html.br()
+    ],
+    album-event(
+      id: "24082024", title: [#strong[Les éléments du “Pont flottant 61” à la descente des Radeaux 2024]],
+      cover: "archive/2024/10/IMG_0317.jpg",
+    )[
 #link("https://lecourrier.ch/2024/08/25/une-flottille-alter-sur-le-rhone/", "https://lecourrier.ch/2024/08/25/une-flottille-alter-sur-le-rhone/")
 
 #gallery[
@@ -114,12 +108,11 @@
 #photo("archive/2024/10/IMG_0349.jpg", "Images 2024 — photographie 33")
 
 ]
-
-#html.hr()
-
-#html.span(id: "31082024")[]
-#strong[Championnat Suisse à Bex (31.8-1.9.2024)]
-
+    ],
+    album-event(
+      id: "31082024", title: [#strong[Championnat Suisse à Bex (31.8-1.9.2024)]],
+      cover: "archive/2024/10/IMG_0607-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2024/10/LHTM7958-1152x1536.jpg", "Images 2024 — photographie 34")
@@ -173,12 +166,11 @@
 #photo("archive/2024/10/IMG_0756-1152x1536.jpg", "Images 2024 — photographie 58")
 
 ]
-
-#html.hr()
-
-#html.span(id: "16112024")[]
-#strong[Tests Pont Flottant 61]
-
+    ],
+    album-event(
+      id: "16112024", title: [#strong[Tests Pont Flottant 61]],
+      cover: "archive/2025/02/IMG_2122-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/02/IMG_2122-1024x768.jpg", "Images 2024 — photographie 59")
@@ -214,12 +206,11 @@
 #photo("archive/2025/02/ENVBE2445-1259x2048.jpg", "Images 2024 — photographie 74")
 
 ]
-
-#html.hr()
-
-#html.span(id: "12122024")[]
-#strong[Escalade 2025]
-
+    ],
+    album-event(
+      id: "12122024", title: [#strong[Escalade 2025]],
+      cover: "archive/2025/02/IMG_E2716-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2025/02/IMG_2726-1152x1536.jpg", "Images 2024 — photographie 75")
@@ -227,3 +218,9 @@
 #photo("archive/2025/02/IMG_E2716-1024x768.jpg", "Images 2024 — photographie 76")
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

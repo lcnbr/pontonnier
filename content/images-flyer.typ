@@ -1,6 +1,14 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images Flyer", path: "images-flyer/")
 
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "Images Flyer", path: "images-flyer/",
+  cover: "archive/2018/10/IMG_6244.jpg",
+  events: (
+    album-event(
+      id: "photos", title: "Images Flyer",
+      cover: "archive/2018/10/IMG_6244.jpg",
+    )[
 #gallery[
 
 #photo("archive/2018/10/900_Venice-vintage-Italian-poster-1.jpg", "Images Flyer — photographie 1")
@@ -124,3 +132,9 @@
 #html.br()
 
 ]
+    ],
+  ),
+)
+
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)

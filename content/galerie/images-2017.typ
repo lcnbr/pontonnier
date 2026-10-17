@@ -1,26 +1,15 @@
 #import "/theme.typ": *
-#show: page.with(title: "Images 2017", path: "galerie/images-2017/")
 
-#site-link("galerie/images-2017/#17072017")[Traversée du Lac Léman en Weidling partie IV et fin]#html.br()
-#site-link("galerie/images-2017/#13072017")[Traversée du Lac Léman en Weidling partie III]#html.br()
-#site-link("galerie/images-2017/#08072017")[Traversée du Lac Léman en Weidling partie II]#html.br()
-#site-link("galerie/images-2017/#12062017")[Traversée du Lac Léman en Weidling partie I]#html.br()
-#site-link("galerie/images-2017/#10062017b")[Descente du Rhône de Bex au Lac Leman]#html.br()
-#site-link("galerie/images-2017/#10062017")[Swiss Rhone Contest à Bex]#html.br()
-#site-link("galerie/images-2017/#13052017")[Exercices en Mai]#html.br()
-#site-link("galerie/images-2017/#05042017")[Exercices en Avril]#html.br()
-#site-link("galerie/images-2017/#Descente")[Descente du Rhône 19.3.2017]
-
-#html.hr()
-
+// Set cover: none to use the first photo instead.
+#let album = album-data(
+  title: "2017", path: "galerie/images-2017/",
+  cover: "archive/2017/08/img_20170717_135858.jpg",
+  events: (
+    album-event(
+      id: "17072017", title: [#strong[Traversée du Lac Léman en Weidling partie IV et fin (Passage sous les ponts de Genève)]],
+      cover: "archive/2017/08/img_20170717_135858.jpg",
+    )[
 #html.span(id: "07102017")[]
-
-#html.hr()
-
-#html.span(id: "17072017")[]
-#html.br()
-#strong[Traversée du Lac Léman en Weidling partie IV et fin (Passage sous les ponts de Genève)]
-
 #gallery[
 
 #photo("archive/2017/08/img_20170717_135858.jpg", "Images 2017 — photographie 1")
@@ -56,15 +45,12 @@
 #photo("archive/2017/07/dsc02723-768x1152.jpg", "Images 2017 — photographie 16")
 
 ]
-
+    ],
+    album-event(
+      id: "13072017", title: [#strong[Traversée du Lac Léman en Weidling partie III (Port de la Tour Carée =\> Eaux Vives)]],
+      cover: "archive/2017/07/img_0509-1024x768.jpg",
+    )[
 #html.span(id: "NosBateaux")[]
-
-#html.hr()
-
-#html.span(id: "13072017")[]
-#html.br()
-#strong[Traversée du Lac Léman en Weidling partie III (Port de la Tour Carée =\> Eaux Vives)]
-
 #gallery[
 
 #photo("archive/2017/07/img_0568-768x1024.jpg", "Images 2017 — photographie 17")
@@ -82,13 +68,11 @@
 #photo("archive/2017/07/img_0580-768x1024.jpg", "Images 2017 — photographie 23")
 
 ]
-
-#html.hr()
-
-#html.span(id: "08072017")[]
-#html.br()
-#strong[Traversée du Lac Léman en Weidling partie II (Nyon =\>Nernier =\>Port de la Tour Carée)]
-
+    ],
+    album-event(
+      id: "08072017", title: [#strong[Traversée du Lac Léman en Weidling partie II (Nyon =\>Nernier =\>Port de la Tour Carée)]],
+      cover: "archive/2017/07/img_0374-1024x768.jpg",
+    )[
 #gallery[
 
 #photo("archive/2017/07/img_0374-1024x768.jpg", "Images 2017 — photographie 24")
@@ -100,13 +84,11 @@
 #photo("archive/2017/07/img_0409-1024x768.jpg", "Images 2017 — photographie 27")
 
 ]
-
-#html.hr()
-
-#html.span(id: "12062017")[]
-#html.br()
-#strong[Traversée du Lac Léman en Weidling (Le Bouveret =\> Nyon)]
-
+    ],
+    album-event(
+      id: "12062017", title: [#strong[Traversée du Lac Léman en Weidling (Le Bouveret =\> Nyon)]],
+      cover: "archive/2017/06/img_20170613_060127-1080x810.jpg",
+    )[
 #gallery[
 
 #photo("archive/2017/06/img_20170613_050145-1080x1440.jpg", "Images 2017 — photographie 28")
@@ -134,13 +116,11 @@
 #photo("archive/2017/06/img_9921-1080x810.jpg", "Images 2017 — photographie 39")
 
 ]
-
-#html.hr()
-
-#html.span(id: "10062017b")[]
-#html.br()
-#strong[Descente du Rhône de Bex au Lac Léman (Bex =\> Le Bouveret)]
-
+    ],
+    album-event(
+      id: "10062017b", title: [#strong[Descente du Rhône de Bex au Lac Léman (Bex =\> Le Bouveret)]],
+      cover: "archive/2017/06/img_9686-1080x810.jpg",
+    )[
 #gallery[
 
 #photo("archive/2017/06/img_9804.jpg", "Images 2017 — photographie 40")
@@ -160,13 +140,11 @@
 #photo("archive/2017/06/img_9700-1080x1440.jpg", "Images 2017 — photographie 47")
 
 ]
-
-#html.hr()
-
-#html.span(id: "10062017")[]
-#html.br()
-#strong[Swiss Rhone Contest à Bex]
-
+    ],
+    album-event(
+      id: "10062017", title: [#strong[Swiss Rhone Contest à Bex]],
+      cover: "archive/2017/06/img_9813-1080x810.jpg",
+    )[
 Article dans le #link("http://www.lenouvelliste.ch/articles/valais/chablais/le-swiss-rhone-contest-a-rassemble-un-millier-de-pontonniers-ce-weekend-a-bex-677184?image=1")[Nouveliste], #link("https://www.24heures.ch/vaud-regions/riviera-chablais/Pontonniers-de-Bex-l-exception-vaudoise-dans-un-fleuve-alemanique/story/12269987")[24Heures ]et la #link("https://www.rts.ch/play/tv/couleurs-locales/video/vd-le-concours-national-de-pontonniers-se-tiendra-a-bex?id=8691389")[TSR.]
 
 #gallery[
@@ -202,13 +180,11 @@ Article dans le #link("http://www.lenouvelliste.ch/articles/valais/chablais/le-s
 #photo("archive/2017/06/img_9991-1080x1440.jpg", "Images 2017 — photographie 62")
 
 ]
-
-#html.hr()
-
-#html.span(id: "13052017")[]
-#html.br()
-#strong[Exercices en Mai]
-
+    ],
+    album-event(
+      id: "13052017", title: [#strong[Exercices en Mai]],
+      cover: "archive/2017/05/img_9244-1080x810.jpg",
+    )[
 #gallery[
 
 #photo("archive/2017/05/img_9244-1080x810.jpg", "Images 2017 — photographie 63")
@@ -220,13 +196,11 @@ Article dans le #link("http://www.lenouvelliste.ch/articles/valais/chablais/le-s
 #photo("archive/2017/05/img_9339-1080x1440.jpg", "Images 2017 — photographie 66")
 
 ]
-
-#html.hr()
-
-#html.span(id: "05042017")[]
-#html.br()
-#strong[Exercices en Avril]
-
+    ],
+    album-event(
+      id: "05042017", title: [#strong[Exercices en Avril]],
+      cover: "archive/2017/04/img_8583-1080x1440.jpg",
+    )[
 #photo("archive/2017/04/train_long-1080x2510.jpg", "Images 2017 — photographie 67")
 
 #gallery[
@@ -236,13 +210,11 @@ Article dans le #link("http://www.lenouvelliste.ch/articles/valais/chablais/le-s
 #photo("archive/2017/04/img_8592-1080x1440.jpg", "Images 2017 — photographie 69")
 
 ]
-
-#html.hr()
-
-#html.span(id: "Descente")[]
-#html.br()
-#strong[Descente du Rhône 19.3.2018]
-
+    ],
+    album-event(
+      id: "Descente", title: [#strong[Descente du Rhône 19.3.2018]],
+      cover: "archive/2017/03/dsc01973-1080x720.jpg",
+    )[
 #gallery[
 
 #photo("archive/2017/03/dsc01973-1080x720.jpg", "Images 2017 — photographie 70")
@@ -256,5 +228,9 @@ Article dans le #link("http://www.lenouvelliste.ch/articles/valais/chablais/le-s
 #photo("archive/2017/03/img_8378-1080x1440.jpg", "Images 2017 — photographie 74")
 
 ]
+    ],
+  ),
+)
 
-#html.hr()
+#show: page.with(title: album.title, path: album.path)
+#album-page(album)
