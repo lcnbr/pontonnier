@@ -7,7 +7,7 @@ marchandises sur l’eau.
 
 En 1444, Konrad Witz représente une embarcation dirigée par des rameurs debout
 sur son tableau _La Pêche miraculeuse_. La rade de Genève et les montagnes
-alentour y sont reconnaissables.
+alentour y sont reconnaissables. BLABLABLA hiihhi
 
 #photo("histoire.jpg", "La Pêche miraculeuse de Konrad Witz, 1444", caption: [Konrad Witz, _La Pêche miraculeuse_, 1444.])
 
