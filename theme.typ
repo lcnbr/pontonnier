@@ -3,9 +3,18 @@
 #let base = sys.inputs.at("base-path", default: published-url)
 #assert(base.ends-with("/"), message: "The site base URL must end with /")
 #let site-link(path, body) = link(base + path, body)
-// Editor previews load published media; builds supply the local Pages base path.
+// The editor uses a tiny local thumbnail set; publishing keeps the full media.
+#let media-mode = sys.inputs.at("media", default: "preview")
+#assert(media-mode in ("preview", "full"), message: "media must be preview or full")
+#let light-preview = media-mode == "preview"
+#let previews = if light-preview { json("preview/manifest.json") } else { () }
 #let media = json("assets/manifest.json")
 #let picture(file, alt, loading: "lazy") = {
+  if light-preview {
+    let thumbnail = previews.find(item => file in item.sources)
+    return if thumbnail != none { image(thumbnail.file, alt: alt) }
+      else { html.p(class: "editor-media-note")[Image : #alt] }
+  }
   let entry = media.find(item => item.path == "assets/" + file)
   let dimensions = if entry != none and "width" in entry and "height" in entry {
     (width: entry.width, height: entry.height)
@@ -19,14 +28,20 @@
     #if caption != none { html.figcaption(caption) }
   ]
 }
-#let video(file, description) = html.figure[
-  #html.video(src: base + "assets/" + file, controls: true, preload: none,
-    ..("aria-label": description))[
-    #site-link("assets/" + file)[Télécharger la vidéo]
+#let video(file, description) = if light-preview {
+  html.p(class: "editor-media-note")[Vidéo : #description]
+} else {
+  html.figure[
+    #html.video(src: base + "assets/" + file, controls: true, preload: none,
+      ..("aria-label": description))[
+      #site-link("assets/" + file)[Télécharger la vidéo]
+    ]
+    #html.figcaption(description)
   ]
-  #html.figcaption(description)
-]
-#let gallery(body) = html.div(class: "gallery", body)
+}
+#let gallery(body) = if light-preview {
+  html.p(class: "editor-media-note")[Photos de la galerie masquées dans l’aperçu de rédaction.]
+} else { html.div(class: "gallery", body) }
 #let section(class, body) = html.div(class: class, body)
 #let contact-link() = link("mailto:" + email, email)
 #let menu-link(item, current) = html.a(
@@ -50,6 +65,9 @@
   let album = albums.find(item => item.path == path)
   set text(lang: "fr")
   set document(title: title + " | " + name, author: name)
+  show html.elem.where(tag: "iframe"): element => if light-preview {
+    html.p(class: "editor-media-note")[Contenu intégré masqué dans l’aperçu de rédaction.]
+  } else { element }
   html.html(lang: "fr")[
     #html.head[
       #html.meta(charset: "utf-8")
@@ -96,6 +114,9 @@
               #album-picker(album)
             ]
           } else { html.h1(class: "entry-title", title) }
+          #if light-preview {
+            html.p(class: "editor-preview-notice")[Aperçu de rédaction · médias allégés]
+          }
           #html.div(class: "entry-content", body)
         ]
         #html.footer[

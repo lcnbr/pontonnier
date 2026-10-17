@@ -75,6 +75,12 @@ class PublishedSiteTests(unittest.TestCase):
         self.assertTrue(any("missing anchor" in error for error in errors))
         self.assertTrue(any("escapes base path" in error for error in errors))
 
+    def test_editor_preview_cannot_be_deployed(self):
+        errors = self.check_page('<p class="editor-preview-notice">Editing preview</p>')
+        self.assertTrue(
+            any("editor preview must not be published" in error for error in errors)
+        )
+
     def test_live_rhonometre_and_external_sources_remain_allowed(self):
         errors = self.check_page(
             '<iframe src="https://rhonometre.pontonniers-geneve.ch/"></iframe>'

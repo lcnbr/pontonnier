@@ -131,3 +131,6 @@ footer span, footer span a, footer span a:visited { color: #666; }
   .gallery img, .gallery figure > a::after { transition: none; }
   .gallery figure > a:hover img { transform: none; }
 }
+
+.editor-media-note { margin: 16px 0; color: #666; font: italic 13px/1.5 Arial, sans-serif; }
+.editor-preview-notice { padding: 9px 12px; border-left: 2px solid #777; background: #f3f3f3; color: #555; font: 12px/1.5 Arial, sans-serif; }

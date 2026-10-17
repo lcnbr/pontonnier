@@ -1,0 +1,76 @@
+[
+  {
+    "file": "preview/banner.jpg",
+    "sources": [
+      "banner.jpg"
+    ],
+    "width": 640,
+    "height": 135,
+    "bytes": 6451,
+    "sha256": "08716e75285258506262082065546113d21f250755804816d0b415f8d5ae761a",
+    "source": "assets/banner.jpg",
+    "source_sha256": "89b51e07cbef054399230de5e1aba73051561c056f695b5099382de473777ec4"
+  },
+  {
+    "file": "preview/logo.jpg",
+    "sources": [
+      "logo.jpg",
+      "archive/2016/09/logo_pontonniers_square21.jpg"
+    ],
+    "width": 160,
+    "height": 160,
+    "bytes": 4976,
+    "sha256": "5a1c6f4040e26c3982a8d9c760b8995821ba30f2e73a0a23133aa0feb10eb82d",
+    "source": "assets/logo.jpg",
+    "source_sha256": "ecd649874bdae7272090a7369d83e5333a49d4f4f689b235381e098f9f28ad8d"
+  },
+  {
+    "file": "preview/histoire.jpg",
+    "sources": [
+      "histoire.jpg",
+      "archive/2018/05/witz1444.jpg"
+    ],
+    "width": 320,
+    "height": 279,
+    "bytes": 9721,
+    "sha256": "7d60a3a4bca1a0383cea0fecc615e797355799abf2a01aa0533430c65053438c",
+    "source": "assets/histoire.jpg",
+    "source_sha256": "f8892cdd103eb8b69c64257b1c05e3daec39198a01da5f36f119161458dfb0d2"
+  },
+  {
+    "file": "preview/weidling.jpg",
+    "sources": [
+      "archive/2016/09/weidling.jpg"
+    ],
+    "width": 360,
+    "height": 123,
+    "bytes": 6482,
+    "sha256": "4f22de66e29c9570a31cc36193e67f6a92b41771ac6c2d15cfe2a57ed0f975d2",
+    "source": "assets/archive/2016/09/weidling.jpg",
+    "source_sha256": "ce4d74ab8658f22fa32c4f620a60adb8201af8592e09f5fd7296bee726b19d70"
+  },
+  {
+    "file": "preview/nacelle.jpg",
+    "sources": [
+      "archive/2016/09/nacelle.jpg"
+    ],
+    "width": 360,
+    "height": 134,
+    "bytes": 7366,
+    "sha256": "d126e6aeb3649adff6d2a90ac27cbde7e22ac7d100223192a61b7cee6b2e3fc9",
+    "source": "assets/archive/2016/09/nacelle.jpg",
+    "source_sha256": "a9a2c3aa6f6b40777f2e96abd4c62be37f0effd5a896aca70824427e6193f17a"
+  },
+  {
+    "file": "preview/gaffe.jpg",
+    "sources": [
+      "archive/2016/09/gaffe1.jpg"
+    ],
+    "width": 320,
+    "height": 224,
+    "bytes": 4735,
+    "sha256": "af082e748708ffc51fe8f227a78a21b28b95a1b497119c7b8f93ff656f6dd719",
+    "source": "assets/archive/2016/09/gaffe1.jpg",
+    "source_sha256": "7eae86fca9470e1a06448d940299c613aa3c174ff9c467407c196d8865a65dae"
+  }
+]

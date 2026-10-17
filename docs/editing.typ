@@ -16,6 +16,7 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 - `main.typ`: the pages and assets emitted by Typst’s bundle exporter.
 - `.media/`: an ignored media checkout, downloaded by local builds and CI.
 - `dist/`: generated deployment files, also ignored by Git.
+- `preview/`: six small local images for the Typst editor, with an index of their sources.
 
 The published site keeps the same local `assets/` URLs. Visitors do not download
 media from GitHub or from the original WordPress site. CI assembles the two
@@ -63,11 +64,20 @@ The template supplies the main heading. Use `==` for section headings,
 `site-link` for internal links and Typst’s `link` for external references.
 Select the page’s source file to switch pages within the Typst editor.
 
-HTML previews load images, videos and downloads from the published website,
-using `published-url` in `site.typ`. The web app therefore needs only the source
-files and the small asset index. It does not need the binary media archive.
-Text and layout edits appear in the preview; newly added media becomes visible
-there after its first deployment. CSS is included in the preview itself.
+Individual Typst previews default to lightweight editing mode. They show a small
+local banner, logo and selected illustrations, while galleries, videos and
+embedded services are replaced by short notes. These previews load no remote
+media. Text, headings and captions remain available for editing.
+
+The six JPEG thumbnails in `preview/` are downscaled copies of media assets and
+are embedded directly in the preview HTML. Keep this cache below 12 images,
+64 KiB per image and 256 KiB in total; CI enforces those project budgets. The
+original media still belongs in `pontonnier-media`.
+
+Production builds explicitly pass `--input media=full`. They retain every photo,
+video, embed and download at its existing local website URL. To preview all media
+from a single file locally, use `--features html --input media=full`; its images
+load from `published-url` unless a local `base-path` is supplied.
 
 The web app does not support bundle export. Preview individual files there;
 GitHub Actions compiles `main.typ` to publish the complete website. Typst Pro is
@@ -94,7 +104,7 @@ For a live preview, fetch the media once and run Typst’s built-in server:
 ```sh
 bash scripts/fetch-media.sh
 typst watch --root . --features html,bundle --format bundle \
-  --input base-path=/ main.typ dist
+  --input base-path=/ --input media=full main.typ dist
 ```
 
 Typst prints the local URL. Stop it with Ctrl-C. A root build uses `/`; a GitHub
@@ -125,8 +135,8 @@ application JavaScript. Typst injects live reload only into its preview server.
 
 Pushing media alone does not change the live site. The source revision explicitly
 selects the media version, making builds reproducible. Keep binary files out of
-this editor repository; CI rejects them and checks the source file count, file
-sizes and reachable Git-history size against the documented sync limits.
+this editor repository except for the bounded `preview/` thumbnail cache. CI
+checks that cache, the source file count, file sizes and reachable history size.
 
 == Gallery years and new pages
 

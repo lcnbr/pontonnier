@@ -22,6 +22,8 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if "editor-preview-notice" in (attrs.get("class") or "").split():
+            self.errors.append("editor preview must not be published")
         if "id" in attrs:
             if attrs["id"] in self.ids:
                 self.errors.append(f"duplicate id: {attrs['id']}")

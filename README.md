@@ -2,7 +2,8 @@
 
 The [Pontonnier website](https://lcnbr.github.io/pontonnier/) is authored in Typst,
 which generates its HTML directly. This repository contains the small editing
-project. Photos, PDFs and videos live in [pontonnier-media](https://github.com/lcnbr/pontonnier-media).
+project. Typst previews use six tiny local images and omit galleries, videos and
+embeds; publishing retains the full media. Photos, PDFs and videos live in [pontonnier-media](https://github.com/lcnbr/pontonnier-media).
 
 Edit the `.typ` files under `content/` and push to `main`. CI fetches the media
 commit pinned in `.media-revision` and publishes the complete website at the
