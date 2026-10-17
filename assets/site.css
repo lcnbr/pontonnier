@@ -175,3 +175,8 @@ footer span, footer span a, footer span a:visited { color: #666; }
 @media print {
   .album-events[hidden], .album-event[hidden], .album-event.is-selected > .event-title { display: block; }
 }
+
+/* Lightweight images also appear in the small photo groups within articles. */
+.editor-gallery { columns: 2; column-gap: 8px; margin: 28px 0; }
+.editor-gallery figure { break-inside: avoid; margin: 0 0 8px; }
+.editor-gallery img { width: 100%; height: auto; }

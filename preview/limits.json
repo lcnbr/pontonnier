@@ -1,0 +1,8 @@
+{
+  "max_images": 96,
+  "max_image_bytes": 131072,
+  "max_total_bytes": 4194304,
+  "width": 960,
+  "height": 1280,
+  "jpeg_quality": 78
+}

@@ -15,7 +15,7 @@
 #let base = sys.inputs.at("base-path", default: published-url)
 #assert(base.ends-with("/"), message: "The site base URL must end with /")
 #let site-link(path, body) = link(base + path, body)
-// The editor uses a tiny local thumbnail set; publishing keeps the full media.
+// The editor embeds downscaled article images; publishing keeps the full media.
 #let media-mode = sys.inputs.at("media", default: "preview")
 #assert(media-mode in ("preview", "full"), message: "media must be preview or full")
 #let light-preview = media-mode == "preview"
@@ -56,9 +56,6 @@
   }
 }
 #let gallery(body, caption: none) = {
-  if light-preview {
-    metadata((kind: "gallery-media", items: media-items(body)))
-    html.p(class: "editor-media-note")[Photos de la galerie masquées dans l’aperçu de rédaction.]
-  } else { html.div(class: "gallery", body) }
+  html.div(class: if light-preview { "editor-gallery" } else { "gallery" }, body)
   if caption != none { html.div(class: "gallery-caption", caption) }
 }

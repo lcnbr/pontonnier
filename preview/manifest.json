@@ -1,76 +1,763 @@
 [
   {
-    "file": "preview/banner.jpg",
+    "file": "preview/carted-1080x210-ed7c509d.jpg",
     "sources": [
-      "banner.jpg"
+      "archive/2016/09/carted-1080x210.jpg"
     ],
-    "width": 640,
-    "height": 135,
-    "bytes": 6451,
-    "sha256": "08716e75285258506262082065546113d21f250755804816d0b415f8d5ae761a",
-    "source": "assets/banner.jpg",
-    "source_sha256": "89b51e07cbef054399230de5e1aba73051561c056f695b5099382de473777ec4"
+    "width": 960,
+    "height": 187,
+    "bytes": 45384,
+    "sha256": "430db87d40102282a842988a6fe4089f648f101c0117972cd7b03b4dd34a1c46",
+    "source": "assets/archive/2016/09/carted-1080x210.jpg",
+    "source_sha256": "ed7c509dbdcfbcb68e0874d3f4e59512d1344c6da5ecb464924809ac0415416a"
   },
   {
-    "file": "preview/logo.jpg",
+    "file": "preview/cropped-cartebbb-e48345ee.jpg",
     "sources": [
-      "logo.jpg",
-      "archive/2016/09/logo_pontonniers_square21.jpg"
+      "archive/2016/09/cropped-cartebbb.jpg"
     ],
-    "width": 160,
-    "height": 160,
-    "bytes": 4976,
-    "sha256": "5a1c6f4040e26c3982a8d9c760b8995821ba30f2e73a0a23133aa0feb10eb82d",
-    "source": "assets/logo.jpg",
-    "source_sha256": "ecd649874bdae7272090a7369d83e5333a49d4f4f689b235381e098f9f28ad8d"
+    "width": 940,
+    "height": 198,
+    "bytes": 74148,
+    "sha256": "0dbb641252620b135048dc162c98b06358d725b6684439a36762482437314c9d",
+    "source": "assets/archive/2016/09/cropped-cartebbb.jpg",
+    "source_sha256": "e48345ee616a4a36d4ace31427465112c9f7fab10bc6afd8294d03e98468252d"
   },
   {
-    "file": "preview/histoire.jpg",
+    "file": "preview/ezgif-com-optimize-aadfb9f5.jpg",
     "sources": [
-      "histoire.jpg",
-      "archive/2018/05/witz1444.jpg"
+      "archive/2016/09/ezgif-com-optimize.gif"
     ],
-    "width": 320,
-    "height": 279,
-    "bytes": 9721,
-    "sha256": "7d60a3a4bca1a0383cea0fecc615e797355799abf2a01aa0533430c65053438c",
-    "source": "assets/histoire.jpg",
-    "source_sha256": "f8892cdd103eb8b69c64257b1c05e3daec39198a01da5f36f119161458dfb0d2"
+    "width": 350,
+    "height": 197,
+    "bytes": 6441,
+    "sha256": "3d8fa9bf895cae5626f7db2b6b4d6a8187fea83ae5b1cabed5e41952d842a3b3",
+    "source": "assets/archive/2016/09/ezgif-com-optimize.gif",
+    "source_sha256": "aadfb9f5f1bc769a5276fdf4ff8927267bd2b0e21b4ad774f4ba8d61d9101c3b"
   },
   {
-    "file": "preview/weidling.jpg",
+    "file": "preview/fuhrmann-1f616870.jpg",
     "sources": [
-      "archive/2016/09/weidling.jpg"
+      "archive/2016/09/fuhrmann.jpg"
     ],
-    "width": 360,
-    "height": 123,
-    "bytes": 6482,
-    "sha256": "4f22de66e29c9570a31cc36193e67f6a92b41771ac6c2d15cfe2a57ed0f975d2",
-    "source": "assets/archive/2016/09/weidling.jpg",
-    "source_sha256": "ce4d74ab8658f22fa32c4f620a60adb8201af8592e09f5fd7296bee726b19d70"
-  },
-  {
-    "file": "preview/nacelle.jpg",
-    "sources": [
-      "archive/2016/09/nacelle.jpg"
-    ],
-    "width": 360,
-    "height": 134,
-    "bytes": 7366,
-    "sha256": "d126e6aeb3649adff6d2a90ac27cbde7e22ac7d100223192a61b7cee6b2e3fc9",
-    "source": "assets/archive/2016/09/nacelle.jpg",
-    "source_sha256": "a9a2c3aa6f6b40777f2e96abd4c62be37f0effd5a896aca70824427e6193f17a"
+    "width": 676,
+    "height": 234,
+    "bytes": 12106,
+    "sha256": "734053257f70eaa878533cee0cbe4c2eb25741a191d81e37874f41136d63d2a3",
+    "source": "assets/archive/2016/09/fuhrmann.jpg",
+    "source_sha256": "1f6168704da46b9f8c2b88e2999dc6ae398970a9b1c933284ffe84c404a487de"
   },
   {
     "file": "preview/gaffe.jpg",
     "sources": [
-      "archive/2016/09/gaffe1.jpg"
+      "archive/2016/09/gaffe1.jpg",
+      "gaffe.jpg"
     ],
-    "width": 320,
-    "height": 224,
-    "bytes": 4735,
-    "sha256": "af082e748708ffc51fe8f227a78a21b28b95a1b497119c7b8f93ff656f6dd719",
+    "width": 731,
+    "height": 511,
+    "bytes": 21583,
+    "sha256": "ecf91f232ca1e66de3225e98826fd1e524a7837407d6756f2e94ab200beddd8a",
     "source": "assets/archive/2016/09/gaffe1.jpg",
     "source_sha256": "7eae86fca9470e1a06448d940299c613aa3c174ff9c467407c196d8865a65dae"
+  },
+  {
+    "file": "preview/logo.jpg",
+    "sources": [
+      "archive/2016/09/logo_pontonniers_square21.jpg",
+      "logo.jpg"
+    ],
+    "width": 721,
+    "height": 721,
+    "bytes": 44457,
+    "sha256": "4b9595b69a06d8fbcc809194cc99b96bee5c56df9439df41ac8ee6e089e5fa36",
+    "source": "assets/logo.jpg",
+    "source_sha256": "ecd649874bdae7272090a7369d83e5333a49d4f4f689b235381e098f9f28ad8d"
+  },
+  {
+    "file": "preview/mastwurf-4dd9625b.jpg",
+    "sources": [
+      "archive/2016/09/mastwurf.jpg",
+      "noeud-batelier.jpg"
+    ],
+    "width": 466,
+    "height": 158,
+    "bytes": 10921,
+    "sha256": "f832fce13df1008efce8e85c562c429c6524758ddc4e2b25859e18a10c8b6f5c",
+    "source": "assets/archive/2016/09/mastwurf.jpg",
+    "source_sha256": "4dd9625b0c53a0965dfa540fdd3113bafbb98662ed6f774ec04348e3dd02e5b5"
+  },
+  {
+    "file": "preview/maurer-d02f9ebc.jpg",
+    "sources": [
+      "archive/2016/09/maurer.jpg"
+    ],
+    "width": 428,
+    "height": 238,
+    "bytes": 16806,
+    "sha256": "4b4968c616fe1ee0925310a9bd577e90846cb4f0b4951759d81e31c4479b9bf5",
+    "source": "assets/archive/2016/09/maurer.jpg",
+    "source_sha256": "d02f9ebc4c16b2f12debd6625e095f2be829983dc9e3737cd2827553e8fc42be"
+  },
+  {
+    "file": "preview/meisnera-92797425.jpg",
+    "sources": [
+      "archive/2016/09/meisnera.jpg"
+    ],
+    "width": 682,
+    "height": 452,
+    "bytes": 69701,
+    "sha256": "8ba2321e8a340fda13a17e9b7e5931150a850d0c543aad110095ff9dfc8779df",
+    "source": "assets/archive/2016/09/meisnera.jpg",
+    "source_sha256": "927974258433f6fdba8a81bdf5e2456380ac389f03feeace997bed7a476465df"
+  },
+  {
+    "file": "preview/nacelle.jpg",
+    "sources": [
+      "archive/2016/09/nacelle.jpg",
+      "nacelle.jpg"
+    ],
+    "width": 555,
+    "height": 206,
+    "bytes": 21776,
+    "sha256": "2246a53f28ced2e64ca65e7317584564365c56a9c63575b6a5f32f6e4fa58761",
+    "source": "assets/archive/2016/09/nacelle.jpg",
+    "source_sha256": "a9a2c3aa6f6b40777f2e96abd4c62be37f0effd5a896aca70824427e6193f17a"
+  },
+  {
+    "file": "preview/ruder-5f2a9451.jpg",
+    "sources": [
+      "archive/2016/09/ruder.jpg"
+    ],
+    "width": 200,
+    "height": 155,
+    "bytes": 4390,
+    "sha256": "65783bc670350ac0bd197340e839aa3b2d41480dc8c0cbd87ef62c383fd3c2d3",
+    "source": "assets/archive/2016/09/ruder.jpg",
+    "source_sha256": "5f2a94511c5dbbc5bb4d351864b7300ae6addb377cdd78e9adf3f94843011355"
+  },
+  {
+    "file": "preview/schiffer-826f696d.jpg",
+    "sources": [
+      "archive/2016/09/schiffer.jpg"
+    ],
+    "width": 534,
+    "height": 286,
+    "bytes": 17169,
+    "sha256": "5fca52428f65b595ca46ce838e3e3fed6927b87cfed47315045627aa60378c26",
+    "source": "assets/archive/2016/09/schiffer.jpg",
+    "source_sha256": "826f696dc647e6500dff7d1bc8682f5111ed2cae9ed60cd17c9b72d8b1c28651"
+  },
+  {
+    "file": "preview/schifferdoppelt-b81282f5.jpg",
+    "sources": [
+      "archive/2016/09/schifferdoppelt.jpg"
+    ],
+    "width": 392,
+    "height": 232,
+    "bytes": 11513,
+    "sha256": "5c0326d291190f13acf560287249d8066bdf922bbba429cd8824d8fed602a39d",
+    "source": "assets/archive/2016/09/schifferdoppelt.jpg",
+    "source_sha256": "b81282f5f4b89bb9822e4f58b31947947403d3ffb7998a0995b221df0343a0de"
+  },
+  {
+    "file": "preview/stacheln-13c4ea5e.jpg",
+    "sources": [
+      "archive/2016/09/stacheln.jpg"
+    ],
+    "width": 200,
+    "height": 136,
+    "bytes": 4490,
+    "sha256": "abf5a83bc0846c69b28fb15a290c28dc7d6b56886cf65086d5f8a0132f781d57",
+    "source": "assets/archive/2016/09/stacheln.jpg",
+    "source_sha256": "13c4ea5ebc11f0d3d2941744eb2c3c441306c6063d4fc2742cf0af474fa3e089"
+  },
+  {
+    "file": "preview/weidling.jpg",
+    "sources": [
+      "archive/2016/09/weidling.jpg",
+      "weidling.jpg"
+    ],
+    "width": 560,
+    "height": 191,
+    "bytes": 19651,
+    "sha256": "73326b949a32262572bba99e8ba167f36f8d386d2a851ac421f11e55ddf910ec",
+    "source": "assets/archive/2016/09/weidling.jpg",
+    "source_sha256": "ce4d74ab8658f22fa32c4f620a60adb8201af8592e09f5fd7296bee726b19d70"
+  },
+  {
+    "file": "preview/jdg_1930_09_23_pontonniers-05abeacc.jpg",
+    "sources": [
+      "archive/2016/11/jdg_1930_09_23_pontonniers.jpg"
+    ],
+    "width": 645,
+    "height": 408,
+    "bytes": 47877,
+    "sha256": "5c524700cb86470b8e4288216f07f09bf732c5107dcf6670d7f15ce484d358bf",
+    "source": "assets/archive/2016/11/jdg_1930_09_23_pontonniers.jpg",
+    "source_sha256": "05abeaccc7a260f6e90cd56248978ef70af3930767f32619ed041784c82b4e62"
+  },
+  {
+    "file": "preview/1949_dietikon-1080x1077-0978a6da.jpg",
+    "sources": [
+      "archive/2017/03/1949_dietikon-1080x1077.jpg"
+    ],
+    "width": 960,
+    "height": 957,
+    "bytes": 83131,
+    "sha256": "4f20c3353dc6db82b4fe3f214f365263a753fa666f404bd71909a32bb175a688",
+    "source": "assets/archive/2017/03/1949_dietikon-1080x1077.jpg",
+    "source_sha256": "0978a6da2bc3625f398f5643b8e6bda3d5d713d4fdb3859e3d2f39afe9a7636c"
+  },
+  {
+    "file": "preview/1950_berna-1080x1083-2cd3e268.jpg",
+    "sources": [
+      "archive/2017/03/1950_berna-1080x1083.jpg"
+    ],
+    "width": 960,
+    "height": 963,
+    "bytes": 85855,
+    "sha256": "e8a8b30bf9c748b2511cc03e1001a0444e52bb9215e66b74aca09ca2ae1b3d0c",
+    "source": "assets/archive/2017/03/1950_berna-1080x1083.jpg",
+    "source_sha256": "2cd3e268855f5c0bdf3a6996ee4bd22631f93aae337ce6d34158892db6ee1bdc"
+  },
+  {
+    "file": "preview/1953_bernb-849a577b.jpg",
+    "sources": [
+      "archive/2017/03/1953_bernb.jpg"
+    ],
+    "width": 960,
+    "height": 950,
+    "bytes": 130889,
+    "sha256": "98d11c76e7c63498f83815b4bf57b34c991dc0b0315c8f6fe9bb5ce64a561f53",
+    "source": "assets/archive/2017/03/1953_bernb.jpg",
+    "source_sha256": "849a577b387cacb44780decb51d0b29e076298772156a776de43e0e100a83eac"
+  },
+  {
+    "file": "preview/1964_yverdon-cf90aa23.jpg",
+    "sources": [
+      "archive/2017/03/1964_yverdon.jpg"
+    ],
+    "width": 960,
+    "height": 973,
+    "bytes": 96710,
+    "sha256": "7d34f781e7fb4ec5dcf20d256f427f28fd1cf0a69853662886db7a71c66c9049",
+    "source": "assets/archive/2017/03/1964_yverdon.jpg",
+    "source_sha256": "cf90aa235b991c0457cfe19f7d2a1cd39c843aef760db8e3dae3179d66cd2d8e"
+  },
+  {
+    "file": "preview/statuts19301-3358ebb4.jpg",
+    "sources": [
+      "archive/2017/03/statuts19301.jpg"
+    ],
+    "width": 904,
+    "height": 266,
+    "bytes": 11462,
+    "sha256": "5fb4996aafeef81b3c5692ca42bacecfefab95013a7745913e02244750aa3476",
+    "source": "assets/archive/2017/03/statuts19301.jpg",
+    "source_sha256": "3358ebb497e18fa285cc146f2bc884227d1c1fb1b02edc46af2ca8dda80a4e95"
+  },
+  {
+    "file": "preview/img_0568-768x1024-df6e9faa.jpg",
+    "sources": [
+      "archive/2017/07/img_0568-768x1024.jpg"
+    ],
+    "width": 768,
+    "height": 1024,
+    "bytes": 71108,
+    "sha256": "622ac82137c2f8041d93025adfb613ef1569d0a6ec3677e4a7692441884fa1de",
+    "source": "assets/archive/2017/07/img_0568-768x1024.jpg",
+    "source_sha256": "df6e9faaf9b464add82d3b8995e1db7866f8cd91d22cc9a36d5e41f39e1d50c0"
+  },
+  {
+    "file": "preview/img_9987_cropped-6bbaa3d3.jpg",
+    "sources": [
+      "archive/2017/07/img_9987_cropped.jpg"
+    ],
+    "width": 770,
+    "height": 1280,
+    "bytes": 124644,
+    "sha256": "f162fcbd4e679ba19bdd2e26602454e625a49e6aca745688346e29fabeb3f6be",
+    "source": "assets/archive/2017/07/img_9987_cropped.jpg",
+    "source_sha256": "6bbaa3d36c21e0dc017f3592ae726d743ddfb079b3fad796c54fc02966b6e2fc"
+  },
+  {
+    "file": "preview/12-trough-the-telescope-x600_2-3d4febcb.jpg",
+    "sources": [
+      "archive/2017/10/12-trough-the-telescope-x600_2.jpg"
+    ],
+    "width": 371,
+    "height": 364,
+    "bytes": 24378,
+    "sha256": "4a9f8004fb331f21ee656988432abd7a23423c9667b59ffb9f15cf1e04b0eec0",
+    "source": "assets/archive/2017/10/12-trough-the-telescope-x600_2.jpg",
+    "source_sha256": "3d4febcb2c0fcab51d4394c6335a0be7a7279ede01a3d225988de8c3c42e8cb3"
+  },
+  {
+    "file": "preview/bac1932-3a322241.jpg",
+    "sources": [
+      "archive/2017/10/bac1932.jpg"
+    ],
+    "width": 808,
+    "height": 656,
+    "bytes": 130346,
+    "sha256": "5e8b2a84ad63019c6393088703c6de1b91c97b50d5e363a1505a13a88a9722ea",
+    "source": "assets/archive/2017/10/bac1932.jpg",
+    "source_sha256": "3a3222412d4b52f06ab6d9903c5066fbd1ce526450d732aeff8041d5c09d6172"
+  },
+  {
+    "file": "preview/bacdaire2jpg-1024x659-7356be90.jpg",
+    "sources": [
+      "archive/2017/10/bacdaire2jpg-1024x659.jpg"
+    ],
+    "width": 960,
+    "height": 618,
+    "bytes": 92219,
+    "sha256": "1c0c2e82a1b42c1c3232b86de3486186918063d94e6b56e39212ded34b6098be",
+    "source": "assets/archive/2017/10/bacdaire2jpg-1024x659.jpg",
+    "source_sha256": "7356be906a79668f5e2f194243714b44c186a695f175fd54fd33dafee33db1b9"
+  },
+  {
+    "file": "preview/jonction1954_d-944x1024-404c58a3.jpg",
+    "sources": [
+      "archive/2017/10/jonction1954_d-944x1024.jpg"
+    ],
+    "width": 944,
+    "height": 1024,
+    "bytes": 115085,
+    "sha256": "9e4fdde3d9fe888dcc5ebd4c5c0c73a8c004fb41dcd0a04238621549e8ef38d9",
+    "source": "assets/archive/2017/10/jonction1954_d-944x1024.jpg",
+    "source_sha256": "404c58a30542f2db2af763d853a97af79a54d0f0510cccead83b009e76c5bc04"
+  },
+  {
+    "file": "preview/old-ferry-2-91280674.jpg",
+    "sources": [
+      "archive/2017/10/old-ferry-2.jpg"
+    ],
+    "width": 600,
+    "height": 386,
+    "bytes": 57548,
+    "sha256": "b5cf2ec177f5722e7e4a7155cc923469d3a545252300492fa6df3c6c048b7e22",
+    "source": "assets/archive/2017/10/old-ferry-2.jpg",
+    "source_sha256": "91280674ba5871b3a3f6c39602edf3f7ad8a3e6453329a512ef6b18ebe6b9c70"
+  },
+  {
+    "file": "preview/old-ferry-3-fb4a2558.jpg",
+    "sources": [
+      "archive/2017/10/old-ferry-3.jpg"
+    ],
+    "width": 600,
+    "height": 404,
+    "bytes": 58080,
+    "sha256": "5a622b849398047535213283a7e2917da63fd73113f9a68b89443d46713f3443",
+    "source": "assets/archive/2017/10/old-ferry-3.jpg",
+    "source_sha256": "fb4a255890ef0930fbe27545d585135ed9f4c5aca4602eaa6547471f079c4015"
+  },
+  {
+    "file": "preview/descente1-6e9d408d.jpg",
+    "sources": [
+      "archive/2017/11/descente1.jpg"
+    ],
+    "width": 960,
+    "height": 734,
+    "bytes": 128861,
+    "sha256": "86cb471840438d6760ec88a74915df0a1b11edbff3eccd81146c13303b75a892",
+    "source": "assets/archive/2017/11/descente1.jpg",
+    "source_sha256": "6e9d408d98a229c15a15aa4ba546be591694a0555b541e9f0f8a20d138f8c8ec"
+  },
+  {
+    "file": "preview/descente10-3a9dfe2d.jpg",
+    "sources": [
+      "archive/2017/11/descente10.jpg"
+    ],
+    "width": 944,
+    "height": 618,
+    "bytes": 80907,
+    "sha256": "48b5d95682562c08e35d598ad6643e374a7a573001554a847aa86d5e96b2e763",
+    "source": "assets/archive/2017/11/descente10.jpg",
+    "source_sha256": "3a9dfe2d4b1d034fc2fe6bdece991b20151cc16d23568f2afb0e33ef290a2884"
+  },
+  {
+    "file": "preview/descente11-8265bc3c.jpg",
+    "sources": [
+      "archive/2017/11/descente11.jpg"
+    ],
+    "width": 943,
+    "height": 557,
+    "bytes": 68108,
+    "sha256": "fa5e7e52353acb5519c74a1fd99b97f753df3f253b805f6bf2087c294e9b8279",
+    "source": "assets/archive/2017/11/descente11.jpg",
+    "source_sha256": "8265bc3c752e94051555f65425441f549e117adddc28afccf313b116b58a4107"
+  },
+  {
+    "file": "preview/descente12-21f4de46.jpg",
+    "sources": [
+      "archive/2017/11/descente12.jpg"
+    ],
+    "width": 464,
+    "height": 426,
+    "bytes": 29636,
+    "sha256": "8d75bb5ab22b0206282a49f8ff3724feebef169abb075a1a956ae8d134155e73",
+    "source": "assets/archive/2017/11/descente12.jpg",
+    "source_sha256": "21f4de469bdf8b8b15cc102386e469bc1a0ed55ad84c33e8673fd5f7f113b613"
+  },
+  {
+    "file": "preview/descente3-f904e61b.jpg",
+    "sources": [
+      "archive/2017/11/descente3.jpg"
+    ],
+    "width": 942,
+    "height": 686,
+    "bytes": 96839,
+    "sha256": "e17e6170a1946e47ddaf77ee25039060b1caeb6495b6d9bfe4b70f289fc2b8f6",
+    "source": "assets/archive/2017/11/descente3.jpg",
+    "source_sha256": "f904e61b5e81fc9e832f18d909efc2d87327b257905dfcec44111957fec14927"
+  },
+  {
+    "file": "preview/descente4-9cef7069.jpg",
+    "sources": [
+      "archive/2017/11/descente4.jpg"
+    ],
+    "width": 948,
+    "height": 557,
+    "bytes": 82953,
+    "sha256": "8497777cf360444804bc52d18cd5de56833bf32ab2e6a154efcf2d859ccd732b",
+    "source": "assets/archive/2017/11/descente4.jpg",
+    "source_sha256": "9cef7069f2be4411030fa2e531619c90aeae24e9e5fe41e59acf6584932c0902"
+  },
+  {
+    "file": "preview/descente5-a5fe9b47.jpg",
+    "sources": [
+      "archive/2017/11/descente5.jpg"
+    ],
+    "width": 946,
+    "height": 679,
+    "bytes": 99212,
+    "sha256": "997952e5166a6c581691f8969e34ba178489983241ca9432d84a27815ed6db44",
+    "source": "assets/archive/2017/11/descente5.jpg",
+    "source_sha256": "a5fe9b47e9fafd1fa011cc66e1e84c81cc6794517bf59d382c7ba3537fccc75c"
+  },
+  {
+    "file": "preview/descente8-8780a757.jpg",
+    "sources": [
+      "archive/2017/11/descente8.jpg"
+    ],
+    "width": 939,
+    "height": 570,
+    "bytes": 63680,
+    "sha256": "5eb3c36047cfabbe9a31bcf5f5162283239fee7f53976bbc154a1ad16a0a9f35",
+    "source": "assets/archive/2017/11/descente8.jpg",
+    "source_sha256": "8780a75739bde1ed2f54e3b8e57dcfc59980eba250958b9b8cfd0717eb20f5fe"
+  },
+  {
+    "file": "preview/descente9-87d7c282.jpg",
+    "sources": [
+      "archive/2017/11/descente9.jpg"
+    ],
+    "width": 459,
+    "height": 355,
+    "bytes": 23675,
+    "sha256": "eecac00fa81fd2c2d2c51741d2f66a1fd80433cc40d4a03ddf1014827fa6f8e5",
+    "source": "assets/archive/2017/11/descente9.jpg",
+    "source_sha256": "87d7c28227fc6856ef825afea1378b830c9382b30725fed7a69d359c71e15e67"
+  },
+  {
+    "file": "preview/stravamaprhone-1024x207-84d82a34.jpg",
+    "sources": [
+      "archive/2018/03/stravamaprhone-1024x207.png"
+    ],
+    "width": 960,
+    "height": 194,
+    "bytes": 37337,
+    "sha256": "7d4a4a99db1b36b5bdbcbe3bef4a6a02a12a9f8f9efeb53b746de46b66070839",
+    "source": "assets/archive/2018/03/stravamaprhone-1024x207.png",
+    "source_sha256": "84d82a34ead8db8e74c645adb89eb58843faa93b5ad7747e7b0b50ed0c8c67cc"
+  },
+  {
+    "file": "preview/meriana-1024x697-2d43dbcd.jpg",
+    "sources": [
+      "archive/2018/05/meriana-1024x697.jpg"
+    ],
+    "width": 960,
+    "height": 653,
+    "bytes": 109819,
+    "sha256": "175c469a03ce36bf791fce372136b7193c666a78fccd19aea1f0b59ff7ab7d2a",
+    "source": "assets/archive/2018/05/meriana-1024x697.jpg",
+    "source_sha256": "2d43dbcd3164f5f866f45328e755a8c931aed13b274349bbea40c31a50877492"
+  },
+  {
+    "file": "preview/Brelage_Macon-0a9beef8.jpg",
+    "sources": [
+      "archive/2018/11/Brelage_Macon.jpg"
+    ],
+    "width": 828,
+    "height": 278,
+    "bytes": 26448,
+    "sha256": "0b860ba8d3afbe0c651a0418698eb3dd6cab4b5d4a2f81397c91a3054bc97f4c",
+    "source": "assets/archive/2018/11/Brelage_Macon.jpg",
+    "source_sha256": "0a9beef8318775014782dd49ddd7b8dc4fb3762f2c3e12ec81e32458c8692bdf"
+  },
+  {
+    "file": "preview/Brelage_MaconB-362a0c38.jpg",
+    "sources": [
+      "archive/2018/11/Brelage_MaconB.jpg"
+    ],
+    "width": 469,
+    "height": 236,
+    "bytes": 21020,
+    "sha256": "3a45cf05da35e0fc12e3c1836f6bcf340d950714a97225c16c274e85aa8bdfd1",
+    "source": "assets/archive/2018/11/Brelage_MaconB.jpg",
+    "source_sha256": "362a0c38d642292ead3761ae2a12b4fa6a990f6f999485a99b59fbc65d4c8837"
+  },
+  {
+    "file": "preview/Brelage_parallel-ea1e619e.jpg",
+    "sources": [
+      "archive/2018/11/Brelage_parallel.jpg"
+    ],
+    "width": 742,
+    "height": 390,
+    "bytes": 35265,
+    "sha256": "684b9b40ecce9bcecf07f1cbfe265b95f34654cfa42c92cd3b5dd118f26c6459",
+    "source": "assets/archive/2018/11/Brelage_parallel.jpg",
+    "source_sha256": "ea1e619e98b198c786691298389d3ec45ee0635e02e107b62a90c442895251e8"
+  },
+  {
+    "file": "preview/LancementCorde-165f2f93.jpg",
+    "sources": [
+      "archive/2018/11/LancementCorde.jpg"
+    ],
+    "width": 290,
+    "height": 303,
+    "bytes": 13585,
+    "sha256": "7b423fcac1522afc8e96bba598050ace7a49922fe1a0f5fe2af39a3cdd7797ab",
+    "source": "assets/archive/2018/11/LancementCorde.jpg",
+    "source_sha256": "165f2f936593412e6bebc9771b5a2aa9af92fa2af616f402eb7c458b4d30fbcc"
+  },
+  {
+    "file": "preview/StJean-e172f664.jpg",
+    "sources": [
+      "archive/2018/11/StJean.jpg"
+    ],
+    "width": 521,
+    "height": 459,
+    "bytes": 85299,
+    "sha256": "843b9f7e996b62a0e52df2932fb34489708b71eedc99f15fb5587541dacddfaf",
+    "source": "assets/archive/2018/11/StJean.jpg",
+    "source_sha256": "e172f664b0001a2f35c54d48ff505d4d0a0043bb643e4cb4f49034d4936e9b98"
+  },
+  {
+    "file": "preview/jonction_030_BacStJean-a2a880fa.jpg",
+    "sources": [
+      "archive/2018/11/jonction_030_BacStJean.jpg"
+    ],
+    "width": 542,
+    "height": 800,
+    "bytes": 85582,
+    "sha256": "9d342143e893363382ff3f699931a4bf4638098f53d56be94e21d421669bbc00",
+    "source": "assets/archive/2018/11/jonction_030_BacStJean.jpg",
+    "source_sha256": "a2a880faa4d12a6e77585ff770fa57dd40536cdab5cdaee57be97d7a939e616d"
+  },
+  {
+    "file": "preview/Cinquenelle-dc701535.jpg",
+    "sources": [
+      "archive/2019/09/Cinquenelle.jpg"
+    ],
+    "width": 960,
+    "height": 345,
+    "bytes": 26126,
+    "sha256": "8c1706cf7c54d724e5f9bf448dc63e7c307cdaf48701920fe6b6ee94e2ec052d",
+    "source": "assets/archive/2019/09/Cinquenelle.jpg",
+    "source_sha256": "dc701535249d8b4dbc2049fa861f5529b191c0224fb0a0a6e4261c38d40949be"
+  },
+  {
+    "file": "preview/Droit-2952de4a.jpg",
+    "sources": [
+      "archive/2019/09/Droit.jpg"
+    ],
+    "width": 960,
+    "height": 197,
+    "bytes": 12660,
+    "sha256": "a9d5020dbaf5e9de23fc70d286f559887bfca81e46c25498eaf0d2162a935775",
+    "source": "assets/archive/2019/09/Droit.jpg",
+    "source_sha256": "2952de4a9ec855e802ca5847064345aeab986b7c05378e77dcf5800b31f2b065"
+  },
+  {
+    "file": "preview/Tisserant-618a1d69.jpg",
+    "sources": [
+      "archive/2019/09/Tisserant.jpg"
+    ],
+    "width": 960,
+    "height": 270,
+    "bytes": 13578,
+    "sha256": "cf15f20dd1dd0565802637c2c706670fa9b36eda51da3605105464e10556ee35",
+    "source": "assets/archive/2019/09/Tisserant.jpg",
+    "source_sha256": "618a1d69d10eaa2a4907b3bc46dfc58e2cda2c6120ee67b089b505f691a81109"
+  },
+  {
+    "file": "preview/FlyerA-1-82292b6d.jpg",
+    "sources": [
+      "archive/2020/03/FlyerA-1.jpg"
+    ],
+    "width": 960,
+    "height": 679,
+    "bytes": 92703,
+    "sha256": "17f8804e08e02494041e419be19952b02a2a22ced575bce77782273d5e6b228c",
+    "source": "assets/archive/2020/03/FlyerA-1.jpg",
+    "source_sha256": "82292b6d110c4721cb787e73c2f5f78a5be1e62dbeeee4ea8874efa9b3113049"
+  },
+  {
+    "file": "preview/FlyerA4-1024x724-34a6898f.jpg",
+    "sources": [
+      "archive/2020/03/FlyerA4-1024x724.jpg"
+    ],
+    "width": 960,
+    "height": 679,
+    "bytes": 39866,
+    "sha256": "1c319b7a209570abca31914f369505c09f921aca4334e325d5f7fc0b3297945f",
+    "source": "assets/archive/2020/03/FlyerA4-1024x724.jpg",
+    "source_sha256": "34a6898f27caf94156f9fe718c305b4b7de5981a8b62b56dbea8077e91fe11d9"
+  },
+  {
+    "file": "preview/Genf_Anleitung-1024x587-fc813b09.jpg",
+    "sources": [
+      "archive/2020/04/Genf_Anleitung-1024x587.jpg",
+      "origami.jpg"
+    ],
+    "width": 960,
+    "height": 550,
+    "bytes": 53364,
+    "sha256": "6f657a8e7c90fb72f8d787f2926214eeaa5780b0af75557285f5dfa81cdee2bc",
+    "source": "assets/archive/2020/04/Genf_Anleitung-1024x587.jpg",
+    "source_sha256": "fc813b09652ed8ef000434cd123ee84efad02d641450a497506fe3bc81c478c6"
+  },
+  {
+    "file": "preview/banner.jpg",
+    "sources": [
+      "banner.jpg"
+    ],
+    "width": 940,
+    "height": 198,
+    "bytes": 17739,
+    "sha256": "9406a6a18a1ddac215535dc5f06d1ac805b411befbb196d0104ad3ff8d91ea05",
+    "source": "assets/banner.jpg",
+    "source_sha256": "89b51e07cbef054399230de5e1aba73051561c056f695b5099382de473777ec4"
+  },
+  {
+    "file": "preview/barque-d1d9d773.jpg",
+    "sources": [
+      "archive/2019/08/IMG_3740.jpg",
+      "barque.jpg"
+    ],
+    "width": 960,
+    "height": 720,
+    "bytes": 108072,
+    "sha256": "fceef653d1faf9ab2354138af16ee146a196bd8dae31af0d195164936fd3daba",
+    "source": "assets/barque.jpg",
+    "source_sha256": "d1d9d773d00d82ffafd46a563d779afcded681bd7d1cd483a3299eceb4504e2e"
+  },
+  {
+    "file": "preview/equipe-496a596e.jpg",
+    "sources": [
+      "archive/2018/10/DSC02689-1024x683.jpg",
+      "archive/2018/10/DSC02689.jpg",
+      "equipe.jpg"
+    ],
+    "width": 960,
+    "height": 640,
+    "bytes": 90345,
+    "sha256": "65ee6eee93a264057503aa5e23a059879114282f131a823eb7cffb71986d6602",
+    "source": "assets/equipe.jpg",
+    "source_sha256": "496a596e2749cfff5021571cb2d7c162302fbec93d5b4f4288fcb17f026dd834"
+  },
+  {
+    "file": "preview/histoire.jpg",
+    "sources": [
+      "archive/2018/05/witz1444.jpg",
+      "histoire.jpg"
+    ],
+    "width": 960,
+    "height": 836,
+    "bytes": 100271,
+    "sha256": "05f9ecdb4121c6a23984fdce94837e2135606fa13a3eb19015b3fd4eca76640b",
+    "source": "assets/histoire.jpg",
+    "source_sha256": "f8892cdd103eb8b69c64257b1c05e3daec39198a01da5f36f119161458dfb0d2"
+  },
+  {
+    "file": "preview/jonction-86f698f3.jpg",
+    "sources": [
+      "archive/2020/11/079-IMG_7145.jpg",
+      "jonction.jpg"
+    ],
+    "width": 960,
+    "height": 720,
+    "bytes": 61059,
+    "sha256": "3123dbbfffd9e726110b854d34c897dba84c6ce6beb68d39a7ba61f7c240fa65",
+    "source": "assets/jonction.jpg",
+    "source_sha256": "86f698f3c299b0c77c52bead6f6e157f5504a3f68fb6fcb3df61c990a2f1ae7f"
+  },
+  {
+    "file": "preview/lac-0953a806.jpg",
+    "sources": [
+      "archive/2019/12/KNJZ5777-1024x683.jpg",
+      "lac.jpg"
+    ],
+    "width": 960,
+    "height": 640,
+    "bytes": 61705,
+    "sha256": "af31b8c68dfbdaeb6dd97874851c980311f4c07a589893ae0a17ce41030a1ecd",
+    "source": "assets/lac.jpg",
+    "source_sha256": "0953a80615535c8b750be76480addda643e13ec5f303feb02f86a2938123dbb6"
+  },
+  {
+    "file": "preview/navigation-2fb1802d.jpg",
+    "sources": [
+      "archive/2019/08/20190824-_DSC0294.jpg",
+      "navigation.jpg"
+    ],
+    "width": 960,
+    "height": 640,
+    "bytes": 117090,
+    "sha256": "5d3e5cd000aa2aa45e1397729414bcb6724bb746bdff54c6242d43213d5490b9",
+    "source": "assets/navigation.jpg",
+    "source_sha256": "2fb1802d954f1b71f54c1f0c39717039e3d62ef50a360f8ed2628c37de8d20e6"
+  },
+  {
+    "file": "preview/rame-1b993c0c.jpg",
+    "sources": [
+      "archive/2018/10/DSC02631-1024x683.jpg",
+      "archive/2018/10/DSC02631.jpg",
+      "rame.jpg"
+    ],
+    "width": 960,
+    "height": 640,
+    "bytes": 83792,
+    "sha256": "563baa095d12381987af5d7d96f02e039f7b76166d1f76d591b6f18951c63689",
+    "source": "assets/rame.jpg",
+    "source_sha256": "1b993c0ce49725835a0d0e23a899133b335fc05cbd7f35efce3855f3e75bed9e"
+  },
+  {
+    "file": "preview/rhone-ae1b0968.jpg",
+    "sources": [
+      "archive/2020/11/040-IMG_8126.jpg",
+      "rhone.jpg"
+    ],
+    "width": 960,
+    "height": 720,
+    "bytes": 75640,
+    "sha256": "7c186224cae5572a4159ef4638f1d566748a5df479dd2c4ea29a7e9b3181ac4a",
+    "source": "assets/rhone.jpg",
+    "source_sha256": "ae1b09683636a96452eef92f1c494b828bd8e60809d524729277dcd35fbfec03"
+  },
+  {
+    "file": "preview/sortie-03b4633b.jpg",
+    "sources": [
+      "archive/2023/10/NRAJ0281.jpg",
+      "sortie.jpg"
+    ],
+    "width": 960,
+    "height": 639,
+    "bytes": 56182,
+    "sha256": "1796a63b9187707b69946db84edf1a75dba54ec6a61a56466a991daa170ff489",
+    "source": "assets/sortie.jpg",
+    "source_sha256": "03b4633b03568e94857eae8ae0b06d5b20c140e804c95fff10a3016f947c413e"
   }
 ]

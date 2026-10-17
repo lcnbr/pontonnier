@@ -1,0 +1,11 @@
+{
+  "name": "pontonnier-preview-tools",
+  "private": true,
+  "description": "Maintenance tools for the small Typst image previews",
+  "scripts": {
+    "previews": "node scripts/update-previews.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5"
+  }
+}

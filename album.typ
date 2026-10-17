@@ -72,6 +72,14 @@
 }
 
 #let album-page(album) = {
+  // Article photo groups stay visible; only album media is omitted in the editor.
+  show html.elem.where(tag: "div"): element => if light-preview and element.attrs.at("class", default: "") == "editor-gallery" {
+    html.p(class: "editor-media-note")[Photos de la galerie masquées dans l’aperçu de rédaction.]
+  } else { element }
+  show image: element => if light-preview {
+    html.p(class: "editor-media-note")[Image : #element.alt]
+  } else { element }
+
   if album.events.len() > 1 {
     html.div(class: "album-overview")[
       #html.div(class: "album-summary")[

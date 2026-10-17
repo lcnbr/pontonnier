@@ -2,10 +2,12 @@
 """Keep the editor repository within Typst's documented Git Sync limits."""
 
 from pathlib import Path
+import json
 import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PREVIEW_LIMITS = json.loads((ROOT / "preview/limits.json").read_text())
 MEDIA_SUFFIXES = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".mp4", ".pdf"}
 
 
@@ -28,18 +30,24 @@ def main():
                 ".webp",
             }:
                 preview_images.append(path)
-                if (ROOT / path).stat().st_size > 64 * 1024:
-                    errors.append(f"{path}: editor thumbnail exceeds 64 KiB")
+                if (ROOT / path).stat().st_size > PREVIEW_LIMITS["max_image_bytes"]:
+                    errors.append(
+                        f"{path}: editor thumbnail exceeds {PREVIEW_LIMITS['max_image_bytes'] // 1024} KiB"
+                    )
             else:
                 errors.append(f"{path}: store media in pontonnier-media instead")
         if (ROOT / path).stat().st_size > 20 * 1024**2:
             errors.append(f"{path}: exceeds Typst's 20 MiB per-file limit")
 
     if (
-        len(preview_images) > 12
-        or sum((ROOT / path).stat().st_size for path in preview_images) > 256 * 1024
+        len(preview_images) > PREVIEW_LIMITS["max_images"]
+        or sum((ROOT / path).stat().st_size for path in preview_images)
+        > PREVIEW_LIMITS["max_total_bytes"]
     ):
-        errors.append("Editor thumbnails must stay within 12 files and 256 KiB total")
+        errors.append(
+            f"Editor thumbnails must stay within {PREVIEW_LIMITS['max_images']} files "
+            f"and {PREVIEW_LIMITS['max_total_bytes'] // 1024**2} MiB total"
+        )
 
     # Include history and all fetched refs: deleting a large file is not enough.
     objects = git("rev-list", "--objects", "--all")

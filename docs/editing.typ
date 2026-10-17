@@ -21,7 +21,8 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 - `main.typ`: the pages and assets emitted by Typst’s bundle exporter.
 - `.media/`: an ignored media checkout, downloaded by local builds and CI.
 - `dist/`: generated deployment files, also ignored by Git.
-- `preview/`: six small local images for the Typst editor, with an index of their sources.
+- `preview/`: optimized images for regular pages, with source hashes and size limits.
+- `scripts/update-previews.mjs`: refreshes those images from the pinned media repository.
 
 The published site keeps the same local `assets/` URLs. Visitors do not download
 media from GitHub or from the original WordPress site. CI assembles the two
@@ -69,15 +70,35 @@ The template supplies the main heading. Use `==` for section headings,
 `site-link` for internal links and Typst’s `link` for external references.
 Select the page’s source file to switch pages within the Typst editor.
 
-Individual Typst previews default to lightweight editing mode. They show a small
-local banner, logo and selected illustrations, while galleries, videos and
-embedded services are replaced by short notes. These previews load no remote
-media. Text, headings and captions remain available for editing.
+Individual Typst previews default to lightweight editing mode. Every image on
+regular pages is available locally, including historical illustrations, maps,
+knot diagrams, and photo groups in articles and on the homepage. Album covers
+and album photographs remain hidden. Videos and embedded services are replaced
+by short notes. These previews load no remote media.
 
-The six JPEG thumbnails in `preview/` are downscaled copies of media assets and
-are embedded directly in the preview HTML. Keep this cache below 12 images,
-64 KiB per image and 256 KiB in total; CI enforces those project budgets. The
-original media still belongs in `pontonnier-media`.
+The JPEGs in `preview/` are downscaled copies embedded directly in the preview
+HTML. Images fit within 960 × 1280 pixels without cropping or upscaling;
+animated GIFs use a still frame. Identical source files share a preview. The
+current cache is about 3.6 MB. `preview/limits.json` caps it at 96 images,
+128 KiB per image and 4 MiB total, keeping the editing repository small.
+Originals still belong in `pontonnier-media` and are used for publication.
+
+When adding or replacing an image used outside an album, refresh the cache
+locally with Node.js 20.9 or newer, Python 3 and the pinned Typst CLI installed:
+
+```sh
+bash scripts/fetch-media.sh
+npm ci --ignore-scripts
+npm run previews
+python3 scripts/check-preview.py
+```
+
+Commit the generated `preview/` changes along with the page and media manifest.
+The generator discovers images from the Typst-generated regular pages, verifies
+the pinned originals and applies the size limits before writing. Node packages
+are maintenance tools only: they are ignored by Git and never synced into Typst.
+CI checks that regular-page previews include every image and that their source
+hashes are current; ordinary text edits need no image regeneration.
 
 Production builds explicitly pass `--input media=full`. They retain every photo,
 video, embed and download at its existing local website URL. To preview all media
@@ -136,7 +157,9 @@ and verifies that it contains only embedded lightweight images.
 + In this source repository, update `.media-revision` to the full media commit SHA.
 + Add or update its `assets/manifest.json` entry. Record the path, original source,
   byte size and SHA-256 checksum; images also need width and height in pixels.
-+ Reference it from Typst and push the source change to trigger publication.
++ Reference it from Typst. If it is an image on a regular page, run
+  `npm run previews` to refresh the local editor copy. Push the source changes
+  and previews to trigger publication.
 
 ```typst
 #photo("archive/2026/10/sortie.jpg", "Sortie sur le Rhône")
@@ -204,7 +227,8 @@ sections, which remain visible on the page.
 Alternative text identifies images for accessibility and is never displayed as
 a caption. Add `caption: [...]` to `photo` for a real caption, or to `gallery`
 for a shared caption or credit. Captions can contain source links. The editor
-continues to hide gallery media and covers while showing the editable text.
+continues to hide album media and covers while showing the editable text; photo
+groups on regular pages remain visible.
 
 To add a year, copy a recent album source, extend the `albums` year range in
 `site.typ`, and register the page in `main.typ`. The overview automatically reads

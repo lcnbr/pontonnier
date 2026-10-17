@@ -49,6 +49,11 @@ class EditorMediaBudgetTests(unittest.TestCase):
         self.add_file("preview/banner.jpg", 8 * 1024)
         check_sync.main()
 
+    def test_regular_page_image_set_is_allowed(self):
+        for i in range(16):
+            self.add_file(f"preview/{i}.jpg", 24 * 1024)
+        check_sync.main()
+
     def test_media_outside_preview_cache_is_rejected(self):
         self.add_file("assets/photo.jpg", 1024)
         with self.assertRaisesRegex(SystemExit, "store media in pontonnier-media"):
@@ -60,20 +65,23 @@ class EditorMediaBudgetTests(unittest.TestCase):
             check_sync.main()
 
     def test_individual_thumbnail_budget(self):
-        self.add_file("preview/oversized.jpg", 65 * 1024)
-        with self.assertRaisesRegex(SystemExit, "thumbnail exceeds 64 KiB"):
+        self.add_file(
+            "preview/oversized.jpg", check_sync.PREVIEW_LIMITS["max_image_bytes"] + 1
+        )
+        with self.assertRaisesRegex(SystemExit, "thumbnail exceeds 128 KiB"):
             check_sync.main()
 
     def test_total_thumbnail_budget(self):
-        for i in range(5):
-            self.add_file(f"preview/{i}.jpg", 60 * 1024)
-        with self.assertRaisesRegex(SystemExit, "256 KiB total"):
+        limit = check_sync.PREVIEW_LIMITS
+        for i in range(limit["max_total_bytes"] // limit["max_image_bytes"] + 1):
+            self.add_file(f"preview/{i}.jpg", limit["max_image_bytes"])
+        with self.assertRaisesRegex(SystemExit, "4 MiB total"):
             check_sync.main()
 
     def test_thumbnail_file_count_budget(self):
-        for i in range(13):
+        for i in range(check_sync.PREVIEW_LIMITS["max_images"] + 1):
             self.add_file(f"preview/{i}.jpg", 10)
-        with self.assertRaisesRegex(SystemExit, "12 files"):
+        with self.assertRaisesRegex(SystemExit, "96 files"):
             check_sync.main()
 
 
