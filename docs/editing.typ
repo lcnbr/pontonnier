@@ -11,6 +11,8 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 - `site.typ`: the name, contact details, published URL and album inventory.
 - `theme.typ`: the shared Typst HTML template and media elements.
 - `assets/site.css`: the visual layout.
+- `gallery.typ`: Typst-generated photo viewer controls.
+- `assets/gallery.mjs`: mosaic layout, carousel navigation and zoom.
 - `assets/manifest.json`: published asset paths, provenance and image dimensions.
 - `.media-revision`: the full media commit selected for publication.
 - `main.typ`: the pages and assets emitted by Typst’s bundle exporter.
@@ -115,8 +117,14 @@ BASE_PATH=/pontonnier/ bash scripts/build.sh
 python3 scripts/check.py --base-path /pontonnier/
 ```
 
-A server for that build must mount `dist/` at `/pontonnier/`. Production has no
-application JavaScript. Typst injects live reload only into its preview server.
+A server for that build must mount `dist/` at `/pontonnier/`. Typst generates the
+HTML. A small local JavaScript module enhances the gallery and menu; there are
+no external script dependencies. Without JavaScript, the photos and album links
+remain usable. Typst injects live reload only into its preview server.
+
+CI also runs the Python tests, `node --test tests/gallery.test.mjs` and
+`python3 scripts/check-preview.py`; the last command compiles every editor page
+and verifies that it contains only embedded lightweight images.
 
 == Adding or changing media
 
@@ -140,9 +148,25 @@ checks that cache, the source file count, file sizes and reachable history size.
 
 == Gallery years and new pages
 
-Wrap photos in `gallery[...]` for the responsive mosaic. Images retain their
-proportions and open their local file when clicked. The `albums` inventory in
-`site.typ` supplies the main menu and year dropdown. Extend the year range when
+Wrap photos in `gallery[...]` for the responsive mosaic. Images keep their
+original proportions with square corners and narrow gaps. On album pages,
+clicking a photo opens the carousel for the entire page. Scroll, pinch or use
+the magnifier buttons to zoom; drag to pan, click the percentage to reset, and
+use the arrows or swipe at normal zoom to change photos. Escape or the close
+icon returns to the original gallery position.
+
+Alternative text identifies images for accessibility and is never displayed as
+a caption. Add `caption: [...]` to `photo` for a real caption, or to `gallery`
+for a shared caption or credit. Captions can contain source links. For example:
+
+```typst
+#gallery(caption: [Photos : notre équipe.])[
+  #photo("archive/2026/10/sortie.jpg", "Une barque sur le Rhône",
+    caption: [Sortie du 17 octobre 2026.])
+]
+```
+
+The `albums` inventory in `site.typ` supplies the year dropdown within the navbar. Extend the year range when
 adding an annual album, then register its source and output path in `main.typ`.
 The historic routes for 2012 and 2015 are preserved.
 

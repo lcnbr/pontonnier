@@ -1,4 +1,5 @@
 #import "site.typ": name, motto, email, navigation, albums, published-url
+#import "gallery.typ": photo-viewer
 
 #let base = sys.inputs.at("base-path", default: published-url)
 #assert(base.ends-with("/"), message: "The site base URL must end with /")
@@ -23,7 +24,7 @@
 }
 #let photo(file, alt, caption: none, destination: none) = {
   let href = if destination == none { base + "assets/" + file } else { destination }
-  html.figure[
+  html.figure(class: if destination == none { "photo gallery-photo" } else { "photo" })[
     #link(href, picture(file, alt))
     #if caption != none { html.figcaption(caption) }
   ]
@@ -39,9 +40,12 @@
     #html.figcaption(description)
   ]
 }
-#let gallery(body) = if light-preview {
-  html.p(class: "editor-media-note")[Photos de la galerie masquées dans l’aperçu de rédaction.]
-} else { html.div(class: "gallery", body) }
+#let gallery(body, caption: none) = {
+  if light-preview {
+    html.p(class: "editor-media-note")[Photos de la galerie masquées dans l’aperçu de rédaction.]
+  } else { html.div(class: "gallery", body) }
+  if caption != none { html.div(class: "gallery-caption", caption) }
+}
 #let section(class, body) = html.div(class: class, body)
 #let contact-link() = link("mailto:" + email, email)
 #let menu-link(item, current) = html.a(
@@ -50,16 +54,15 @@
   item.title,
 )
 
-#let album-picker(current) = html.details(class: "album-picker")[
-  #html.summary[
-    #html.span(class: "album-picker-label")[Année / album]
-    #html.span(class: "album-picker-current", current.title)
-    #html.span(class: "album-picker-chevron", ..("aria-hidden": true))[⌄]
+#let album-menu(current) = {
+  let album = albums.find(item => item.path == current)
+  html.details(class: "gallery-menu")[
+    #html.summary[Galerie#if album != none and album.title.len() == 4 { [ · #album.title] }]
+    #html.ul(class: "album-options", ..("aria-label": "Choisir une année ou un album"))[
+      #for item in albums { html.li(menu-link(item, current)) }
+    ]
   ]
-  #html.ul(class: "album-options", ..("aria-label": "Choisir une année ou un album"))[
-    #for album in albums { html.li(menu-link(album, current.path)) }
-  ]
-]
+}
 
 #let page(title: "", path: "", description: "La Société des Pontonnier·ère·s de Genève : histoire, navigation, cours et vie du club au bord du Rhône.", body) = {
   let album = albums.find(item => item.path == path)
@@ -75,6 +78,7 @@
       #html.meta(name: "description", content: description)
       #html.title(title + " | " + name)
       #html.style(read("assets/site.css"))
+      #if not light-preview { html.script(type: "module", src: base + "assets/gallery.mjs") }
     ]
     #html.body[
       #html.a(href: "#content", class: "skip-link")[Aller au contenu]
@@ -90,8 +94,8 @@
           #html.nav(..("aria-label": "Navigation principale"))[
             #html.ul(class: "menu")[
               #for item in navigation {
-                html.li[
-                  #if "children" in item {
+                html.li(class: if item.path == "galerie/" { "gallery-nav" } else { "" })[
+                  #if item.path == "galerie/" { album-menu(path) } else if "children" in item {
                     html.details[
                       #html.summary(item.title)
                       #html.ul(class: "submenu")[
@@ -105,19 +109,12 @@
           ]
         ]
         #html.main(id: "content", tabindex: -1, class: if album != none { "gallery-page" } else { "" })[
-          #if album != none {
-            html.div(class: "gallery-heading")[
-              #html.div[
-                #html.p(class: "gallery-eyebrow")[Au fil de l’eau, au fil des années]
-                #html.h1(class: "entry-title", title)
-              ]
-              #album-picker(album)
-            ]
-          } else { html.h1(class: "entry-title", title) }
+          #html.h1(class: "entry-title", title)
           #if light-preview {
             html.p(class: "editor-preview-notice")[Aperçu de rédaction · médias allégés]
           }
           #html.div(class: "entry-content", body)
+          #if album != none and not light-preview { photo-viewer() }
         ]
         #html.footer[
           #html.strong[#site-link("", name)]

@@ -5,7 +5,7 @@ body { margin: 0; background: #bcbcbc; color: var(--ink); font: 16px/1.5 Georgia
 a { color: var(--link); text-underline-offset: 2px; }
 a:visited { color: #743399; }
 a:hover { color: #d43722; }
-a:focus-visible, summary:focus-visible { outline: 3px solid #0066cc; outline-offset: 4px; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #0066cc; outline-offset: 4px; }
 .wrapper { width: min(980px, calc(100% - 32px)); margin: 20px auto; padding: 0 20px; background: #fff; }
 header { padding-top: 30px; }
 .branding { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
@@ -17,7 +17,7 @@ header { padding-top: 30px; }
 .banner img { display: block; width: 100%; height: auto; aspect-ratio: 940 / 198; }
 nav { background: #000; font: 13px/1.5 "Helvetica Neue", Arial, sans-serif; }
 .menu, .submenu { list-style: none; margin: 0; padding: 0; }
-.menu { display: flex; flex-wrap: wrap; padding-left: 12px; }
+.menu { position: relative; display: flex; flex-wrap: wrap; padding-left: 12px; }
 .menu > li { position: relative; }
 .menu a, .menu summary { display: block; padding: 10px; line-height: 18px; color: #b5b5b5; text-decoration: none; cursor: pointer; }
 .menu summary { list-style: none; }
@@ -42,36 +42,53 @@ figure { margin: 0 0 24px; }
 figure p { margin: 0; }
 figure img { display: block; max-width: 100%; height: auto; margin: auto; }
 figcaption { margin-top: 8px; color: #666; font: 12px/1.5 "Helvetica Neue", Arial, sans-serif; text-align: center; }
-/* Natural image proportions create a mosaic without cropping the archive. */
-.gallery { columns: 2; column-gap: 12px; margin: 28px 0; }
-.gallery figure { break-inside: avoid; margin: 0 0 12px; border-radius: 8px; background: #f0f4f3; }
-.gallery figure > a { position: relative; overflow: hidden; border-radius: 8px; }
-.gallery img { width: 100%; height: auto; transition: transform 180ms ease; }
-.gallery figure > a:hover img { transform: scale(1.025); }
-.gallery figure > a::after { content: "↗"; position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #fff; color: #163d45; font: 18px/1 Arial, sans-serif; opacity: 0; transition: opacity 180ms ease; }
-.gallery figure > a:hover::after, .gallery figure > a:focus-visible::after { opacity: 1; }
-.gallery figure > a:focus-visible { outline-offset: 3px; }
-.gallery figcaption { padding: 0 10px 10px; }
-.gallery-page { max-width: 880px; }
-.gallery-page .gallery { columns: 3; column-gap: 14px; }
-.gallery-page .gallery figure { margin-bottom: 14px; }
-.gallery-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 28px; }
-.gallery-eyebrow { margin: 0 0 7px; color: #42686c; font: 11px/1.5 Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.gallery-heading h1.entry-title { margin: 0; font-size: 34px; line-height: 1.2; }
-.album-picker { position: relative; z-index: 2; flex-shrink: 0; font: 14px/1.4 Arial, sans-serif; }
-.album-picker summary { display: grid; grid-template-columns: 1fr auto; gap: 3px 16px; min-width: 210px; padding: 12px 16px; border: 1px solid #b9cccb; border-radius: 8px; background: #f5f9f8; color: #163d45; list-style: none; cursor: pointer; }
-.album-picker summary::-webkit-details-marker { display: none; }
-.album-picker summary:hover, .album-picker[open] summary { border-color: #42686c; background: #edf4f2; }
-.album-picker-label { font-size: 11px; color: #42686c; }
-.album-picker-current { grid-column: 1; font-weight: bold; font-size: 16px; }
-.album-picker-chevron { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: 22px; }
-.album-options { position: absolute; right: 0; top: calc(100% + 8px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; width: 300px; max-height: 60vh; overflow-y: auto; padding: 12px; margin: 0; list-style: none; border: 1px solid #d5dfdd; border-radius: 10px; background: #fff; box-shadow: 0 10px 30px #12352d24; }
-.album-options li + li { margin: 0; }
+/* Without JavaScript the archive remains a natural-ratio column gallery. */
+.gallery { columns: 2; column-gap: 8px; margin: 28px 0; }
+.gallery figure { break-inside: avoid; margin: 0 0 8px; }
+.gallery figure > a { display: block; }
+.gallery img { width: 100%; height: auto; }
+.gallery-page { max-width: none; }
+.gallery-page h1.entry-title { font-size: 28px; line-height: 1.25; }
+.gallery-page .gallery { columns: 3; }
+.gallery.is-mosaic { position: relative; columns: auto; }
+.gallery.is-mosaic > figure { position: absolute; margin: 0; }
+.gallery.is-mosaic > figure > a { width: 100%; height: 100%; }
+.gallery.is-mosaic img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.gallery.is-mosaic figcaption { display: none; }
+.gallery-caption { margin: -16px 0 24px; color: #666; font: 12px/1.5 Arial, sans-serif; text-align: right; }
+.menu .gallery-menu summary { color: #fff; }
+.menu .album-options { position: absolute; z-index: 4; top: 100%; left: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; width: 288px; padding: 12px; margin: 0; background: #292929; list-style: none; }
+.menu .album-options a { padding: 11px 7px; text-align: center; color: #ddd; }
+.menu .album-options a:hover { background: #444; color: #fff; }
+.menu .album-options a[aria-current="page"] { background: #eee; color: #111; font-weight: bold; }
 .album-options li:first-child, .album-options li:nth-last-child(-n+3) { grid-column: 1 / -1; }
-.album-options a { display: block; padding: 10px 8px; border-radius: 5px; color: #294f53; text-align: center; text-decoration: none; }
-.album-options a:hover { background: #edf4f2; }
-.album-options a[aria-current="page"] { background: #163d45; color: #fff; font-weight: bold; }
-.album-options a:focus-visible { outline-offset: -2px; }
+.menu .album-options li:first-child a, .menu .album-options li:nth-last-child(-n+3) a { text-align: left; padding-left: 12px; }
+.album-options li:nth-last-child(3) { border-top: 1px solid #555; margin-top: 4px; padding-top: 4px; }
+.menu .album-options a:focus-visible { outline-offset: -2px; }
+.photo-viewer { background: #111; color: #fff; font: 14px/1.5 Arial, sans-serif; }
+.photo-viewer[hidden], .entry-content[hidden], .pg-viewer-caption[hidden] { display: none; }
+.pg-viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px; }
+.pg-viewer-count { margin: 0 0 0 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pg-viewer-tools { display: flex; gap: 2px; align-items: center; }
+.photo-viewer button { cursor: pointer; }
+.pg-viewer-tools button { display: grid; place-items: center; min-width: 44px; height: 44px; padding: 6px; border: 0; background: transparent; color: #fff; font: inherit; }
+.pg-viewer-tools button:hover { background: #333; }
+.pg-viewer-tools button:disabled { opacity: .35; cursor: default; }
+.pg-viewer-tools .pg-zoom-reset { min-width: 52px; font-variant-numeric: tabular-nums; }
+.pg-viewer-tools .pg-viewer-close { margin-left: 4px; }
+.pg-viewer-stage { position: relative; aspect-ratio: 3 / 2; }
+.pg-image-viewport { position: absolute; inset: 0; overflow: hidden; touch-action: none; user-select: none; }
+.pg-image-viewport.is-zoomed { cursor: grab; }
+.pg-image-viewport.is-dragging { cursor: grabbing; }
+.pg-viewer-image { display: block; width: 100%; height: 100%; object-fit: contain; transform-origin: center; pointer-events: none; }
+.pg-photo-nav { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 46px; height: 52px; padding: 0; border: 0; background: #000b; color: #fff; }
+.pg-photo-prev { left: 8px; }
+.pg-photo-next { right: 8px; }
+.pg-viewer-caption { margin: 0; padding: 14px; color: #ddd; text-align: center; }
+.pg-viewer-caption a, .pg-viewer-caption a:visited { color: #ddd; }
+@media (max-width: 600px) {
+  .pg-viewer-stage { aspect-ratio: 4 / 5; }
+}
 .instagram { margin-bottom: 24px; text-align: center; color: #c90000; font-size: 24px; font-weight: bold; line-height: 1.5; }
 .instagram a, .instagram a:visited { color: inherit; }
 .news-label { margin-bottom: 24px; color: #c90000; font-weight: bold; }
@@ -103,12 +120,10 @@ footer span, footer span a, footer span a:visited { color: #666; }
   .menu a, .menu summary { padding: 10px 9px; }
   .submenu { position: static; width: min(215px, calc(100vw - 32px)); box-shadow: none; }
   main { padding-top: 28px; }
-  .gallery-page .gallery { columns: 2; column-gap: 10px; }
-  .gallery-page .gallery figure { margin-bottom: 10px; }
-  .gallery-heading { align-items: stretch; flex-direction: column; gap: 18px; }
-  .gallery-heading h1.entry-title { font-size: 30px; }
-  .album-picker summary { min-width: 0; }
-  .album-options { width: 100%; }
+  .gallery-page .gallery:not(.is-mosaic) { columns: 2; column-gap: 6px; }
+  .menu > .gallery-nav { position: static; }
+  .menu .album-options { width: 100%; }
+  .menu .album-options a { min-height: 44px; }
   .instagram { font-size: 21px; }
   .introduction { text-align: left; }
   footer { flex-direction: column; gap: 8px; }
@@ -116,21 +131,16 @@ footer span, footer span a, footer span a:visited { color: #666; }
 @media print {
   body { background: #fff; }
   .wrapper { width: 100%; padding: 0; margin: 0; }
-  nav, .rhonometre, .skip-link, .album-picker { display: none; }
+  nav, .rhonometre, .skip-link, .photo-viewer { display: none; }
   main { max-width: none; }
+  .entry-content[hidden] { display: block; }
 }
 
 /* Archive media is shared between pages instead of embedded in every document. */
-.gallery figure > a { display: block; }
 .entry-content video { display: block; max-width: 100%; max-height: 75vh; margin: auto; }
 .video-embed { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; margin: 24px 0; }
 .caption { font-size: 12px; color: #666; text-align: right; }
 [id] { scroll-margin-top: 20px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .gallery img, .gallery figure > a::after { transition: none; }
-  .gallery figure > a:hover img { transform: none; }
-}
 
 .editor-media-note { margin: 16px 0; color: #666; font: italic 13px/1.5 Arial, sans-serif; }
 .editor-preview-notice { padding: 9px 12px; border-left: 2px solid #777; background: #f3f3f3; color: #555; font: 12px/1.5 Arial, sans-serif; }

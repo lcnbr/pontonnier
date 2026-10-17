@@ -46,4 +46,5 @@
 #for entry in json("assets/manifest.json") {
   asset(entry.path, read(".media/" + entry.path, encoding: none))
 }
+#asset("assets/gallery.mjs", read("assets/gallery.mjs", encoding: none))
 #asset(".nojekyll", bytes(""))

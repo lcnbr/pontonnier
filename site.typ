@@ -4,7 +4,7 @@
 #let motto = "Rhodanus Et Lemanus"
 #let email = "info@pontonniers-geneve.ch"
 #let instagram = "https://www.instagram.com/pontonniers_geneve/"
-// The gallery picker and main menu share one album inventory.
+// One album inventory supplies the year menu in the navbar.
 #let albums = ((title: "Tous les albums", path: "galerie/"),) + range(2025, 2011, step: -1).map(year => (
   title: str(year),
   path: if year in (2012, 2015) { "images-" + str(year) + "/" }

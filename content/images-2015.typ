@@ -5,9 +5,7 @@
 
 Crue centennale de l’Arve en Mai 2015
 
-#photo("archive/2016/12/arve_2015_rudhard.jpg", "L'Arve, 04.05.2015")
-
-Photo: F. Rudhard, #link("http://www.notrehistoire.ch/medias/3106")[Source]
+#photo("archive/2016/12/arve_2015_rudhard.jpg", "L'Arve, 04.05.2015", caption: [L’Arve, 04.05.2015. Photo: F. Rudhard, #link("http://www.notrehistoire.ch/medias/3106")[Source]])
 
 #html.hr()
 

@@ -33,6 +33,10 @@ jobs:
           typst-version: ${{ steps.typst.outputs.version }}
       - name: Test published-site validation
         run: python3 -m unittest discover -s tests -v
+      - name: Test uncropped gallery layout
+        run: node --test tests/gallery.test.mjs
+      - name: Check lightweight editor previews
+        run: python3 scripts/check-preview.py
       - name: Check root deployment
         run: |
           bash scripts/build.sh
