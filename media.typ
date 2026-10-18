@@ -15,29 +15,41 @@
 #let base = sys.inputs.at("base-path", default: published-url)
 #assert(base.ends-with("/"), message: "The site base URL must end with /")
 #let site-link(path, body) = link(base + path, body)
-// The editor embeds downscaled article images; publishing keeps the full media.
+// Editor previews, small mosaic images and unchanged originals have separate paths.
 #let media-mode = sys.inputs.at("media", default: "preview")
 #assert(media-mode in ("preview", "full"), message: "media must be preview or full")
 #let light-preview = media-mode == "preview"
 #let previews = if light-preview { json("preview/manifest.json") } else { () }
 #let media = json("assets/manifest.json")
-#let picture(file, alt, loading: "lazy") = {
+#let picture(file, alt, loading: "lazy", thumbnail: false) = {
   if light-preview {
-    let thumbnail = previews.find(item => file in item.sources)
-    return if thumbnail != none { image(thumbnail.file, alt: alt) }
+    let cached = previews.find(item => file in item.sources)
+    return if cached != none { image(cached.file, alt: alt) }
       else { html.p(class: "editor-media-note")[Image : #alt] }
   }
-  let entry = media.find(item => item.path == "assets/" + file)
+  let source = media.find(item => item.path == "assets/" + file)
+  if thumbnail and source != none and "derived_from" not in source {
+    assert("thumbnail" in source, message: "Create a mosaic thumbnail for " + file + " with scripts/upgrade-media.mjs")
+  }
+  let entry = if thumbnail and source != none and "thumbnail" in source {
+    let small = media.find(item => item.path == source.thumbnail)
+    assert(small != none, message: "Missing mosaic image for " + file)
+    small
+  } else { source }
   let dimensions = if entry != none and "width" in entry and "height" in entry {
-    (width: entry.width, height: entry.height)
+    (width: str(entry.width), height: str(entry.height))
   } else { (:) }
-  html.img(src: base + "assets/" + file, alt: alt, loading: loading, decoding: "async", ..dimensions)
+  html.elem("img", attrs: (src: base + if entry != none { entry.path } else { "assets/" + file },
+    alt: alt, loading: loading, decoding: "async", "data-media-file": file, ..dimensions))
 }
 #let photo(file, alt, caption: none, destination: none) = {
   metadata((kind: "gallery-media", items: ((kind: "photo", file: file),)))
-  let href = if destination == none { base + "assets/" + file } else { destination }
+  let entry = media.find(item => item.path == "assets/" + file)
+  let href = if destination != none { destination } else if entry != none and "original" in entry {
+    "https://raw.githubusercontent.com/lcnbr/pontonnier-media/" + read(".media-revision").trim() + "/" + entry.original.path
+  } else { base + "assets/" + file }
   html.figure(class: if destination == none { "photo gallery-photo" } else { "photo" })[
-    #link(href, picture(file, alt))
+    #link(href, picture(file, alt, thumbnail: true))
     #if caption != none { html.figcaption(caption) }
   ]
 }

@@ -23,9 +23,14 @@ if [[ -n "$(git -C .media status --porcelain)" ]]; then
   printf '.media has local changes; commit or move them before building\n' >&2
   exit 1
 fi
+# Originals are served on demand from the media repository, outside the Pages bundle.
+# A partial checkout keeps CI from transferring the much larger original collection.
+git -C .media config remote.origin.promisor true
+git -C .media config remote.origin.partialclonefilter blob:none
+git -C .media sparse-checkout set --cone assets
 current=$(git -C .media rev-parse --verify HEAD 2>/dev/null || true)
 if [[ "$current" != "$revision" ]]; then
-  git -C .media fetch --quiet --depth=1 --no-tags origin "$revision"
+  git -C .media fetch --quiet --filter=blob:none --depth=1 --no-tags origin "$revision"
   git -C .media checkout --quiet --detach "$revision"
 fi
 printf 'Media ready at %s\n' "$revision"

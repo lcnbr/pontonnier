@@ -35,7 +35,7 @@
 #let album-card(item, href, events: false) = html.a(class: "album-card", href: href)[
   #if not light-preview {
     html.span(class: "album-cover")[
-      #if item.cover != none { picture(item.cover, "Couverture de l’album") } else {
+      #if item.cover != none { picture(item.cover, "Couverture de l’album", thumbnail: true) } else {
         html.span(class: "album-cover-empty")[Album]
       }
     ]

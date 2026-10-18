@@ -126,6 +126,8 @@ function initializeGallery(main) {
   let zoom = 1;
   let offset = {x: 0, y: 0};
   let photoRatio = 1;
+  let imageRequest = 0;
+  let originalLoader = null;
   const pointers = new Map();
 
   function paintZoom() {
@@ -235,7 +237,9 @@ function initializeGallery(main) {
   function showPhoto(index) {
     activePhoto = (index + sequence.length) % sequence.length;
     const item = sequence[activePhoto];
-    viewerImage.src = item.anchor.href;
+    const request = ++imageRequest;
+    if (originalLoader) originalLoader.src = '';
+    viewerImage.src = item.image.currentSrc || item.image.src;
     viewerImage.alt = item.image.alt;
     photoRatio = item.width / item.height;
     if (!viewer.open) {
@@ -243,6 +247,16 @@ function initializeGallery(main) {
       viewer.showModal();
     }
     resetZoom();
+    // Keep the mosaic image visible while decoding the full-resolution original.
+    const original = new Image();
+    originalLoader = original;
+    original.src = item.anchor.href;
+    original.decode().then(() => {
+      if (request !== imageRequest || !viewer.open) return;
+      viewerImage.src = original.src;
+      photoRatio = original.naturalWidth / original.naturalHeight;
+      paintZoom();
+    }).catch(() => { /* Keep the small image if an original is temporarily unavailable. */ });
     viewerCount.textContent = (activePhoto + 1) + ' / ' + sequence.length;
     // Captions are authored content, never the automatically numbered alt text.
     viewerCaption.replaceChildren(...(item.caption ? Array.from(item.caption.childNodes, node => node.cloneNode(true)) : []));
@@ -253,6 +267,9 @@ function initializeGallery(main) {
     }
   }
   function closePhoto(restorePosition = true) {
+    imageRequest++;
+    if (originalLoader) originalLoader.src = '';
+    originalLoader = null;
     activePhoto = null;
     resetZoom();
     if (viewer.open) viewer.close();

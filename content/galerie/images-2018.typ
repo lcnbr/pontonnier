@@ -217,15 +217,12 @@ Les félicitations de notre expert Alain Schmid des #link("http://www.pontoniere
 
 #photo("archive/2018/07/IMG_8145-e1532812204898.jpg", "Images 2018 — photographie 70")
 
-#photo("archive/2018/07/IMG_8245.mp4", "Images 2018 — photographie 71")
-
-#photo("archive/2018/07/IMG_8244.mp4", "Images 2018 — photographie 72")
-
 #photo("archive/2018/07/IMG_8205-e1532812221600.jpg", "Images 2018 — photographie 73")
 
 ]
 
 #video("archive/2018/07/IMG_8245.mp4", "Images 2018 — vidéo")
+#video("archive/2018/07/IMG_8244.mp4", "Images 2018 — vidéo")
     ],
     album-event(
       id: "11052018", title: [#strong[Descente du Rhône avec la section Bex (11.5.2018)]],

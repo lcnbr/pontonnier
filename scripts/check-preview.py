@@ -31,7 +31,8 @@ class PageMedia(HTMLParser):
         self.album |= tag == "main" and "gallery-page" in classes
         if tag == "img":
             self.images.append(
-                {"src": attrs.get("src", ""), "alt": attrs.get("alt", "")}
+                {"src": attrs.get("src", ""), "alt": attrs.get("alt", ""),
+                 "file": attrs.get("data-media-file")}
             )
         if not self.preview:
             return
@@ -107,7 +108,8 @@ def main():
                 for image in full.images:
                     if not image["src"].startswith("/assets/"):
                         raise SystemExit(f"{page}: non-local image {image['src']}")
-                    inventory.add(unquote(image["src"].lstrip("/")))
+                    inventory.add("assets/" + image["file"] if image["file"]
+                                  else unquote(image["src"].lstrip("/")))
                 continue
             preview = compile_page(page, output, "preview")
             if not preview.notice:
@@ -126,7 +128,8 @@ def main():
                         "regular-page images are missing or out of order; run npm run previews"
                     )
                 for image in full.images:
-                    source = unquote(image["src"].lstrip("/"))
+                    source = ("assets/" + image["file"] if image["file"]
+                              else unquote(image["src"].lstrip("/")))
                     thumbnail = cached.get(source)
                     original = originals.get(source)
                     if (

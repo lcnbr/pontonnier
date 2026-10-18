@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import subprocess
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -125,10 +126,25 @@ def main():
             errors.append(f"missing required output: {required}")
     for page in pages.values():
         errors.extend(page.check(pages, root, args.base_path))
+    source = Path(__file__).resolve().parents[1]
+    manifest = json.loads((source / "assets/manifest.json").read_text())
+    originals = {item["original"]["path"] for item in manifest if "original" in item}
+    if originals:
+        # Read Git tree names, never the original blobs in the partial checkout.
+        archived = set(subprocess.check_output(
+            ["git", "-C", str(source / ".media"), "ls-tree", "-r", "--name-only",
+             "HEAD", "--", "originals/"], text=True,
+        ).splitlines())
+        errors.extend(f"original is absent from the pinned media commit: {path}"
+                      for path in sorted(originals - archived))
+    published_bytes = sum(path.stat().st_size for path in root.rglob("*") if path.is_file())
+    if published_bytes > 1_000_000_000:
+        errors.append("Pages output exceeds 1 GB; keep camera originals outside the published bundle")
     if errors:
         raise SystemExit("\n".join(errors))
     print(
-        f"Validated {len(pages)} HTML pages, local links and media references at {args.base_path}"
+        f"Validated {len(pages)} HTML pages, local links and media references at {args.base_path}; "
+        f"{len(originals)} archived originals, {published_bytes:,} published bytes"
     )
 
 

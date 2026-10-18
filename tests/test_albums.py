@@ -1,6 +1,8 @@
 """Cover choices and derived media counts must agree in both Typst modes."""
 
 import os
+import json
+from html.parser import HTMLParser
 from pathlib import Path
 import shutil
 import subprocess
@@ -9,6 +11,18 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 COMPILER = os.environ.get("TYPST", "typst")
+
+
+class CoverImages(HTMLParser):
+    def __init__(self, html):
+        super().__init__()
+        self.images = []
+        self.feed(html)
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "img" and attrs.get("alt") == "Couverture de l’album":
+            self.images.append(attrs)
 
 
 @unittest.skipUnless(shutil.which(COMPILER), "Typst CLI is required")
@@ -32,7 +46,12 @@ class AlbumTests(unittest.TestCase):
                     self.assertEqual(result.returncode, 0, result.stderr)
                     self.assertNotIn("else {", html)
                     if mode == "full":
-                        self.assertIn(f'assets/{cover}', html)
+                        images = CoverImages(html).images
+                        self.assertEqual(images[0]["data-media-file"], cover)
+                        self.assertEqual(images[1]["data-media-file"], "rhone.jpg")
+                        inventory = json.loads((ROOT / "assets/manifest.json").read_text())
+                        selected = next(item for item in inventory if item["path"] == f"assets/{cover}")
+                        self.assertTrue(images[0]["src"].endswith("/" + selected["thumbnail"]))
                         self.assertIn('class="album-cover"', html)
                     else:
                         self.assertNotIn('class="album-cover"', html)

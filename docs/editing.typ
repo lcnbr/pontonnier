@@ -24,11 +24,14 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 - `.media/`: an ignored media checkout, downloaded by local builds and CI.
 - `dist/`: generated deployment files, also ignored by Git.
 - `preview/`: optimized images for regular pages, with source hashes and size limits.
-- `scripts/update-previews.mjs`: refreshes those images from the pinned media repository.
+- `scripts/update-previews.mjs`: refreshes editor images from the pinned media repository.
+- `scripts/upgrade-media.mjs`: recovers public originals and creates small mosaic images.
 
-The published site keeps the same local `assets/` URLs. Visitors do not download
-media from GitHub or from the original WordPress site. CI assembles the two
-repositories and deploys one self-contained static site.
+The published site keeps the same local `assets/` URLs for article media and adds
+small WebP images for mosaics and covers. Opening a photo loads the largest
+available original from the pinned media repository on GitHub Raw. It does not
+request the original WordPress site. Camera originals remain outside the Pages
+bundle and outside the small Typst project; CI uses a partial media checkout.
 
 == Reconnect after the media split
 

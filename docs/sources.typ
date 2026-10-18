@@ -29,8 +29,15 @@ SHA-256 checksum and image dimensions. Binary files live in
 #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media]. The source
 repository pins their commit in `.media-revision`; Typst reads the downloaded
 `.media/` checkout to publish the same asset paths in its bundle.
-Images use existing source-provided web renditions where available. They were
-not generatively recreated. Videos and PDFs retain their downloaded bytes.
+Article images retain the existing web renditions. The photo archive was audited
+against the original site’s WordPress media catalog on 18 October 2026, including
+pre-scaled camera files. Original files were recovered or improved for 408 images and are
+preserved byte for byte in the media repository’s `originals/` directory. That
+repository’s `originals/manifest.json` records the chosen URLs, dimensions and
+checksums. Six legacy progressive JPEGs have an incomplete final scan; browsers
+still decode them, and only the WebP thumbnail generation uses tolerant decoding.
+The original files are unchanged. No imagery is generatively recreated; videos
+and PDFs retain their downloaded bytes.
 
 The former WordPress link to Louis Blondel’s _Le port gallo-romain_ was unavailable.
 Its PDF was recovered from the current website’s uploads at
@@ -52,7 +59,9 @@ At the user’s request, the live Rhonomètre remains at
 #link("https://rhonometre.pontonniers-geneve.ch/"). It is a separate service with
 its own backend. YouTube, SketchUp, Instagram and independent reference sites
 remain external. The main website’s pages, images, PDFs and hosted videos are
-served locally and do not request the original website.
+served locally, except full-resolution photo originals, which are loaded from
+the pinned media repository on GitHub Raw. No media requests go to the original
+website.
 
 == Compiler and deployment
 
