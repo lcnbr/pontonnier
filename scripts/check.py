@@ -2,6 +2,7 @@
 """Check the compiled site, including links beneath a GitHub Pages subpath."""
 
 import argparse
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -13,6 +14,7 @@ class Page(HTMLParser):
         self.path = path
         self.ids = set()
         self.urls = []
+        self.backgrounds = []
         self.errors = []
         self.headings = 0
         self.main = 0
@@ -30,6 +32,18 @@ class Page(HTMLParser):
             self.ids.add(attrs["id"])
         if tag == "html":
             self.french = attrs.get("lang") == "fr"
+        if tag == "body" and "data-backgrounds" in attrs:
+            try:
+                pool = json.loads(attrs["data-backgrounds"])
+                if (
+                    not isinstance(pool, list)
+                    or not pool
+                    or not all(isinstance(path, str) and path for path in pool)
+                ):
+                    raise ValueError("invalid background inventory")
+                self.backgrounds = pool
+            except (TypeError, ValueError):
+                self.errors.append("backgrounds must be a non-empty list of asset paths")
         if tag == "meta" and attrs.get("name") == "viewport":
             self.viewport = True
         if tag == "h1":
@@ -59,7 +73,7 @@ class Page(HTMLParser):
             self.errors.append(
                 "expected French document, viewport, one h1 and one main"
             )
-        for href in self.urls:
+        for href in self.urls + [base + "assets/" + path for path in self.backgrounds]:
             url = urlsplit(href)
             if url.hostname in {
                 "pontonniers-geneve.ch",

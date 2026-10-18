@@ -24,14 +24,14 @@
     "source_sha256": "e48345ee616a4a36d4ace31427465112c9f7fab10bc6afd8294d03e98468252d"
   },
   {
-    "file": "preview/ezgif-com-optimize-aadfb9f5.jpg",
+    "file": "preview/ezgif-com-optimize-aadfb9f5.png",
     "sources": [
       "archive/2016/09/ezgif-com-optimize.gif"
     ],
     "width": 350,
     "height": 197,
-    "bytes": 6441,
-    "sha256": "3d8fa9bf895cae5626f7db2b6b4d6a8187fea83ae5b1cabed5e41952d842a3b3",
+    "bytes": 18317,
+    "sha256": "91416c7ea2b5cad5b0cd883039609746d830513be4a1a78b1d4c527d64fbf23d",
     "source": "assets/archive/2016/09/ezgif-com-optimize.gif",
     "source_sha256": "aadfb9f5f1bc769a5276fdf4ff8927267bd2b0e21b4ad774f4ba8d61d9101c3b"
   },
@@ -461,14 +461,14 @@
     "source_sha256": "87d7c28227fc6856ef825afea1378b830c9382b30725fed7a69d359c71e15e67"
   },
   {
-    "file": "preview/stravamaprhone-1024x207-84d82a34.jpg",
+    "file": "preview/stravamaprhone-1024x207-84d82a34.png",
     "sources": [
       "archive/2018/03/stravamaprhone-1024x207.png"
     ],
     "width": 960,
     "height": 194,
-    "bytes": 37337,
-    "sha256": "7d4a4a99db1b36b5bdbcbe3bef4a6a02a12a9f8f9efeb53b746de46b66070839",
+    "bytes": 123576,
+    "sha256": "c6df991a2262d8f2e183a89a81cbb0b7eb0bebdbe7601040df2103e1accb1bcb",
     "source": "assets/archive/2018/03/stravamaprhone-1024x207.png",
     "source_sha256": "84d82a34ead8db8e74c645adb89eb58843faa93b5ad7747e7b0b50ed0c8c67cc"
   },
@@ -630,18 +630,6 @@
     "source_sha256": "fc813b09652ed8ef000434cd123ee84efad02d641450a497506fe3bc81c478c6"
   },
   {
-    "file": "preview/banner.jpg",
-    "sources": [
-      "banner.jpg"
-    ],
-    "width": 940,
-    "height": 198,
-    "bytes": 17739,
-    "sha256": "9406a6a18a1ddac215535dc5f06d1ac805b411befbb196d0104ad3ff8d91ea05",
-    "source": "assets/banner.jpg",
-    "source_sha256": "89b51e07cbef054399230de5e1aba73051561c056f695b5099382de473777ec4"
-  },
-  {
     "file": "preview/barque-d1d9d773.jpg",
     "sources": [
       "archive/2019/08/IMG_3740.jpg",
@@ -655,18 +643,16 @@
     "source_sha256": "d1d9d773d00d82ffafd46a563d779afcded681bd7d1cd483a3299eceb4504e2e"
   },
   {
-    "file": "preview/equipe-496a596e.jpg",
+    "file": "preview/club-logo-d445c268.png",
     "sources": [
-      "archive/2018/10/DSC02689-1024x683.jpg",
-      "archive/2018/10/DSC02689.jpg",
-      "equipe.jpg"
+      "club-logo.png"
     ],
     "width": 960,
-    "height": 640,
-    "bytes": 90345,
-    "sha256": "65ee6eee93a264057503aa5e23a059879114282f131a823eb7cffb71986d6602",
-    "source": "assets/equipe.jpg",
-    "source_sha256": "496a596e2749cfff5021571cb2d7c162302fbec93d5b4f4288fcb17f026dd834"
+    "height": 997,
+    "bytes": 94070,
+    "sha256": "522bd9f1315710bd3be8b5e2a8261fea1ef71863a421b85a59b9b28adc136b7d",
+    "source": "assets/club-logo.png",
+    "source_sha256": "d445c268e9348d492ef6b5c0f85e225d82d39a46c56b75edb81f1441efd1189b"
   },
   {
     "file": "preview/histoire.jpg",
@@ -680,45 +666,6 @@
     "sha256": "05f9ecdb4121c6a23984fdce94837e2135606fa13a3eb19015b3fd4eca76640b",
     "source": "assets/histoire.jpg",
     "source_sha256": "f8892cdd103eb8b69c64257b1c05e3daec39198a01da5f36f119161458dfb0d2"
-  },
-  {
-    "file": "preview/jonction-86f698f3.jpg",
-    "sources": [
-      "archive/2020/11/079-IMG_7145.jpg",
-      "jonction.jpg"
-    ],
-    "width": 960,
-    "height": 720,
-    "bytes": 61059,
-    "sha256": "3123dbbfffd9e726110b854d34c897dba84c6ce6beb68d39a7ba61f7c240fa65",
-    "source": "assets/jonction.jpg",
-    "source_sha256": "86f698f3c299b0c77c52bead6f6e157f5504a3f68fb6fcb3df61c990a2f1ae7f"
-  },
-  {
-    "file": "preview/lac-0953a806.jpg",
-    "sources": [
-      "archive/2019/12/KNJZ5777-1024x683.jpg",
-      "lac.jpg"
-    ],
-    "width": 960,
-    "height": 640,
-    "bytes": 61705,
-    "sha256": "af31b8c68dfbdaeb6dd97874851c980311f4c07a589893ae0a17ce41030a1ecd",
-    "source": "assets/lac.jpg",
-    "source_sha256": "0953a80615535c8b750be76480addda643e13ec5f303feb02f86a2938123dbb6"
-  },
-  {
-    "file": "preview/navigation-2fb1802d.jpg",
-    "sources": [
-      "archive/2019/08/20190824-_DSC0294.jpg",
-      "navigation.jpg"
-    ],
-    "width": 960,
-    "height": 640,
-    "bytes": 117090,
-    "sha256": "5d3e5cd000aa2aa45e1397729414bcb6724bb746bdff54c6242d43213d5490b9",
-    "source": "assets/navigation.jpg",
-    "source_sha256": "2fb1802d954f1b71f54c1f0c39717039e3d62ef50a360f8ed2628c37de8d20e6"
   },
   {
     "file": "preview/rame-1b993c0c.jpg",
@@ -746,18 +693,5 @@
     "sha256": "7c186224cae5572a4159ef4638f1d566748a5df479dd2c4ea29a7e9b3181ac4a",
     "source": "assets/rhone.jpg",
     "source_sha256": "ae1b09683636a96452eef92f1c494b828bd8e60809d524729277dcd35fbfec03"
-  },
-  {
-    "file": "preview/sortie-03b4633b.jpg",
-    "sources": [
-      "archive/2023/10/NRAJ0281.jpg",
-      "sortie.jpg"
-    ],
-    "width": 960,
-    "height": 639,
-    "bytes": 56182,
-    "sha256": "1796a63b9187707b69946db84edf1a75dba54ec6a61a56466a991daa170ff489",
-    "source": "assets/sortie.jpg",
-    "source_sha256": "03b4633b03568e94857eae8ae0b06d5b20c140e804c95fff10a3016f947c413e"
   }
 ]

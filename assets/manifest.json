@@ -8096,5 +8096,13 @@
     "sha256": "ce4d74ab8658f22fa32c4f620a60adb8201af8592e09f5fd7296bee726b19d70",
     "width": 560,
     "height": 191
+  },
+  {
+    "path": "assets/club-logo.png",
+    "source": "https://raw.githubusercontent.com/huberlabgit/rhonometre/f5e243b74729a8b6a98fea00eabd392e487b0631/frontend/public/Logo_Pontonniers_Round_White.png",
+    "bytes": 86731,
+    "sha256": "d445c268e9348d492ef6b5c0f85e225d82d39a46c56b75edb81f1441efd1189b",
+    "width": 1135,
+    "height": 1179
   }
 ]

@@ -1,8 +1,9 @@
 = Reference sources and media
 
 The source is the public website of the Société des Pontonnier·ère·s de Genève,
-inspected on 17 October 2026. Its Twenty Ten composition supplies the reference
-layout. The CSS in this repository is a separate implementation.
+inspected on 17 October 2026. Its Twenty Ten composition supplied the initial reference layout. The current
+Signal / Rhône design was refined with the user in previews; its CSS is a
+separate implementation.
 
 == Content migration
 
@@ -34,6 +35,11 @@ not generatively recreated. Videos and PDFs retain their downloaded bytes.
 The former WordPress link to Louis Blondel’s _Le port gallo-romain_ was unavailable.
 Its PDF was recovered from the current website’s uploads at
 #link("https://www.pontonniers-geneve.ch/wp-content/uploads/2016/11/genavaiii.pdf").
+
+The transparent round club logo comes from
+#link("https://github.com/huberlabgit/rhonometre/blob/f5e243b74729a8b6a98fea00eabd392e487b0631/frontend/public/Logo_Pontonniers_Round_White.png")[the Rhonomètre project].
+The nine fixed-background photographs are drawn from the existing gallery; no
+new imagery is generated.
 
 Photographs, artwork, logos, articles and documents retain their original rights
 and authorship. Public availability does not transfer ownership, and this

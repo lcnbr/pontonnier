@@ -1,6 +1,8 @@
 """Regression cases for the site's published links and shared media."""
 
 import importlib.util
+import html
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -18,14 +20,34 @@ class PublishedSiteTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
 
-    def check_page(self, body, base="/pontonnier/"):
+    def check_page(self, body, base="/pontonnier/", backgrounds=None):
         path = self.root / "index.html"
+        attributes = ""
+        if backgrounds is not None:
+            encoded = html.escape(json.dumps(backgrounds), quote=True)
+            attributes = f' data-backgrounds="{encoded}"'
         path.write_text(
             '<html lang="fr"><meta name="viewport" content="width=device-width">'
-            '<main id="content"><h1>Archive</h1>' + body + "</main></html>"
+            f'<body{attributes}><main id="content"><h1>Archive</h1>'
+            + body + "</main></body></html>"
         )
         page = site_check.Page(path)
         return page.check({path: page}, self.root, base)
+
+    def test_random_backgrounds_are_checked_under_both_base_paths(self):
+        (self.root / "assets").mkdir()
+        (self.root / "assets/river.jpg").write_bytes(b"test image")
+        for base in ("/", "/pontonnier/"):
+            with self.subTest(base=base):
+                self.assertEqual(self.check_page("", base, backgrounds=["river.jpg"]), [])
+                errors = self.check_page("", base, backgrounds=["missing.jpg"])
+                self.assertTrue(any("broken link" in error for error in errors))
+
+    def test_invalid_background_inventory_is_rejected(self):
+        for backgrounds in ([], {"photo": "river.jpg"}, [None]):
+            with self.subTest(backgrounds=backgrounds):
+                errors = self.check_page("", backgrounds=backgrounds)
+                self.assertTrue(any("non-empty list" in error for error in errors))
 
     def test_original_page_and_asset_links_are_rejected(self):
         for url in (

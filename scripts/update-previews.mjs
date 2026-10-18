@@ -32,22 +32,26 @@ for (const [hash, group] of groups) {
   const source = group.find(item => item.path === old?.source) || group[0];
   const original = await readFile(path.join('.media', source.path));
   if (checksum(original) !== hash) throw new Error(`Media checksum mismatch: ${source.path}`);
+  const transparent = (await sharp(original).metadata()).hasAlpha;
   let width = limits.width, height = limits.height, quality = limits.jpeg_quality, result;
   for (;;) {
-    result = await sharp(original, {animated: false}).rotate()
-      .resize({width, height, fit: 'inside', withoutEnlargement: true})
-      .flatten({background: '#ffffff'})
-      .jpeg({quality, mozjpeg: true}).toBuffer({resolveWithObject: true});
+    const pipeline = sharp(original, {animated: false}).rotate()
+      .resize({width, height, fit: 'inside', withoutEnlargement: true});
+    result = await (transparent ? pipeline.png({palette: true, compressionLevel: 9})
+      : pipeline.flatten({background: '#ffffff'}).jpeg({quality, mozjpeg: true}))
+      .toBuffer({resolveWithObject: true});
     if (result.data.length <= limits.max_image_bytes) break;
-    if (quality > 54) quality -= 8;
+    if (!transparent && quality > 54) quality -= 8;
     else { width = Math.floor(width * .85); height = Math.floor(height * .85); }
     if (width < 160) throw new Error(`Unable to fit preview budget: ${source.path}`);
   }
   const stem = path.basename(source.path, path.extname(source.path)).replace(/[^a-zA-Z0-9_-]+/g, '-').slice(0, 60);
-  const file = old && !usedFiles.has(old.file) ? old.file : `preview/${stem}-${hash.slice(0, 8)}.jpg`;
+  const extension = transparent ? '.png' : '.jpg';
+  const file = old && path.extname(old.file) === extension && !usedFiles.has(old.file)
+    ? old.file : `preview/${stem}-${hash.slice(0, 8)}${extension}`;
   if (usedFiles.has(file)) throw new Error(`Duplicate preview output: ${file}`);
   usedFiles.add(file);
-  if (path.dirname(file) !== 'preview' || path.extname(file) !== '.jpg') throw new Error(`Invalid managed preview path: ${file}`);
+  if (path.dirname(file) !== 'preview' || !['.jpg', '.png'].includes(path.extname(file))) throw new Error(`Invalid managed preview path: ${file}`);
   const aliases = manifest.filter(item => item.sha256 === hash).map(item => item.path.slice('assets/'.length));
   outputs.push({data: result.data, entry: {
     file, sources: aliases, width: result.info.width, height: result.info.height,

@@ -328,20 +328,5 @@ function initializeGallery(main) {
 }
 
 if (typeof document !== 'undefined') {
-  const menus = Array.from(document.querySelectorAll('.menu details'));
-  for (const menu of menus) {
-    menu.addEventListener('toggle', () => {
-      if (menu.open) for (const other of menus) if (other !== menu) other.open = false;
-    });
-    menu.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        menu.open = false;
-        menu.querySelector('summary').focus();
-      }
-    });
-  }
-  document.addEventListener('click', event => {
-    for (const menu of menus) if (!menu.contains(event.target)) menu.open = false;
-  });
   for (const main of document.querySelectorAll('.gallery-page')) initializeGallery(main);
 }

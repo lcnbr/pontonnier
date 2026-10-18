@@ -8,7 +8,7 @@ CSS supplies the layout. The photographs, diagrams, videos and PDF downloads
 live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 
 - `content/`: editable French page sources.
-- `site.typ`: the name, contact details, published URL and album inventory.
+- `site.typ`: the name, contact details, published URL, album inventory and background pool.
 - `theme.typ`: the shared Typst HTML page template.
 - `media.typ`: photos, videos and lightweight editor media.
 - `album.typ`: cover choices, media counts and album/event cards.
@@ -16,6 +16,8 @@ live in #link("https://github.com/lcnbr/pontonnier-media")[pontonnier-media].
 - `assets/site.css`: the visual layout.
 - `gallery.typ`: Typst-generated photo viewer controls.
 - `assets/gallery.mjs`: mosaic layout, carousel navigation and zoom.
+- `assets/site.mjs`: sticky navigation, overflow menu, theme and visit background.
+- `assets/theme-init.js`: restores the visitor’s theme before the first paint.
 - `assets/manifest.json`: published asset paths, provenance and image dimensions.
 - `.media-revision`: the full media commit selected for publication.
 - `main.typ`: the pages and assets emitted by Typst’s bundle exporter.

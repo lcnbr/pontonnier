@@ -48,3 +48,4 @@
 }
 #asset("assets/gallery.mjs", read("assets/gallery.mjs", encoding: none))
 #asset(".nojekyll", bytes(""))
+#asset("assets/site.mjs", read("assets/site.mjs", encoding: none))

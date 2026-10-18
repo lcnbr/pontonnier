@@ -37,3 +37,17 @@
   (title: "Contact", path: "contact/"),
   (title: "Liens", path: "liens/"),
 )
+
+// A random river view is kept throughout a visit. Media stays in the pinned archive.
+#let backgrounds = (
+  "archive/2025/02/IMG_E0535-1024x957.jpg",
+  "archive/2021/08/QZYJ8260.jpg",
+  "archive/2025/08/POYQ5872.jpg",
+  "archive/2025/08/IMG_3243-1152x1536.jpg",
+  "archive/2025/08/YJLM7520.jpg",
+  "archive/2025/02/YBNP4270.jpg",
+  "archive/2025/02/ENVBE2445-1259x2048.jpg",
+  "archive/2023/10/MKED6965.jpg",
+  "archive/2021/08/UZEDE9072.jpg",
+)
+#let rhonometre-url = "https://rhonometre.pontonniers-geneve.ch/?embed=1&station=2606&background=transparent&branding=0"

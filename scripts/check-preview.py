@@ -115,7 +115,7 @@ def main():
             if preview.album:
                 if len(preview.images) != 1:
                     preview.errors.append(
-                        "album preview should show only the banner image"
+                        "album preview should show only the header logo"
                     )
             else:
                 full = compile_page(page, output, "full")
